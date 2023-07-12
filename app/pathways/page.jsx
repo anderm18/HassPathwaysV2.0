@@ -1,8 +1,7 @@
 "use client";
 import React, { useReducer } from "react";
 import pathwaysCategories from "@/public/data/pathwaysCategories";
-import CheckBoxBase from "@/public/assets/svg/checkbox_base.svg";
-import Image from "next/image";
+import CheckBoxBase from "@/public/assets/svg/checkbox_base.svg?svgr";
 
 const pathwaysLists = [
   pathwaysCategories.ART,

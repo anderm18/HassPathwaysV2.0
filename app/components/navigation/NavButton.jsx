@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BarChart from "../../../public/assets/svg/bar-chart-square-02.svg?svgr";
 
 const NavButton = ({ link, text, icon, selected }) => {
   return (

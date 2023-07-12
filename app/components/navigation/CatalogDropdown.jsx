@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import ChevronUp from "@/public/assets/svg/chevron-up.svg";
-import ChevronDown from "@/public/assets/svg/chevron-down.svg";
+import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
+import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
 
 const catalogList = [
