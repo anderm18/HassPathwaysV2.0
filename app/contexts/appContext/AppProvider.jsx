@@ -2,8 +2,11 @@
 
 import { createContext, useContext, useReducer } from "react";
 import { appReducer } from "./AppReducer";
+import { SET_CATALOG } from "../actions";
 
-const appInitialState = {};
+const appInitialState = {
+  catalog_year: 2023,
+};
 
 const AppContext = createContext(appInitialState);
 
@@ -12,7 +15,15 @@ const AppContextProvider = ({ children }) => {
   // Declare any state fucntion here
   // and pass through value props in AppContext.Provider
 
-  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
+  const setCatalog = (catalog_year) => {
+    dispatch({ type: SET_CATALOG, payload: catalog_year });
+  };
+
+  return (
+    <AppContext.Provider value={{ ...state, setCatalog }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useAppContext = () => useContext(AppContext);
