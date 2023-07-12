@@ -1,6 +1,6 @@
 import NavButton from "@/app/components/navigation/NavButton";
-import barChart from "@/public/assets/svg/bar-chart-square-02.svg?url";
-import homeLine from "@/public/assets/svg/home-line.svg?url";
+import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
+import homeLine from "@/public/assets/svg/home-line.svg?svgr";
 import { SiDiscord, SiGithub } from "react-icons/si";
 import Link from "next/link";
 import CatalogDropdown from "/app/components/navigation/CatalogDropdown";
@@ -17,10 +17,10 @@ export default function CourseLayout({ children }) {
             <NavButton
               link="/courses"
               text="My Courses"
-              icon={homeLine}
+              Icon={homeLine}
               selected
             />
-            <NavButton link="/pathways" text="My Pathways" icon={barChart} />
+            <NavButton link="/pathways" text="My Pathways" Icon={barChart} />
           </ul>
           <CatalogDropdown />
         </div>

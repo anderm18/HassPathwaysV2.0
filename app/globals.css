@@ -59,6 +59,10 @@
     @apply w-6 h-6;
   }
 
+  .nav-button--selected > path {
+    @apply stroke-primary-800;
+  }
+
   .dropdown {
     appearance: none;
     -webkit-appearance: none;

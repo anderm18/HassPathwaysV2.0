@@ -1,6 +1,6 @@
 import NavButton from "./components/navigation/NavButton";
-import barChart from "@/public/assets/svg/bar-chart-square-02.svg?url";
-import homeLine from "@/public/assets/svg/home-line.svg?url";
+import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
+import homeLine from "@/public/assets/svg/home-line.svg?svgr";
 import { SiDiscord, SiGithub } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,8 +15,8 @@ export default function Home() {
         </header>
         <div className="flex gap-5 items-center">
           <ul className="flex items-start gap-4 px-4 self-stretch">
-            <NavButton link="/courses" text="My Courses" icon={homeLine} />
-            <NavButton link="/pathways" text="My Pathways" icon={barChart} />
+            <NavButton link="/courses" text="My Courses" Icon={homeLine} />
+            <NavButton link="/pathways" text="My Pathways" Icon={barChart} />
           </ul>
           <CatalogDropdown />
         </div>
