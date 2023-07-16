@@ -1,26 +1,12 @@
-import NavButton from "./components/navigation/NavButton";
-import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
-import homeLine from "@/public/assets/svg/home-line.svg?svgr";
 import { SiDiscord, SiGithub } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import CatalogDropdown from "./components/navigation/CatalogDropdown";
+import NavigationBar from "./components/navigation/NavigationBar";
 
 export default function Home() {
   return (
     <div className="flex flex-col h-screen">
-      <nav className="navigation-bar">
-        <header className="text-xl font-semibold">
-          <span className="text-primary-900">Hass</span> Pathways
-        </header>
-        <div className="flex gap-5 items-center">
-          <ul className="flex items-start gap-4 px-4 self-stretch">
-            <NavButton link="/courses" text="My Courses" Icon={homeLine} />
-            <NavButton link="/pathways" text="My Pathways" Icon={barChart} />
-          </ul>
-          <CatalogDropdown />
-        </div>
-      </nav>
+      <NavigationBar />
       <main className="flex-1 flex px-8 justify-between gap-12 items-center">
         <section className="grow-[1.5] basis-0">
           <h1 className="text-display-md font-semibold">

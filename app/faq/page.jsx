@@ -1,10 +1,7 @@
-import NavButton from "@/app/components/navigation/NavButton";
-import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
-import homeLine from "@/public/assets/svg/home-line.svg?svgr";
 import { SiDiscord, SiGithub } from "react-icons/si";
 import Link from "next/link";
-import CatalogDropdown from "@/app/components/navigation/CatalogDropdown";
 import * as Icon from "../components/utils/Icon";
+import NavigationBar from "../components/navigation/NavigationBar";
 
 async function getFAQ() {
   const res = await fetch("http://localhost:3000/api/faq");
@@ -14,22 +11,10 @@ async function getFAQ() {
 
 const FAQ = async () => {
   const faqQuestions = await getFAQ();
-  console.log(faqQuestions);
 
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="navigation-bar">
-        <header className="text-xl font-semibold">
-          <span className="text-primary-900">Hass</span> Pathways
-        </header>
-        <div className="flex gap-5 items-center">
-          <ul className="flex items-start gap-4 px-4 self-stretch">
-            <NavButton link="/courses" text="My Courses" Icon={homeLine} />
-            <NavButton link="/pathways" text="My Pathways" Icon={barChart} />
-          </ul>
-          <CatalogDropdown />
-        </div>
-      </nav>
+      <NavigationBar className="flex" />
       <main className="flex-1 flex flex-col px-8 items-center w-full">
         <header className="py-12 md:py-24 flex flex-col gap-6 items-center w-full">
           <section className="flex flex-col gap-3 items-center">
