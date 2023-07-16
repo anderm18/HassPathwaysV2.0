@@ -17,7 +17,7 @@ const nextConfig = {
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
-        resourceQuery: /svgr/, // exclude if *.svg?url
+        resourceQuery: /svgr/, // *.svg?svgr
         use: ["@svgr/webpack"],
       }
     );
