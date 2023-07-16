@@ -1,0 +1,25 @@
+import certificate01 from "@/public/assets/svg/certificate-01.svg?svgr";
+import switchhorizontal01 from "@/public/assets/svg/switch-horizontal-01.svg?svgr";
+import slashcircle01 from "@/public/assets/svg/slash-circle-01.svg?svgr";
+import bookopen01 from "@/public/assets/svg/book-open-01.svg?svgr";
+import graduationhat01 from "@/public/assets/svg/graduation-hat-01.svg?svgr";
+import announcement01 from "@/public/assets/svg/announcement-01.svg?svgr";
+import plus01 from "@/public/assets/svg/plus.svg?svgr";
+import share06 from "@/public/assets/svg/share-06.svg?svgr";
+import user01 from "@/public/assets/svg/user-01.svg?svgr";
+import archive01 from "@/public/assets/svg/archive.svg?svgr";
+import clockFastForward from "@/public/assets/svg/clock-fast-forward.svg?svgr";
+import star05 from "@/public/assets/svg/star-05.svg?svgr";
+
+export const certificate = certificate01;
+export const switchhorizontal = switchhorizontal01;
+export const slashcircle = slashcircle01;
+export const bookopen = bookopen01;
+export const graduationhat = graduationhat01;
+export const announcement = announcement01;
+export const plus = plus01;
+export const share = share06;
+export const user = user01;
+export const archive = archive01;
+export const clockfastforward = clockFastForward;
+export const star = star05;
