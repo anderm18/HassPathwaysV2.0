@@ -2,56 +2,56 @@
   {
     "question": "Is HASS pathway a requirement?",
     "answer": "Yes, ..........",
-    "icon": "certificate"
+    "icon": "Certificate"
   },
   {
     "question": "Can I change my pathway later?",
     "answer": "..., ..........",
-    "icon": "switchhorizontal"
+    "icon": "SwitchHorizontal"
   },
   {
     "question": "Is IHSS course a requirement?",
     "answer": "No, ..........",
-    "icon": "bookopen"
+    "icon": "BookOpen"
   },
   {
     "question": "Is 4000-level course a requirement?",
     "answer": "No, ..........",
-    "icon": "graduationhat"
+    "icon": "GraduationHat"
   },
   {
     "question": "Is CI course a requirement?",
     "answer": "No, ..........",
-    "icon": "announcement"
+    "icon": "Announcement"
   },
   {
     "question": "Can I create my own pathway?",
     "answer": "No, ..........",
-    "icon": "plus"
+    "icon": "Plus"
   },
   {
     "question": "Can my pathway count toward minor?",
     "answer": "No, ..........",
-    "icon": "share"
+    "icon": "Share"
   },
   {
     "question": "Can I use the pathway from other years?",
     "answer": "No, ..........",
-    "icon": "user"
+    "icon": "User"
   },
   {
     "question": "Can any course in the pathway be designated as P/NC?",
     "answer": "No, ..........",
-    "icon": "archive"
+    "icon": "Archive"
   },
   {
     "question": "By when do I have to declare a pathway?",
     "answer": "No, ..........",
-    "icon": "clockfastforward"
+    "icon": "ClockFastForward"
   },
   {
     "question": "How do I declare a pathway?",
     "answer": "No, ..........",
-    "icon": "star"
+    "icon": "Star"
   }
 ]
