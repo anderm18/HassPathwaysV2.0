@@ -36,6 +36,10 @@
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
   }
+
+  .path-primary-600 path {
+    @apply stroke-primary-600;
+  }
 }
 
 @layer components {
