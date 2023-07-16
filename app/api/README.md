@@ -9,20 +9,20 @@ Returns a list of course that match search criteria.
 
 ##### Parameters
 
-| Parameter    | In    |          Type          | Required | Description                                          |
-| :----------- | :---- | :--------------------: | :------: | :--------------------------------------------------- |
-| searchString | query |         String         |  false   | string you want to search                            |
-| prefix       | query |  [coursePrefixObject]  |  false   | course prefix                                        |
-| level        | query |  [courseLevelObject]   |  false   | course level                                         |
-| filter       | query |   [courseTagObject]    |  false   | tag included in course (eg. Communication Intensive) |
-| semester     | query | [courseSemesterObject] |  false   | Description                                          |
+| Parameter    | In    |                      Type                       | Required | Description                                          |
+| :----------- | :---- | :---------------------------------------------: | :------: | :--------------------------------------------------- |
+| searchString | query |                     String                      |  false   | string you want to search                            |
+| prefix       | query |   [[coursePrefixObject](#courseprefixobject)]   |  false   | course prefix                                        |
+| level        | query |    [[courseLevelObject](#courselevelobject)]    |  false   | course level                                         |
+| filter       | query |      [[courseTagObject](#coursetagobject)]      |  false   | tag included in course (eg. Communication Intensive) |
+| semester     | query | [[courseSemesterObject](#coursesemesterobject)] |  false   | semester filter                                      |
 
 ##### Responses
 
-| Status | Meaning   | Description       |         Schema |
-| :----- | :-------- | :---------------- | -------------: |
-| 200    | OK        | successful search | [CourseSchema] |
-| 404    | Not Found | No course matched |           None |
+| Status | Meaning   | Description       |                          Schema |
+| :----- | :-------- | :---------------- | ------------------------------: |
+| 200    | OK        | successful search | [[CourseSchema](#courseschema)] |
+| 404    | Not Found | No course matched |                            None |
 
 ### searchPathway
 
@@ -31,17 +31,17 @@ Returns a list of pathway that match search criteria.
 
 ##### Parameters
 
-| Parameter    | In    |           Type            | Required | Description               |
-| :----------- | :---- | :-----------------------: | :------: | :------------------------ |
-| searchString | query |          String           |  false   | string you want to search |
-| department   | query | [pathwayDepartmentObject] |  false   | list of department filter |
+| Parameter    | In    |                         Type                          | Required | Description               |
+| :----------- | :---- | :---------------------------------------------------: | :------: | :------------------------ |
+| searchString | query |                        String                         |  false   | string you want to search |
+| department   | query | [[pathwayDepartmentObject](#pathwaydepartmentobject)] |  false   | list of department filter |
 
 ##### Responses
 
-| Status | Meaning   | Description        |          Schema |
-| :----- | :-------- | :----------------- | --------------: |
-| 200    | OK        | successful search  | [PathwaySchema] |
-| 404    | Not Found | No pathway matched |            None |
+| Status | Meaning   | Description        |                            Schema |
+| :----- | :-------- | :----------------- | --------------------------------: |
+| 200    | OK        | successful search  | [[PathwaySchema](#pathwayschema)] |
+| 404    | Not Found | No pathway matched |                              None |
 
 ### getCourseByCourseCode
 
@@ -56,15 +56,15 @@ Returns course's description.
 
 ##### Responses
 
-| Status | Meaning     | Description           |                    Schema |
-| :----- | :---------- | :-------------------- | ------------------------: |
-| 200    | OK          | successful search     | [CourseDescriptionSchema] |
-| 400    | Bad Request | Malformed course code |                      None |
-| 404    | Not Found   | No course found       |                      None |
+| Status | Meaning     | Description           |                                                Schema |
+| :----- | :---------- | :-------------------- | ----------------------------------------------------: |
+| 200    | OK          | successful search     | [[CourseDescriptionSchema](#coursedescriptionschema)] |
+| 400    | Bad Request | Malformed course code |                                                  None |
+| 404    | Not Found   | No course found       |                                                  None |
 
 ### getPathwayByName
 
-`GET /course/{:pathwayName}`
+`GET /pathway/{:pathwayName}`
 Returns pathway's description.
 
 ##### Parameters
@@ -75,10 +75,10 @@ Returns pathway's description.
 
 ##### Responses
 
-| Status | Meaning   | Description       |                     Schema |
-| :----- | :-------- | :---------------- | -------------------------: |
-| 200    | OK        | successful search | [PathwayDescriptionSchema] |
-| 404    | Not Found | No pathway found  |                       None |
+| Status | Meaning   | Description       |                                                  Schema |
+| :----- | :-------- | :---------------- | ------------------------------------------------------: |
+| 200    | OK        | successful search | [[PathwayDescriptionSchema](#pathwaydescriptionschema)] |
+| 404    | Not Found | No pathway found  |                                                    None |
 
 ---
 
@@ -88,19 +88,39 @@ Returns pathway's description.
 
 ##### coursePrefixObject
 
-`"ARTS" || "COGS" || "COMM" || "ECON" || "GSAS" || "INQR" || "ITWS" || "LANG" || "LITR" || "PHIL" || "PSYC" || "STSO" || "WRIT"`
+```js
+"ARTS" ||
+  "COGS" ||
+  "COMM" ||
+  "ECON" ||
+  "GSAS" ||
+  "INQR" ||
+  "ITWS" ||
+  "LANG" ||
+  "LITR" ||
+  "PHIL" ||
+  "PSYC" ||
+  "STSO" ||
+  "WRIT";
+```
 
 ##### courseLevelObject
 
-`"1" || "2" || "4"`
+```js
+"1" || "2" || "4";
+```
 
 ##### courseTagObject
 
-`"CI" || "PDII" || "HInq"`
+```js
+"CI" || "PDII" || "HInq";
+```
 
 ##### courseSemesterObject
 
-`"F" || "S" || "U"`
+```js
+"F" || "S" || "U";
+```
 
 ##### pathwayDepartmentObject
 
