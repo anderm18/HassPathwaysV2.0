@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
 import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
@@ -31,13 +31,27 @@ const catalogList = [
 const CatalogDropdown = () => {
   const { catalog_year, setCatalog } = useAppContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const catalogText = catalogList.filter((cat) => cat.value === catalog_year)[0]
     .text;
 
+  useEffect(() => {
+    if (!dropdownOpen) return;
+
+    const outsideDropdown = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target))
+        setDropdownOpen(false);
+    };
+    document.addEventListener("click", outsideDropdown);
+
+    return () => document.removeEventListener("click", outsideDropdown);
+  }, [dropdownOpen]);
+
   return (
     <div
       className="dropdown flex items-center gap-2 w-[320px] bg-white border-solid border border-gray-300 text-gray-500 py-[10px] px-[14px] rounded-lg prevent-select"
+      ref={dropdownRef}
       onClick={() => {
         setDropdownOpen((open) => !open);
       }}
