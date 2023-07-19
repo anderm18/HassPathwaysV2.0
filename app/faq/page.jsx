@@ -1,7 +1,6 @@
-import { SiDiscord, SiGithub } from "react-icons/si";
-import Link from "next/link";
 import * as Icon from "../components/utils/Icon";
 import NavigationBar from "../components/navigation/NavigationBar";
+import Footer from "../components/navigation/Footer";
 
 async function getFAQ() {
   const res = await fetch("http://localhost:3000/api/faq");
@@ -32,17 +31,20 @@ const FAQ = async () => {
             const IconComponent = Icon[question.icon];
 
             return (
-              <section key={question.question} className="w-[384px]">
+              <section
+                key={question.question}
+                className="w-[200px] md:w-[384px]"
+              >
                 <div className="mb-5 border-8 border-solid border-primary-50 bg-primary-100 rounded-full w-fit p-3 mx-auto flex items-center justify-center">
                   {IconComponent && (
                     <IconComponent className="w-6 h-6 path-primary-600" />
                   )}
                 </div>
                 <div>
-                  <header className="text-xl font-semibold text-center text-gray-900 md-2">
+                  <header className="text-md md:text-xl font-semibold text-center text-gray-900 md-2">
                     {question.question}
                   </header>
-                  <p className="text-center text-md text-gray-600">
+                  <p className="text-center text-sm md:text-md text-gray-600">
                     {question.answer}
                   </p>
                 </div>
@@ -51,18 +53,7 @@ const FAQ = async () => {
           })}
         </section>
       </main>
-      <footer className="footer bg-gray-100">
-        <div className="flex gap-4">
-          <SiDiscord className="icon" />
-          <SiGithub className="icon" />
-        </div>
-        <div className="flex gap-12 text-md">
-          <Link href="/faq">FAQ</Link>
-          <Link href="/courses">My Courses</Link>
-          <Link href="/pathways">My Pathways</Link>
-        </div>
-        <div className="text-md">&copy; 2023 Hass Pathways</div>
-      </footer>
+      <Footer />
     </div>
   );
 };

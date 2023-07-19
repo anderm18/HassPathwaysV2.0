@@ -120,4 +120,13 @@
   .button-group .checkbox-group > input[type="checkbox"]:checked {
     @apply text-primary-700;
   }
+
+  .footer {
+    @apply text-sm md:text-md;
+    @apply font-medium md:font-normal;
+  }
+
+  .footer .icon {
+    @apply w-4 h-4 md:w-6 md:h-6;
+  }
 }

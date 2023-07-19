@@ -6,14 +6,16 @@ import { BarChart, HomeLine } from "../utils/Icon";
 
 const NavigationBar = (props) => {
   return (
-    <nav className={`navigation-bar ${props.className}`}>
+    <nav
+      className={`navigation-bar flex flex-col gap-y-3 sm:flex-row items-start md:items-center justify-between ${props.className}`}
+    >
       <Link href="/">
-        <header className="text-xl font-semibold">
+        <header className="text-md lg:text-xl font-semibold">
           <span className="text-primary-900">Hass</span> Pathways
         </header>
       </Link>
-      <div className="flex gap-5 items-center">
-        <ul className="flex items-start gap-4 px-4 self-stretch">
+      <div className="flex flex-col md:flex-row gap-y-3 gap-x-5 items-start sm:items-end md:items-center">
+        <ul className="flex items-start gap-4 md:px-4 self-stretch">
           <NavButton
             link="/courses"
             text="My Courses"

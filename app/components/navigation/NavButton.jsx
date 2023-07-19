@@ -11,16 +11,18 @@ const NavButton = ({ link, text, Icon, keyword }) => {
   return (
     <Link href={link}>
       <div
-        className={`flex py-2 px-3 gap-2 ${
+        className={`flex items-center py-2 px-3 gap-2 ${
           selected && "text-primary-800 bg-gray-100 rounded-md"
         }`}
       >
         <Icon.type
           {...Icon.props}
-          className={selected && "nav-button--selected"}
+          className={`${selected && "nav-button--selected"} hidden md:block`}
         />
         <span
-          className={`text-md font-semibold ${!selected && "text-gray-700"}`}
+          className={`text-sm lg:text-md font-semibold ${
+            !selected && "text-gray-700"
+          }`}
         >
           {text}
         </span>
