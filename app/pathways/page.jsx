@@ -1,7 +1,7 @@
 "use client";
-import React, { useReducer } from "react";
+import React, { useState, useReducer } from "react";
 import pathwaysCategories from "@/public/data/pathwaysCategories";
-import CheckBoxBase from "@/public/assets/svg/checkbox_base.svg?svgr";
+import { CheckBoxChecked, CheckBoxUnChecked } from "../components/utils/Icon";
 
 const pathwaysLists = [
   pathwaysCategories.ART,
@@ -15,6 +15,10 @@ const pathwaysLists = [
 ];
 
 const MyPathways = () => {
+  // Determine the mode of pathway card
+  const [bookmarkedState, setbookmarkedState] = useState(true);
+
+  // Determine the filter
   const [filterState, dispatchFilter] = useReducer((state, action) => {
     const rep = 1 << action.payload;
     console.log(action.payload);
@@ -34,33 +38,32 @@ const MyPathways = () => {
         <h1 className="text-display-md font-semibold">My Pathways</h1>
         <section className="flex gap-4">
           <div className="flex button-group">
-            <div>Bookmarked</div>
-            <div>Matched</div>
+            <ModeRadioButton
+              label="Bookmarked"
+              checked={bookmarkedState}
+              clickCallback={() => setbookmarkedState(true)}
+            />
+            <ModeRadioButton
+              label="Matched"
+              checked={!bookmarkedState}
+              clickCallback={() => setbookmarkedState(false)}
+            />
           </div>
           <div className="flex button-group">
-            <div
-              className={`checkbox-group ${
-                filterState === 255 ? "checked" : ""
-              }`}
-              onClick={() => dispatchFilter({ payload: 255 })}
-            >
-              {/* <input type="checkbox" name="course-filter" /> */}
-              {/* <Image src={checkBoxBase} /> */}
-              <CheckBoxBase />
-              <label>All</label>
-            </div>
+            <FilterCheckBox
+              clickCallback={() => dispatchFilter({ payload: 255 })}
+              label="All"
+              checked={filterState === 255}
+            />
+
             {pathwaysLists.map((pathway, i) => {
               return (
-                <div
-                  className={`checkbox-group ${
-                    activeFilter(filterState, i) ? "checked" : ""
-                  }`}
+                <FilterCheckBox
+                  checked={activeFilter(filterState, i)}
                   key={pathway}
-                  onClick={() => dispatchFilter({ payload: i })}
-                >
-                  {/* <input type="checkbox" name="course-filter" /> */}
-                  <label>{pathway}</label>
-                </div>
+                  label={pathway}
+                  clickCallback={() => dispatchFilter({ payload: i })}
+                />
               );
             })}
           </div>
@@ -70,4 +73,26 @@ const MyPathways = () => {
   );
 };
 
+const FilterCheckBox = ({ checked, label, clickCallback }) => {
+  return (
+    <button
+      className={`checkbox-group ${checked ? "checked" : ""}`}
+      onClick={clickCallback}
+    >
+      {checked ? <CheckBoxChecked /> : <CheckBoxUnChecked />}
+      <label>{label}</label>
+    </button>
+  );
+};
+
+const ModeRadioButton = ({ checked, label, clickCallback }) => {
+  return (
+    <button
+      className={`checkbox-group ${checked ? "checked !bg-primary-50" : ""}`}
+      onClick={clickCallback}
+    >
+      {label}
+    </button>
+  );
+};
 export default MyPathways;

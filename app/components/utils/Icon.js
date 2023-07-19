@@ -12,6 +12,8 @@ import clockFastForward from "@/public/assets/svg/clock-fast-forward.svg?svgr";
 import star05 from "@/public/assets/svg/star-05.svg?svgr";
 import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
 import homeLine from "@/public/assets/svg/home-line.svg?svgr";
+import checkbox_unchecked from "@/public/assets/svg/checkbox_base_uncheck.svg?svgr";
+import checkbox_checked from "@/public/assets/svg/checkbox_base_checked.svg?svgr";
 
 export const Certificate = certificate01;
 export const SwitchHorizontal = switchhorizontal01;
@@ -27,3 +29,5 @@ export const ClockFastForward = clockFastForward;
 export const Star = star05;
 export const BarChart = barChart;
 export const HomeLine = homeLine;
+export const CheckBoxChecked = checkbox_checked;
+export const CheckBoxUnChecked = checkbox_unchecked;

@@ -125,11 +125,12 @@
     @apply cursor-pointer;
   }
 
-  .button-group .checkbox-group > input[type="checkbox"] {
+  .button-group .checkbox-group {
     @apply bg-white border-gray-300 border border-solid;
+    @apply hover:bg-gray-50;
   }
 
-  .button-group .checkbox-group > input[type="checkbox"]:checked {
+  .button-group .checkbox-group.checked {
     @apply text-primary-700;
   }
 
