@@ -11,8 +11,8 @@ const NavButton = ({ link, text, Icon, keyword }) => {
   return (
     <Link href={link}>
       <div
-        className={`flex items-center py-2 px-3 gap-2 ${
-          selected && "text-primary-800 bg-gray-100 rounded-md"
+        className={`flex items-center py-2 px-3 gap-2 rounded-md hover:bg-gray-50 ${
+          selected && "text-primary-800 bg-gray-100"
         }`}
       >
         <Icon.type

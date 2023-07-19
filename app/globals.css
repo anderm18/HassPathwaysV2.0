@@ -91,6 +91,18 @@
     @apply hover:bg-gray-100;
   }
 
+  .home-button {
+    @apply rounded-lg;
+    @apply border border-solid;
+    @apply py-3 px-5;
+    @apply text-sm md:text-md font-semibold;
+    @apply text-center;
+    @apply flex-1 md:grow-0 md:basis-[200px] lg:basis-[280px];
+    @apply cursor-pointer;
+
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+
   .button-group > * {
     @apply border-gray-300 border;
     @apply py-2.5 px-4;
