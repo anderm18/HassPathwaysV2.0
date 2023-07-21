@@ -113,8 +113,8 @@ const MyPathways = () => {
         </section>
       </header>
       <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-        {pathwayList.map((pathway) => {
-          return <PathwayCard {...pathway} key={pathway.pathwayName} />;
+        {pathwayList.map((pathway, i) => {
+          return <PathwayCard {...pathway} key={pathway.pathwayName + i} />;
         })}
       </section>
     </>

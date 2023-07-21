@@ -7,7 +7,7 @@ const PathwayCard = ({ pathwayName, category, tooltip, bookmark, courses }) => {
       <header className="flex justify-between w-full items-start">
         <div className="w-[367px] mb-2">
           <div className="flex flex-col md:flex-row gap-2 items-start py-1">
-            <h3 className="pathway-title">{pathwayName}</h3>
+            <h3 className="pathway-title flex-1">{pathwayName}</h3>
             <p className="tag">{category}</p>
           </div>
           <div className="progress-bar">
@@ -24,9 +24,9 @@ const PathwayCard = ({ pathwayName, category, tooltip, bookmark, courses }) => {
         </div>
       </header>
       <div className="flex gap-3 flex-col">
-        {courses.map((course) => {
+        {courses.map((course, i) => {
           return (
-            <div className="courselist" key={course.name}>
+            <div className="courselist" key={course.name + i}>
               <StatusIndicator {...course} />
               <span>{course.name}</span>
             </div>
