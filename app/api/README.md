@@ -163,7 +163,7 @@ Note: Case sensitive.
 ```js
 {
   type: "course" || "and" || "or",
-  nested: PrereqSchema || null,   // non-null if type is "and" or "or"
+  nested: [PrereqSchema] || null,   // non-null if type is "and" or "or"
   course: String || null          // non-null if type is "course", in the format "[prefix] [code]", e.g. "COGS 4960"
 }
 ```
