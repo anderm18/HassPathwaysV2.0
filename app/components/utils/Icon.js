@@ -14,6 +14,9 @@ import barChart from "@/public/assets/svg/bar-chart-square-02.svg?svgr";
 import homeLine from "@/public/assets/svg/home-line.svg?svgr";
 import checkbox_unchecked from "@/public/assets/svg/checkbox_base_uncheck.svg?svgr";
 import checkbox_checked from "@/public/assets/svg/checkbox_base_checked.svg?svgr";
+import bookmark from "@/public/assets/svg/bookmark.svg?svgr";
+import bookmark_check from "@/public/assets/svg/bookmark_checked.svg?svgr";
+import helpIcon from "@/public/assets/svg/help_icon.svg?svgr";
 
 export const Certificate = certificate01;
 export const SwitchHorizontal = switchhorizontal01;
@@ -31,3 +34,6 @@ export const BarChart = barChart;
 export const HomeLine = homeLine;
 export const CheckBoxChecked = checkbox_checked;
 export const CheckBoxUnChecked = checkbox_unchecked;
+export const Bookmark = bookmark;
+export const BookmarkChecked = bookmark_check;
+export const HelpIcon = helpIcon;

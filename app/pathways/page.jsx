@@ -2,6 +2,7 @@
 import React, { useState, useReducer } from "react";
 import pathwaysCategories from "@/public/data/pathwaysCategories";
 import { CheckBoxChecked, CheckBoxUnChecked } from "../components/utils/Icon";
+import PathwayCard from "../components/pathway/PathwayCard";
 
 const pathwaysLists = [
   pathwaysCategories.ART,
@@ -14,6 +15,49 @@ const pathwaysLists = [
   pathwaysCategories.STS,
 ];
 
+const pathwayList = [
+  {
+    pathwayName: "Gender, Race, Sexuality, Ethnicity, and Social Change",
+    category: "Inter",
+    tooltip: "",
+    bookmark: true,
+    courses: [
+      {
+        status: "none",
+        name: "None",
+      },
+      {
+        status: "none",
+        name: "None",
+      },
+      {
+        status: "none",
+        name: "None",
+      },
+    ],
+  },
+  {
+    pathwayName: "Gender, Race, Sexuality, Ethnicity, and Social Change",
+    category: "Major Restricted",
+    tooltip: "",
+    bookmark: false,
+    courses: [
+      {
+        status: "none",
+        name: "None",
+      },
+      {
+        status: "none",
+        name: "None",
+      },
+      {
+        status: "none",
+        name: "None",
+      },
+    ],
+  },
+];
+
 const MyPathways = () => {
   // Determine the mode of pathway card
   const [bookmarkedState, setbookmarkedState] = useState(true);
@@ -21,7 +65,6 @@ const MyPathways = () => {
   // Determine the filter
   const [filterState, dispatchFilter] = useReducer((state, action) => {
     const rep = 1 << action.payload;
-    console.log(action.payload);
     if (action.payload === 255) {
       if (state === action.payload) return 0;
       else return 255;
@@ -69,6 +112,11 @@ const MyPathways = () => {
           </div>
         </section>
       </header>
+      <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
+        {pathwayList.map((pathway) => {
+          return <PathwayCard {...pathway} key={pathway.pathwayName} />;
+        })}
+      </section>
     </>
   );
 };

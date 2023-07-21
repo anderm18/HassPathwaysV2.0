@@ -63,6 +63,14 @@
     @apply w-6 h-6;
   }
 
+  .tag {
+    @apply my-1 py-0.5 px-2;
+    @apply rounded-2xl;
+    @apply text-xs font-medium;
+    @apply text-blue-light-700 bg-blue-light-50;
+    @apply border border-solid border-blue-light-200;
+  }
+
   .nav-button--selected > path {
     @apply stroke-primary-800;
   }
@@ -141,5 +149,32 @@
 
   .footer .icon {
     @apply w-4 h-4 md:w-6 md:h-6;
+  }
+
+  .pathway-card {
+    @apply w-[280px] md:w-[475px];
+    @apply bg-white;
+    @apply rounded-[5px];
+    @apply border border-solid border-gray-300;
+    @apply p-6;
+    @apply flex gap-5 flex-col;
+  }
+
+  .pathway-card .pathway-title {
+    @apply text-lg font-semibold;
+  }
+
+  .pathway-card .progress-bar {
+    @apply flex gap-x-2.5;
+    @apply items-center;
+  }
+
+  .pathway-card .progress-bar .indicator {
+    @apply rounded-[5px] w-[56px] h-[4px];
+  }
+
+  .pathway-card .courselist {
+    @apply flex gap-x-2.5;
+    @apply items-center;
   }
 }
