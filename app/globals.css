@@ -40,6 +40,11 @@
   .path-primary-600 path {
     @apply stroke-primary-600;
   }
+
+  .main-container {
+    @apply grow;
+    @apply px-8 py-4 md:py-8;
+  }
 }
 
 @layer components {
@@ -69,6 +74,14 @@
     @apply text-xs font-medium;
     @apply text-blue-light-700 bg-blue-light-50;
     @apply border border-solid border-blue-light-200;
+  }
+
+  .tag-primary {
+    @apply bg-primary-50 text-primary-700 border-primary-200;
+  }
+
+  .tag-gray {
+    @apply bg-gray-50 text-gray-700 border-gray-200;
   }
 
   .nav-button--selected > path {
@@ -142,6 +155,10 @@
     @apply text-primary-700;
   }
 
+  .course-button-group > * {
+    @apply py-2.5 px-3.5;
+  }
+
   .footer {
     @apply text-sm md:text-md;
     @apply font-medium md:font-normal;
@@ -176,5 +193,17 @@
   .pathway-card .courselist {
     @apply flex gap-x-2.5;
     @apply items-center;
+  }
+
+  .course-card {
+    @apply w-[300px] sm:w-[500px] md:w-[723px];
+    @apply rounded-[4px];
+    @apply border border-solid border-gray-200;
+    @apply p-3;
+    @apply flex justify-between items-start;
+  }
+
+  .course-card .course-title {
+    @apply flex flex-col gap-y-1;
   }
 }
