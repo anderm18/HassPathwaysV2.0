@@ -9,10 +9,8 @@ const pathwaysLists = [
   pathwaysCategories.COGSCI,
   pathwaysCategories.COMM,
   pathwaysCategories.ECON,
-  pathwaysCategories.INTER,
-  pathwaysCategories.LANG,
-  pathwaysCategories.MAJOR,
   pathwaysCategories.STS,
+  pathwaysCategories.INTER,
 ];
 
 const pathwayList = [
@@ -79,7 +77,7 @@ const MyPathways = () => {
     <>
       <header className="flex flex-col gap-3">
         <h1 className="text-display-md font-semibold">My Pathways</h1>
-        <section className="flex gap-4">
+        <section className="flex flex-col lg:flex-row gap-4">
           <div className="flex button-group">
             <ModeRadioButton
               label="Bookmarked"
@@ -92,7 +90,7 @@ const MyPathways = () => {
               clickCallback={() => setbookmarkedState(false)}
             />
           </div>
-          <div className="flex button-group">
+          <div className="flex button-group flex-wrap">
             <FilterCheckBox
               clickCallback={() => dispatchFilter({ payload: 255 })}
               label="All"
