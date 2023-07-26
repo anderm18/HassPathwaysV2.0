@@ -17,6 +17,7 @@ import checkbox_checked from "@/public/assets/svg/checkbox_base_checked.svg?svgr
 import bookmark from "@/public/assets/svg/bookmark.svg?svgr";
 import bookmark_check from "@/public/assets/svg/bookmark_checked.svg?svgr";
 import helpIcon from "@/public/assets/svg/help_icon.svg?svgr";
+import searchIcon from "@/public/assets/svg/search-lg.svg?svgr";
 
 export const Certificate = certificate01;
 export const SwitchHorizontal = switchhorizontal01;
@@ -37,3 +38,4 @@ export const CheckBoxUnChecked = checkbox_unchecked;
 export const Bookmark = bookmark;
 export const BookmarkChecked = bookmark_check;
 export const HelpIcon = helpIcon;
+export const SearchIcon = searchIcon;

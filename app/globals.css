@@ -206,4 +206,8 @@
   .course-card .course-title {
     @apply flex flex-col gap-y-1;
   }
+
+  .input-wrapper:has(input:focus) {
+    @apply outline outline-2 outline-gray-500;
+  }
 }
