@@ -5,7 +5,7 @@ export default function CourseLayout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       <NavigationBar />
-      <main className="grow p-8">{children}</main>
+      <main className="main-container">{children}</main>
       <Footer />
     </div>
   );

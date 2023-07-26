@@ -40,6 +40,11 @@
   .path-primary-600 path {
     @apply stroke-primary-600;
   }
+
+  .main-container {
+    @apply grow;
+    @apply px-8 py-4 md:py-8;
+  }
 }
 
 @layer components {
@@ -61,6 +66,22 @@
 
   .icon {
     @apply w-6 h-6;
+  }
+
+  .tag {
+    @apply my-1 py-0.5 px-2;
+    @apply rounded-2xl;
+    @apply text-xs font-medium;
+    @apply text-blue-light-700 bg-blue-light-50;
+    @apply border border-solid border-blue-light-200;
+  }
+
+  .tag-primary {
+    @apply bg-primary-50 text-primary-700 border-primary-200;
+  }
+
+  .tag-gray {
+    @apply bg-gray-50 text-gray-700 border-gray-200;
   }
 
   .nav-button--selected > path {
@@ -134,6 +155,10 @@
     @apply text-primary-700;
   }
 
+  .course-button-group > * {
+    @apply py-2.5 px-3.5;
+  }
+
   .footer {
     @apply text-sm md:text-md;
     @apply font-medium md:font-normal;
@@ -141,5 +166,44 @@
 
   .footer .icon {
     @apply w-4 h-4 md:w-6 md:h-6;
+  }
+
+  .pathway-card {
+    @apply w-[280px] md:w-[475px];
+    @apply bg-white;
+    @apply rounded-[5px];
+    @apply border border-solid border-gray-300;
+    @apply p-6;
+    @apply flex gap-5 flex-col;
+  }
+
+  .pathway-card .pathway-title {
+    @apply text-lg font-semibold;
+  }
+
+  .pathway-card .progress-bar {
+    @apply flex gap-x-2.5;
+    @apply items-center;
+  }
+
+  .pathway-card .progress-bar .indicator {
+    @apply rounded-[5px] w-[56px] h-[4px];
+  }
+
+  .pathway-card .courselist {
+    @apply flex gap-x-2.5;
+    @apply items-center;
+  }
+
+  .course-card {
+    @apply w-[300px] sm:w-[500px] md:w-[723px];
+    @apply rounded-[4px];
+    @apply border border-solid border-gray-200;
+    @apply p-3;
+    @apply flex justify-between items-start;
+  }
+
+  .course-card .course-title {
+    @apply flex flex-col gap-y-1;
   }
 }
