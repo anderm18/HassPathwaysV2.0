@@ -57,7 +57,6 @@ export async function GET(request: NextRequest) {
     blob = blob.filter((c) =>
       params
         .get("filter")
-        .slice(1, -1)
         .split(",")
         .map((p) => p.trim())
         .map((p) => tags_short_to_long[p])
