@@ -144,7 +144,7 @@ const CourseList = ({ name, filter }) => {
     {
       title: "Introduction to Graphic Design",
       courseCode: "COMM-2660",
-      tag: ["Communication Intensive"],
+      tag: ["Communication Intensive", "Introductory Level Course"],
     },
     {
       title: "Introductory Economics",

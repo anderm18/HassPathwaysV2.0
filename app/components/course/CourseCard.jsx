@@ -3,7 +3,7 @@ import React from "react";
 const CourseCard = ({ title, courseCode, tag }) => {
   return (
     <section className="course-card">
-      <div className="flex justify-between items-start w-full">
+      <div className="flex justify-between items-start">
         <header className="course-title">
           <h3 className="text-md font-semibold">{title}</h3>
           <p className="text-sm text-gray-600">{courseCode}</p>
