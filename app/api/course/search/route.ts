@@ -59,6 +59,7 @@ export async function GET(request: NextRequest) {
         .get("filter")
         .slice(1, -1)
         .split(",")
+        .map((p) => p.trim())
         .map((p) => tags_short_to_long[p])
         .every((v) => c[1]["attributes"].includes(v))
     );
