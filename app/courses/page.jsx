@@ -1,6 +1,14 @@
+"use client";
+import { useState } from "react";
 import CourseCard from "../components/course/CourseCard";
+import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
+import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
+import { useAppContext } from "../contexts/appContext/AppProvider";
 
 const MyCourses = () => {
+  const [courseFilter, setCourseFilter] = useState(0);
+  const { courseState } = useAppContext();
+
   return (
     <>
       <header className="mb-4 md:mb-8">
@@ -9,11 +17,29 @@ const MyCourses = () => {
         </h1>
       </header>
       <section>
-        <div className="course-button-group flex flex-col sm:flex-row gap-x-2">
-          <ModeRadioButton checked={true} label="All" tag={3} />
-          <ModeRadioButton checked={false} label="Completed" tag={3} />
-          <ModeRadioButton checked={false} label="In Progress" tag={3} />
-          <ModeRadioButton checked={false} label="Planned" tag={3} />
+        <div className="course-button-group sm:flex flex-wrap gap-x-2 hidden">
+          <ModeRadioButton
+            checked={0 === courseFilter}
+            label={"All"}
+            tag={0}
+            clickCallback={() => {
+              setCourseFilter(0);
+            }}
+          />
+          {courseState.map((state, i) => {
+            const idx = i + 1;
+            return (
+              <ModeRadioButton
+                checked={idx === courseFilter}
+                label={state}
+                tag={0}
+                key={state}
+                clickCallback={() => {
+                  setCourseFilter(idx);
+                }}
+              />
+            );
+          })}
         </div>
       </section>
       <section className="my-4 grid grid-flow-row gap-y-3">
@@ -37,7 +63,9 @@ const ModeRadioButton = ({ checked, label, tag, clickCallback }) => {
       }`}
       onClick={clickCallback}
     >
-      <span className={`text-sm md:text-lg font-semibold ${fontStyle}`}>
+      <span
+        className={`text-xs md:text-sm lg:text-lg font-semibold ${fontStyle}`}
+      >
         {label}
       </span>
       <p className={`tag ${tagStyle}`}>{tag}</p>

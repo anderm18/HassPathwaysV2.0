@@ -4,8 +4,17 @@ import { createContext, useContext, useReducer } from "react";
 import { appReducer } from "./AppReducer";
 import { SET_CATALOG } from "../actions";
 
+const courseState = [
+  "Completed",
+  "In Progress",
+  "Planned",
+  "Interested",
+  "Not Selected",
+];
+
 const appInitialState = {
   catalog_year: 2023,
+  courseState,
 };
 
 const AppContext = createContext(appInitialState);
