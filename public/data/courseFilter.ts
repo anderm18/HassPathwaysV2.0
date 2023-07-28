@@ -1,6 +1,6 @@
 interface subCourseFilter {
   displayName: String;
-  value: String;
+  value: String | Number;
 }
 
 interface courseFilter {
@@ -34,15 +34,15 @@ export const courseFilters: Array<courseFilter> = [
     options: [
       {
         displayName: "1000",
-        value: "1",
+        value: 1,
       },
       {
         displayName: "2000",
-        value: "2",
+        value: 2,
       },
       {
         displayName: "4000",
-        value: "4",
+        value: 4,
       },
     ],
   },

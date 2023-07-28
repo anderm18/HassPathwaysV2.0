@@ -9,26 +9,76 @@ import {
 } from "@/app/components/utils/Icon";
 import Filter from "@/public/assets/svg/filter-funnel-02.svg?svgr";
 import { courseFilters } from "@/public/data/courseFilter";
-import React, { useState, Fragment, Suspense, useEffect } from "react";
+import React, {
+  useState,
+  Fragment,
+  Suspense,
+  useEffect,
+  useReducer,
+} from "react";
 import CourseCard from "@/app/components/course/CourseCard";
 
+const FilterAction = {
+  ADD: "add",
+  REM: "remove",
+};
+
 const SearchCourse = () => {
+  const [filterState, filterDispatch] = useReducer(
+    (state, action) => {
+      switch (action.type) {
+        case FilterAction.ADD:
+          console.log(action.payload.group);
+          console.log(action.payload.value);
+
+          return {
+            ...state,
+            [action.payload.group]: [
+              ...state[action.payload.group],
+              action.payload.value,
+            ],
+          };
+        case FilterAction.REM:
+          return {
+            ...state,
+            [action.payload.group]: state[action.payload.group].filter(
+              (e) => e !== action.payload.value
+            ),
+          };
+        default:
+          return state;
+      }
+    },
+    {
+      filter: [],
+      level: [],
+      prefix: [],
+      semester: [],
+    }
+  );
+
+  const [searchString, setSearchString] = useState("");
+
   return (
     <>
       <header className="mb-4 md:mb-8">
         <h1 className="text-display-xs sm:text-display-sm md:text-display-md font-semibold mb-3">
           Find Courses
         </h1>
-        <FilterSection />
+        <FilterSection
+          filterState={filterState}
+          filterDispatch={filterDispatch}
+          setSearchString={setSearchString}
+        />
       </header>
       <Suspense fallback={<div>Loading</div>}>
-        <CourseList />
+        <CourseList searchString={searchString} filterState={filterState} />
       </Suspense>
     </>
   );
 };
 
-const FilterSection = () => {
+const FilterSection = ({ filterState, filterDispatch, setSearchString }) => {
   return (
     <div className="filters flex justify-between gap-4">
       <label htmlFor="course-input" className="basis-0 grow">
@@ -40,32 +90,31 @@ const FilterSection = () => {
             name="course"
             id="course-input"
             placeholder="Search"
+            onChange={(e) => setSearchString(e.target.value)}
           />
         </div>
       </label>
-      <FilterDropdown />
+      <FilterDropdown
+        filterState={filterState}
+        filterDispatch={filterDispatch}
+      />
     </div>
   );
 };
 
-const FilterDropdown = () => {
+const FilterDropdown = ({ filterState, filterDispatch }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const filterState = {
-    filter: {},
-    level: {},
-    prefix: {},
-    semester: {},
-  };
 
   return (
     <Fragment>
       <div className="dropdown">
         <div
-          className="w-11 h-11 flex justify-center items-center gap-2 cursor-pointer border-gray-300 border border-solid rounded-lg"
+          className={`w-11 h-11 flex justify-center items-center gap-2 cursor-pointer border-gray-300 border border-solid rounded-lg ${
+            dropdownOpen && "bg-gray-100"
+          }`}
           onClick={() => setDropdownOpen((open) => !open)}
         >
-          <Filter />
+          <Filter className={dropdownOpen && "path-gray-700"} />
         </div>
         {dropdownOpen && (
           <div className="rounded-lg shadow-lg p-6 dropdown-choices w-max max-w-xs sm:max-w-sm md:max-w-md grid grid-flow-row gap-2">
@@ -77,12 +126,39 @@ const FilterDropdown = () => {
                   </header>
                   <div className="flex flex-wrap">
                     {section.options.map((choice) => {
+                      const selected = filterState[section.apiName].includes(
+                        choice.value
+                      );
+                      const actionType = selected
+                        ? FilterAction.REM
+                        : FilterAction.ADD;
                       return (
-                        <div className="px-3 py-2 flex gap-2 items-center basis-auto shrink-0">
-                          <CheckBoxUnChecked />
-                          <label className="text-xs shrink-0">
-                            {choice.displayName}
-                          </label>
+                        <div className="px-3 py-2 basis-auto shrink-0">
+                          <div
+                            className="cursor-pointer flex gap-2 items-center"
+                            onClick={() => {
+                              filterDispatch({
+                                type: actionType,
+                                payload: {
+                                  group: section.apiName,
+                                  value: choice.value,
+                                },
+                              });
+                            }}
+                          >
+                            {selected ? (
+                              <CheckBoxChecked />
+                            ) : (
+                              <CheckBoxUnChecked />
+                            )}
+                            <label
+                              className={`text-sm shrink-0 cursor-pointer ${
+                                selected && "font-medium"
+                              }`}
+                            >
+                              {choice.displayName}
+                            </label>
+                          </div>
                         </div>
                       );
                     })}
@@ -97,81 +173,27 @@ const FilterDropdown = () => {
   );
 };
 
-const flattenFilter = (filter) => {
-  // TODO: Talk with Will about the format
-  return {};
-};
+const CourseList = ({ searchString, filterState }) => {
+  const [courseData, setCourseData] = useState([]);
+  useEffect(() => {
+    const courseAPICall = setTimeout(async () => {
+      const data = await fetch(
+        `http://localhost:3000/api/course/search?${new URLSearchParams({
+          searchString,
+          ...filterState,
+        })}`,
+        {
+          cache: "no-store",
+          next: {
+            revalidate: false,
+          },
+        }
+      ).then((data) => data.json());
+      setCourseData(data.res);
+    }, 150);
 
-const CourseList = ({ name, filter }) => {
-  // const [courseData, setCourseDate] = useState([]);
-
-  // useEffect(() => {
-  //   const courseAPICall = setTimeout(async () => {
-  //     const res = await fetch(
-  //       `http://localhost:3000/api/course/search?${new URLSearchParams({
-  //         searchString: name,
-  //         ...flattenFilter(filter),
-  //       })}`,
-  //       {
-  //         cache: "no-store",
-  //         next: {
-  //           revalidate: false,
-  //         },
-  //       }
-  //     ).then((data) => data.json());
-  //     console.log(res);
-  //   }, 500);
-
-  //   return () => clearTimeout(courseAPICall);
-  // });
-
-  const courseData = [
-    {
-      title: "Introduction to Cognitive Science",
-      courseCode: "COGS-2120",
-      tag: [],
-    },
-    {
-      title: "Introduction to Linguistics",
-      courseCode: "COGS-2340",
-      tag: [],
-    },
-    {
-      title: "Introduction to Cognitive Neuroscience",
-      courseCode: "COGS-4330",
-      tag: [],
-    },
-    {
-      title: "Introduction to Graphic Design",
-      courseCode: "COMM-2660",
-      tag: ["Communication Intensive", "Introductory Level Course"],
-    },
-    {
-      title: "Introductory Economics",
-      courseCode: "ECON-1200",
-      tag: ["Introductory Level Course"],
-    },
-    {
-      title: "Introduction to Game Design",
-      courseCode: "GSAS-2510",
-      tag: [],
-    },
-    {
-      title: "Introduction to Game Storytelling",
-      courseCode: "GSAS-2520",
-      tag: ["Communication Intensive"],
-    },
-    {
-      title: "Introduction to Game Programming",
-      courseCode: "GSAS-2540",
-      tag: [],
-    },
-    {
-      title: "Introduction to Information Technology and Web Science",
-      courseCode: "ITWS-1100",
-      tag: ["Communication Intensive"],
-    },
-  ];
+    return () => clearTimeout(courseAPICall);
+  }, [searchString, filterState]);
 
   return (
     <section className="grid grid-flow-row gap-3">

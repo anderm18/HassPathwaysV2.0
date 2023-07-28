@@ -41,6 +41,14 @@
     @apply stroke-primary-600;
   }
 
+  .path-gray-700 path {
+    @apply stroke-gray-700;
+  }
+
+  .path-gray-900 path {
+    @apply stroke-gray-900;
+  }
+
   .main-container {
     @apply grow;
     @apply px-8 py-4 md:py-8;
