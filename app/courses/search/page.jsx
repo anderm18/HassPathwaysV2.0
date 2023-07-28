@@ -9,7 +9,8 @@ import {
 } from "@/app/components/utils/Icon";
 import Filter from "@/public/assets/svg/filter-funnel-02.svg?svgr";
 import { courseFilters } from "@/public/data/courseFilter";
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, Suspense, useEffect } from "react";
+import CourseCard from "@/app/components/course/CourseCard";
 
 const SearchCourse = () => {
   return (
@@ -20,7 +21,9 @@ const SearchCourse = () => {
         </h1>
         <FilterSection />
       </header>
-      <section className=""></section>
+      <Suspense fallback={<div>Loading</div>}>
+        <CourseList />
+      </Suspense>
     </>
   );
 };
@@ -36,6 +39,7 @@ const FilterSection = () => {
             type="text"
             name="course"
             id="course-input"
+            placeholder="Search"
           />
         </div>
       </label>
@@ -64,17 +68,19 @@ const FilterDropdown = () => {
           <Filter />
         </div>
         {dropdownOpen && (
-          <div className="rounded-lg shadow-lg p-3 dropdown-choices w-fit">
+          <div className="rounded-lg shadow-lg p-6 dropdown-choices w-max max-w-xs sm:max-w-sm md:max-w-md grid grid-flow-row gap-2">
             {courseFilters.map((section) => {
               return (
                 <section>
-                  <header>{section.displayName}</header>
-                  <div className="flex">
+                  <header className="text-md font-medium text-gray-900">
+                    {section.displayName}
+                  </header>
+                  <div className="flex flex-wrap">
                     {section.options.map((choice) => {
                       return (
-                        <div className="px-3 py-2 flex gap-2 items-center basis-auto">
+                        <div className="px-3 py-2 flex gap-2 items-center basis-auto shrink-0">
                           <CheckBoxUnChecked />
-                          <label className="text-xs">
+                          <label className="text-xs shrink-0">
                             {choice.displayName}
                           </label>
                         </div>
@@ -91,4 +97,88 @@ const FilterDropdown = () => {
   );
 };
 
+const flattenFilter = (filter) => {
+  // TODO: Talk with Will about the format
+  return {};
+};
+
+const CourseList = ({ name, filter }) => {
+  // const [courseData, setCourseDate] = useState([]);
+
+  // useEffect(() => {
+  //   const courseAPICall = setTimeout(async () => {
+  //     const res = await fetch(
+  //       `http://localhost:3000/api/course/search?${new URLSearchParams({
+  //         searchString: name,
+  //         ...flattenFilter(filter),
+  //       })}`,
+  //       {
+  //         cache: "no-store",
+  //         next: {
+  //           revalidate: false,
+  //         },
+  //       }
+  //     ).then((data) => data.json());
+  //     console.log(res);
+  //   }, 500);
+
+  //   return () => clearTimeout(courseAPICall);
+  // });
+
+  const courseData = [
+    {
+      title: "Introduction to Cognitive Science",
+      courseCode: "COGS-2120",
+      tag: [],
+    },
+    {
+      title: "Introduction to Linguistics",
+      courseCode: "COGS-2340",
+      tag: [],
+    },
+    {
+      title: "Introduction to Cognitive Neuroscience",
+      courseCode: "COGS-4330",
+      tag: [],
+    },
+    {
+      title: "Introduction to Graphic Design",
+      courseCode: "COMM-2660",
+      tag: ["Communication Intensive"],
+    },
+    {
+      title: "Introductory Economics",
+      courseCode: "ECON-1200",
+      tag: ["Introductory Level Course"],
+    },
+    {
+      title: "Introduction to Game Design",
+      courseCode: "GSAS-2510",
+      tag: [],
+    },
+    {
+      title: "Introduction to Game Storytelling",
+      courseCode: "GSAS-2520",
+      tag: ["Communication Intensive"],
+    },
+    {
+      title: "Introduction to Game Programming",
+      courseCode: "GSAS-2540",
+      tag: [],
+    },
+    {
+      title: "Introduction to Information Technology and Web Science",
+      courseCode: "ITWS-1100",
+      tag: ["Communication Intensive"],
+    },
+  ];
+
+  return (
+    <section className="grid grid-flow-row gap-3">
+      {courseData.map((course) => {
+        return <CourseCard {...course} />;
+      })}
+    </section>
+  );
+};
 export default SearchCourse;
