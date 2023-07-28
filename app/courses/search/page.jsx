@@ -3,7 +3,12 @@
 import { SearchIcon } from "@/app/components/utils/Icon";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
 import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
+import {
+  CheckBoxChecked,
+  CheckBoxUnChecked,
+} from "@/app/components/utils/Icon";
 import Filter from "@/public/assets/svg/filter-funnel-02.svg?svgr";
+import { courseFilters } from "@/public/data/courseFilter";
 import React, { useState, Fragment } from "react";
 
 const SearchCourse = () => {
@@ -42,6 +47,13 @@ const FilterSection = () => {
 const FilterDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const filterState = {
+    filter: {},
+    level: {},
+    prefix: {},
+    semester: {},
+  };
+
   return (
     <Fragment>
       <div className="dropdown">
@@ -52,9 +64,26 @@ const FilterDropdown = () => {
           <Filter />
         </div>
         {dropdownOpen && (
-          <div className="dropdown-choices">
-            <input type="checkbox" name="prefix" id="sts" />
-            <label htmlFor="sts">STS</label>
+          <div className="rounded-lg shadow-lg p-3 dropdown-choices w-fit">
+            {courseFilters.map((section) => {
+              return (
+                <section>
+                  <header>{section.displayName}</header>
+                  <div className="flex">
+                    {section.options.map((choice) => {
+                      return (
+                        <div className="px-3 py-2 flex gap-2 items-center basis-auto">
+                          <CheckBoxUnChecked />
+                          <label className="text-xs">
+                            {choice.displayName}
+                          </label>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         )}
       </div>
