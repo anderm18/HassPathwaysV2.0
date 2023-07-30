@@ -180,29 +180,29 @@ const FilterDropdown = ({ filterState, filterDispatch }) => {
 const CourseList = ({ searchString, filterState }) => {
   const [courseData, setCourseData] = useState([]);
   useEffect(() => {
-    const courseAPICall = setTimeout(async () => {
-      console.log(
-        `http://localhost:3000/api/course/search?${new URLSearchParams({
-          searchString,
-          ...filterState,
-        })}`
-      );
-      const data = await fetch(
-        `http://localhost:3000/api/course/search?${new URLSearchParams({
-          searchString,
-          ...filterState,
-        })}`,
-        {
-          cache: "no-store",
-          next: {
-            revalidate: false,
-          },
-        }
-      ).then((data) => data.json());
-      setCourseData(data.res);
-    }, 150);
+    const apiController = new AbortController();
 
-    return () => clearTimeout(courseAPICall);
+    fetch(
+      `http://localhost:3000/api/course/search?${new URLSearchParams({
+        searchString,
+        ...filterState,
+      })}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+        next: {
+          revalidate: false,
+        },
+      }
+    )
+      .then((data) => data.json())
+      .then((data) => setCourseData(data.res))
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Fetching Error: ", err);
+      });
+
+    return () => apiController.abort("Cancelled");
   }, [searchString, filterState]);
 
   return (

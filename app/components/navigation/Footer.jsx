@@ -14,7 +14,7 @@ const Footer = () => {
         <Link href="/courses">My Courses</Link>
         <Link href="/pathways">My Pathways</Link>
       </div>
-      <di>&copy; 2023 Hass Pathways</di>
+      <div>&copy; 2023 Hass Pathways</div>
     </footer>
   );
 };

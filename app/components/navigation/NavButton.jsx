@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const NavButton = ({ link, text, Icon, keyword }) => {
   const pathname = usePathname();
-  const selected = pathname.match(keyword);
+  const selected = pathname.match(new RegExp(`${keyword}$`, "gm"));
 
   return (
     <Link href={link}>
