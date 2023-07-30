@@ -20,13 +20,13 @@ const NavigationBar = (props) => {
             link="/courses"
             text="My Courses"
             Icon={<HomeLine />}
-            keyword="course"
+            keyword="courses"
           />
           <NavButton
             link="/pathways"
             text="My Pathways"
             Icon={<BarChart />}
-            keyword="pathway"
+            keyword="pathways"
           />
         </ul>
         <CatalogDropdown />
