@@ -54,6 +54,7 @@ const SearchCourse = () => {
       level: [],
       prefix: [],
       semester: [],
+      prereq: [],
     }
   );
 
@@ -120,7 +121,7 @@ const FilterDropdown = ({ filterState, filterDispatch }) => {
           <div className="rounded-lg shadow-lg p-6 dropdown-choices w-max max-w-xs sm:max-w-sm md:max-w-md grid grid-flow-row gap-2">
             {courseFilters.map((section) => {
               return (
-                <section>
+                <section key={section.apiName}>
                   <header className="text-md font-medium text-gray-900">
                     {section.displayName}
                   </header>
@@ -133,7 +134,10 @@ const FilterDropdown = ({ filterState, filterDispatch }) => {
                         ? FilterAction.REM
                         : FilterAction.ADD;
                       return (
-                        <div className="px-3 py-2 basis-auto shrink-0">
+                        <div
+                          className="px-3 py-2 basis-auto shrink-0"
+                          key={choice.value}
+                        >
                           <div
                             className="cursor-pointer flex gap-2 items-center"
                             onClick={() => {
@@ -177,6 +181,12 @@ const CourseList = ({ searchString, filterState }) => {
   const [courseData, setCourseData] = useState([]);
   useEffect(() => {
     const courseAPICall = setTimeout(async () => {
+      console.log(
+        `http://localhost:3000/api/course/search?${new URLSearchParams({
+          searchString,
+          ...filterState,
+        })}`
+      );
       const data = await fetch(
         `http://localhost:3000/api/course/search?${new URLSearchParams({
           searchString,
@@ -198,7 +208,9 @@ const CourseList = ({ searchString, filterState }) => {
   return (
     <section className="grid grid-flow-row gap-3">
       {courseData.map((course) => {
-        return <CourseCard {...course} />;
+        return (
+          <CourseCard {...course} key={course.title + course.courseCode} />
+        );
       })}
     </section>
   );
