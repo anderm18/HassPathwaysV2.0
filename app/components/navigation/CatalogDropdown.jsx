@@ -63,7 +63,7 @@ const CatalogDropdown = () => {
       </div>
 
       {dropdownOpen && (
-        <div className="dropdown-choices ut-shadow-lg">
+        <div className="dropdown-choices z-10 ut-shadow-lg">
           {catalogList.map((choice) => {
             return (
               <div
