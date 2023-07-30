@@ -47,6 +47,16 @@ export const courseFilters: Array<courseFilter> = [
     ],
   },
   {
+    displayName: "Prerequisites",
+    apiName: "prereq",
+    options: [
+      {
+        displayName: "No Prereq",
+        value: "Noreq",
+      },
+    ],
+  },
+  {
     displayName: "Prefix",
     apiName: "prefix",
     options: [
