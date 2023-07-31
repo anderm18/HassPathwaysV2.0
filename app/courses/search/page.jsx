@@ -44,9 +44,7 @@ const SearchCourse = () => {
   return (
     <>
       <header>
-        <h1 className="text-display-xs sm:text-display-sm md:text-display-md font-semibold mb-3">
-          Find Courses
-        </h1>
+        <h1 className="title mb-3">Find Courses</h1>
       </header>
       <div className="hidden lg:block">
         <DesktopFilterSection

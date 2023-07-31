@@ -12,9 +12,7 @@ const MyCourses = () => {
   return (
     <>
       <header className="mb-4 md:mb-8">
-        <h1 className="text-display-xs sm:text-display-sm md:text-display-md font-semibold">
-          My Courses
-        </h1>
+        <h1 className="title">My Courses</h1>
       </header>
       <section>
         <div className="course-button-group sm:flex flex-wrap gap-x-2 hidden">
