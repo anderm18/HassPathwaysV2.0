@@ -153,7 +153,7 @@ const FilterDropdown = ({ filterState, filterDispatch }) => {
           <Filter className={dropdownOpen ? "path-gray-700" : undefined} />
         </div>
         {dropdownOpen && (
-          <div className="rounded-lg shadow-lg p-6 dropdown-choices w-max max-w-xs sm:max-w-sm md:max-w-md grid grid-flow-row gap-2">
+          <div className="rounded-lg shadow-lg p-6 dropdown-choices w-screen translate-x-4 fold:translate-x-0 fold:w-max max-w-xs sm:max-w-sm md:max-w-md grid grid-flow-row gap-2">
             {courseFilters.map((section) => {
               return (
                 <section key={section.apiName}>
@@ -243,7 +243,7 @@ const CourseList = ({ searchString, filterState }) => {
   }, [deferFilterState, deferSearchString]);
 
   return (
-    <section className="grid grid-flow-row gap-3">
+    <section className="flex flex-col gap-3">
       {courseData.map((course) => {
         return (
           <CourseCard {...course} key={course.title + course.courseCode} />
