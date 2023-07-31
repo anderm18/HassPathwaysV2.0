@@ -6,7 +6,11 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        fold: "300px",
+      },
+    },
     fontSize: {
       xs: ["0.75rem", "1.125rem"],
       sm: ["0.88rem", "1.25rem"],
