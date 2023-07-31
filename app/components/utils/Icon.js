@@ -18,6 +18,7 @@ import bookmark from "@/public/assets/svg/bookmark.svg?svgr";
 import bookmark_check from "@/public/assets/svg/bookmark_checked.svg?svgr";
 import helpIcon from "@/public/assets/svg/help_icon.svg?svgr";
 import searchIcon from "@/public/assets/svg/search-lg.svg?svgr";
+import filter from "@/public/assets/svg/filter-funnel-02.svg?svgr";
 
 export const Certificate = certificate01;
 export const SwitchHorizontal = switchhorizontal01;
@@ -39,3 +40,4 @@ export const Bookmark = bookmark;
 export const BookmarkChecked = bookmark_check;
 export const HelpIcon = helpIcon;
 export const SearchIcon = searchIcon;
+export const Filter = filter;

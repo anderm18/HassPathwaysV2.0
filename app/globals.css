@@ -204,7 +204,7 @@
   }
 
   .course-card {
-    @apply w-[300px] sm:w-[500px] md:w-[723px];
+    @apply w-full sm:w-[500px] md:w-[723px] lg:w-full lg:max-w-[723px];
     @apply rounded-[4px];
     @apply border border-solid border-gray-200;
     @apply p-3;

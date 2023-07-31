@@ -14,7 +14,11 @@ const CourseCard = ({ title, courseCode, tag }) => {
       </div>
       <div className="flex gap-x-1 flex-wrap">
         {tag?.map((t) => {
-          return <p className="tag tag-primary">{t}</p>;
+          return (
+            <p className="tag tag-primary" key={t}>
+              {t}
+            </p>
+          );
         })}
       </div>
     </section>

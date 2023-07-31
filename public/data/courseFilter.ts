@@ -1,11 +1,11 @@
 interface subCourseFilter {
-  displayName: String;
-  value: String | Number;
+  displayName: string;
+  value: string | number;
 }
 
 interface courseFilter {
-  displayName: String;
-  apiName: String;
+  displayName: string;
+  apiName: string;
   options: Array<subCourseFilter>;
 }
 
