@@ -431,7 +431,7 @@ const pathways = [
                     "Economics of Banking and Finance",
                     "Economics of Healthcare Markets",
                     "Economics of Quantitative Modeling",
-                    "Economics of Technology ann Innovaton"
+                    "Economics of Technology and Innovation"
                 ]
             }
         ]
@@ -692,10 +692,12 @@ const pathways = [
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
 
+  const departments = params.get("department").split(",");
+
   var blob = pathways;
   if (params.get("department")) {
     blob = blob.filter((c) =>
-      c["department"] == params.get("department")
+      departments.includes(c["department"])
     )[0]["pathways"];
   } else {
     blob = blob.map((c) => c["pathways"]).flat();
@@ -709,5 +711,5 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  return NextResponse.json({ blob });
+  return NextResponse.json( blob );
 }
