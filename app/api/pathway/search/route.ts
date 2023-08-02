@@ -393,7 +393,7 @@ const pathways = [
                         ]
                     },
                     {
-                        "name": "Miscellaneous Philosophy"
+                        "name": "Miscellaneous Philosophy",
                         "courses": [
                             "INQR-1140",
                             "PHIL-2000",
