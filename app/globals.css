@@ -51,7 +51,11 @@
 
   .main-container {
     @apply grow;
-    @apply px-8 py-4 md:py-8;
+    @apply px-4 sm:px-8 py-4 md:py-8;
+  }
+
+  .title {
+    @apply text-display-xs sm:text-display-sm md:text-display-md font-semibold;
   }
 }
 
@@ -59,13 +63,14 @@
   .navigation-bar {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    @apply px-4 sm:px-8 py-4;
     width: 100%;
     align-items: center;
   }
 
   .footer {
     display: flex;
+    @apply flex-col sm:flex-row gap-4;
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 2rem;
@@ -155,7 +160,8 @@
   }
 
   .button-group .checkbox-group {
-    @apply bg-white border-gray-300 border border-solid;
+    @apply bg-white;
+    @apply border-none border-gray-300 border md:border-solid;
     @apply hover:bg-gray-50;
   }
 
@@ -204,7 +210,7 @@
   }
 
   .course-card {
-    @apply w-[300px] sm:w-[500px] md:w-[723px];
+    @apply w-full sm:w-[500px] md:w-[723px] lg:w-full lg:max-w-[723px];
     @apply rounded-[4px];
     @apply border border-solid border-gray-200;
     @apply p-3;

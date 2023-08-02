@@ -3,6 +3,8 @@ import React, { useState, useReducer } from "react";
 import pathwaysCategories from "@/public/data/pathwaysCategories";
 import { CheckBoxChecked, CheckBoxUnChecked } from "../components/utils/Icon";
 import PathwayCard from "../components/pathway/PathwayCard";
+import Link from "next/link";
+import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
 
 const pathwaysLists = [
   pathwaysCategories.ART,
@@ -60,12 +62,13 @@ const MyPathways = () => {
   // Determine the mode of pathway card
   const [bookmarkedState, setbookmarkedState] = useState(true);
 
+  const MAX_FILTER = (1 << pathwaysLists.length) - 1;
   // Determine the filter
   const [filterState, dispatchFilter] = useReducer((state, action) => {
     const rep = 1 << action.payload;
-    if (action.payload === 255) {
+    if (action.payload === MAX_FILTER) {
       if (state === action.payload) return 0;
-      else return 255;
+      else return MAX_FILTER;
     }
     if (state & rep) state -= rep;
     else state += rep;
@@ -75,8 +78,15 @@ const MyPathways = () => {
 
   return (
     <>
-      <header className="flex flex-col gap-3">
-        <h1 className="text-display-md font-semibold">My Pathways</h1>
+      <header className="flex flex-col gap-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
+          <h1 className="title">My Pathways</h1>
+          <Link href={"/pathways/search"}>
+            <span className="flex text-primary-700 gap-2 text-sm font-semibold">
+              Explore Pathways <ChevronRight />
+            </span>
+          </Link>
+        </div>
         <section className="flex flex-col lg:flex-row gap-4">
           <div className="flex button-group">
             <ModeRadioButton
@@ -90,23 +100,25 @@ const MyPathways = () => {
               clickCallback={() => setbookmarkedState(false)}
             />
           </div>
-          <div className="flex button-group flex-wrap">
-            <FilterCheckBox
-              clickCallback={() => dispatchFilter({ payload: 255 })}
-              label="All"
-              checked={filterState === 255}
-            />
-
-            {pathwaysLists.map((pathway, i) => {
-              return (
-                <FilterCheckBox
-                  checked={activeFilter(filterState, i)}
-                  key={pathway}
-                  label={pathway}
-                  clickCallback={() => dispatchFilter({ payload: i })}
-                />
-              );
-            })}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold md:hidden">Department</h3>
+            <div className="flex button-group flex-wrap">
+              <FilterCheckBox
+                clickCallback={() => dispatchFilter({ payload: MAX_FILTER })}
+                label="All"
+                checked={filterState === MAX_FILTER}
+              />
+              {pathwaysLists.map((pathway, i) => {
+                return (
+                  <FilterCheckBox
+                    checked={activeFilter(filterState, i)}
+                    key={pathway}
+                    label={pathway}
+                    clickCallback={() => dispatchFilter({ payload: i })}
+                  />
+                );
+              })}
+            </div>
           </div>
         </section>
       </header>
@@ -134,7 +146,9 @@ const FilterCheckBox = ({ checked, label, clickCallback }) => {
 const ModeRadioButton = ({ checked, label, clickCallback }) => {
   return (
     <button
-      className={`checkbox-group ${checked ? "checked !bg-primary-50" : ""}`}
+      className={`checkbox-group !border-solid ${
+        checked ? "checked !bg-primary-50" : ""
+      }`}
       onClick={clickCallback}
     >
       {label}
