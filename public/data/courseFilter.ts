@@ -1,11 +1,11 @@
 interface subCourseFilter {
-  displayName: String;
-  value: String | Number;
+  displayName: string;
+  value: string | number;
 }
 
 interface courseFilter {
-  displayName: String;
-  apiName: String;
+  displayName: string;
+  apiName: string;
   options: Array<subCourseFilter>;
 }
 
@@ -43,6 +43,16 @@ export const courseFilters: Array<courseFilter> = [
       {
         displayName: "4000",
         value: 4,
+      },
+    ],
+  },
+  {
+    displayName: "Prerequisites",
+    apiName: "prereq",
+    options: [
+      {
+        displayName: "No Prereq",
+        value: "Noreq",
       },
     ],
   },
