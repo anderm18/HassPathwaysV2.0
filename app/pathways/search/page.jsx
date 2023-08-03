@@ -6,23 +6,14 @@ import React, {
   useDeferredValue,
   useEffect,
 } from "react";
-import pathwaysCategories from "@/public/data/pathwaysCategories";
 import PathwayCard from "@/app/components/pathway/PathwayCard";
+import { useAppContext } from "@/app/contexts/appContext/AppProvider";
 import {
   SearchInput,
   FilterCheckBox,
 } from "@/app/components/pathway/FilterComponent";
 
-const pathwaysLists = [
-  pathwaysCategories.ART,
-  pathwaysCategories.COGSCI,
-  pathwaysCategories.COMM,
-  pathwaysCategories.ECON,
-  pathwaysCategories.STS,
-  pathwaysCategories.INTER,
-];
-
-const getFilterList = (filterMask) => {
+const getFilterList = (pathwayCategory, filterMask) => {
   const filterList = pathwaysLists
     .filter((_, i) => {
       return (1 << i) & filterMask;
@@ -35,7 +26,9 @@ const getFilterList = (filterMask) => {
 };
 
 const SearchCourse = () => {
-  const MAX_FILTER = (1 << pathwaysLists.length) - 1;
+  const { pathwaysCategories } = useAppContext();
+
+  const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
   const [filterState, dispatchFilter] = useReducer((state, action) => {
     const rep = 1 << action.payload;
@@ -88,17 +81,11 @@ const SearchCourse = () => {
   // const deferFilterState = useDeferredValue(filterState);
   // useEffect(() => {
   //   const apiController = new AbortController();
-  //   // console.log(
-  //   //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-  //   //     searchString: deferSearchString,
-  //   //     department: getFilterList(deferFilterState),
-  //   //   })}`
-  //   // );
 
   //   fetch(
   //     `http://localhost:3000/api/pathway/search?${new URLSearchParams({
   //       searchString: deferSearchString,
-  //       department: getFilterList(deferFilterState),
+  //       department: getFilterList(pathwaysCategories,deferFilterState),
   //     })}`,
   //     {
   //       signal: apiController.signal,
@@ -138,7 +125,7 @@ const SearchCourse = () => {
               label="All"
               checked={filterState === MAX_FILTER}
             />
-            {pathwaysLists.map((pathway, i) => {
+            {pathwaysCategories.map((pathway, i) => {
               return (
                 <FilterCheckBox
                   checked={activeFilter(filterState, i)}

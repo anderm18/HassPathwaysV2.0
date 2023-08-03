@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useReducer } from "react";
-import pathwaysCategories from "@/public/data/pathwaysCategories";
 import {
   ModeRadioButton,
   FilterCheckBox,
@@ -8,15 +7,7 @@ import {
 import PathwayCard from "../components/pathway/PathwayCard";
 import Link from "next/link";
 import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
-
-const pathwaysLists = [
-  pathwaysCategories.ART,
-  pathwaysCategories.COGSCI,
-  pathwaysCategories.COMM,
-  pathwaysCategories.ECON,
-  pathwaysCategories.STS,
-  pathwaysCategories.INTER,
-];
+import { useAppContext } from "../contexts/appContext/AppProvider";
 
 const pathwayList = [
   {
@@ -64,10 +55,11 @@ const pathwayList = [
 ];
 
 const MyPathways = () => {
+  const { pathwaysCategories } = useAppContext();
   // Determine the mode of pathway card
   const [bookmarkedState, setbookmarkedState] = useState(true);
 
-  const MAX_FILTER = (1 << pathwaysLists.length) - 1;
+  const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
   const [filterState, dispatchFilter] = useReducer((state, action) => {
     const rep = 1 << action.payload;
@@ -113,7 +105,7 @@ const MyPathways = () => {
                 label="All"
                 checked={filterState === MAX_FILTER}
               />
-              {pathwaysLists.map((pathway, i) => {
+              {pathwaysCategories.map((pathway, i) => {
                 return (
                   <FilterCheckBox
                     checked={activeFilter(filterState, i)}
