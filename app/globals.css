@@ -51,7 +51,7 @@
 
   .main-container {
     @apply grow;
-    @apply px-4 sm:px-8 py-4 md:py-8;
+    @apply px-4 sm:px-8 py-4 lg:py-8;
   }
 
   .title {

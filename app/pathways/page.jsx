@@ -9,6 +9,7 @@ import Link from "next/link";
 import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
 import { useAppContext } from "../contexts/appContext/AppProvider";
 
+// !! Temporary Data, Remove Later
 const pathwayList = [
   {
     name: "Graphic and Interactive Media Design",
@@ -53,6 +54,8 @@ const pathwayList = [
     ],
   },
 ];
+
+// const pathwayList = [];
 
 const MyPathways = () => {
   const { pathwaysCategories } = useAppContext();
@@ -119,18 +122,51 @@ const MyPathways = () => {
           </div>
         </section>
       </header>
-      <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-        {pathwayList.map((pathway, i) => {
-          return (
-            <PathwayCard
-              name={pathway.name}
-              courses={pathway.courses}
-              key={pathway.name}
-            />
-          );
-        })}
-      </section>
+      {pathwayList.length === 0 ? (
+        <NothingToShow bookmarkedState={bookmarkedState} />
+      ) : (
+        <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
+          {pathwayList.map((pathway, i) => {
+            return (
+              <PathwayCard
+                name={pathway.name}
+                courses={pathway.courses}
+                key={pathway.name}
+              />
+            );
+          })}
+        </section>
+      )}
     </>
+  );
+};
+
+const NothingToShow = ({ bookmarkedState }) => {
+  return (
+    <section className="flex flex-col justify-center items-center grow gap-8 my-4">
+      <header className="text-center">
+        <h3 className="text-xl md:text-display-sm font-bold md:font-semibold mb-2">
+          No <span>{bookmarkedState ? "Bookmarked" : "Matching"}</span> Pathways
+        </h3>
+        <p className="text-sm md:text-xl font-medium  text-gray-500">
+          Explore our newest pathways in the catalog
+        </p>
+      </header>
+      <div className="flex flex-col-reverse fold:flex-row items-center gap-8 text-sm md:text-md font-semibold">
+        <Link
+          href="/faq"
+          className="rounded-lg px-[18px] py-2.5 text-primary-700"
+        >
+          Learn More
+        </Link>
+        <Link
+          href="/pathways/search"
+          className="rounded-lg px-[18px] py-2.5 bg-primary-600 text-white"
+        >
+          Explore Pathways
+        </Link>
+      </div>
+    </section>
   );
 };
 
