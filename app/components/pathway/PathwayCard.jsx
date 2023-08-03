@@ -1,7 +1,14 @@
 import React from "react";
 import { Bookmark, BookmarkChecked, HelpIcon } from "../utils/Icon";
 
-const PathwayCard = ({ pathwayName, category, tooltip, bookmark, courses }) => {
+const PathwayCard = ({ name: pathwayName, category, courses }) => {
+  // TODO: use courses to determine the compatibility
+  // TODO: change to bookmark state and update React Context
+  // TODO: Compute tooltip
+
+  const bookmark = false;
+  const tooltip = null;
+
   return (
     <section className="pathway-card">
       <header className="flex justify-between w-full items-start">

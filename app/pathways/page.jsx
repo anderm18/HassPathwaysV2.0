@@ -1,7 +1,10 @@
 "use client";
 import React, { useState, useReducer } from "react";
 import pathwaysCategories from "@/public/data/pathwaysCategories";
-import { CheckBoxChecked, CheckBoxUnChecked } from "../components/utils/Icon";
+import {
+  ModeRadioButton,
+  FilterCheckBox,
+} from "../components/pathway/FilterComponent";
 import PathwayCard from "../components/pathway/PathwayCard";
 import Link from "next/link";
 import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
@@ -17,10 +20,8 @@ const pathwaysLists = [
 
 const pathwayList = [
   {
-    pathwayName: "Gender, Race, Sexuality, Ethnicity, and Social Change",
-    category: "Inter",
-    tooltip: "",
-    bookmark: true,
+    name: "Graphic and Interactive Media Design",
+    category: "Communication & Media",
     courses: [
       {
         status: "none",
@@ -37,10 +38,8 @@ const pathwayList = [
     ],
   },
   {
-    pathwayName: "Gender, Race, Sexuality, Ethnicity, and Social Change",
-    category: "Major Restricted",
-    tooltip: "",
-    bookmark: false,
+    name: "Information Technology and Web Science",
+    category: "Inter",
     courses: [
       {
         status: "none",
@@ -112,8 +111,8 @@ const MyPathways = () => {
                 return (
                   <FilterCheckBox
                     checked={activeFilter(filterState, i)}
-                    key={pathway}
-                    label={pathway}
+                    key={pathway.value}
+                    label={pathway.display}
                     clickCallback={() => dispatchFilter({ payload: i })}
                   />
                 );
@@ -131,28 +130,4 @@ const MyPathways = () => {
   );
 };
 
-const FilterCheckBox = ({ checked, label, clickCallback }) => {
-  return (
-    <button
-      className={`checkbox-group ${checked ? "checked" : ""}`}
-      onClick={clickCallback}
-    >
-      {checked ? <CheckBoxChecked /> : <CheckBoxUnChecked />}
-      <label>{label}</label>
-    </button>
-  );
-};
-
-const ModeRadioButton = ({ checked, label, clickCallback }) => {
-  return (
-    <button
-      className={`checkbox-group !border-solid ${
-        checked ? "checked !bg-primary-50" : ""
-      }`}
-      onClick={clickCallback}
-    >
-      {label}
-    </button>
-  );
-};
 export default MyPathways;
