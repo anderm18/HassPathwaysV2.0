@@ -24,16 +24,19 @@ const pathwayList = [
     category: "Communication & Media",
     courses: [
       {
-        status: "none",
-        name: "None",
+        title: "abc",
+        courseCode: "ARTS-1050",
+        tag: [],
       },
       {
-        status: "none",
-        name: "None",
+        title: "jir",
+        courseCode: "ARTS-1200",
+        tag: [],
       },
       {
-        status: "none",
-        name: "None",
+        title: "kri",
+        courseCode: "ARTS-2200",
+        tag: [],
       },
     ],
   },
@@ -42,16 +45,19 @@ const pathwayList = [
     category: "Inter",
     courses: [
       {
-        status: "none",
-        name: "None",
+        title: "abc",
+        courseCode: "ARTS-1050",
+        tag: [],
       },
       {
-        status: "none",
-        name: "None",
+        title: "jir",
+        courseCode: "ARTS-1200",
+        tag: [],
       },
       {
-        status: "none",
-        name: "None",
+        title: "kri",
+        courseCode: "ARTS-2200",
+        tag: [],
       },
     ],
   },
