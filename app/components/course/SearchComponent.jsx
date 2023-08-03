@@ -226,14 +226,13 @@ const CourseList = ({ searchString, filterState }) => {
       })}`,
       {
         signal: apiController.signal,
-        cache: "no-store",
         next: {
           revalidate: false,
         },
       }
     )
       .then((data) => data.json())
-      .then((data) => setCourseData(data.res))
+      .then(setCourseData)
       .catch((err) => {
         if (err.name === "AbortError") return;
         console.error("Fetching Error: ", err);
