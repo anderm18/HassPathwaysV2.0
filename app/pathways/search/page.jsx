@@ -84,39 +84,39 @@ const SearchCourse = () => {
     },
   ]);
 
-  const deferSearchString = useDeferredValue(searchString);
-  const deferFilterState = useDeferredValue(filterState);
-  useEffect(() => {
-    const apiController = new AbortController();
-    console.log(
-      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-        searchString: deferSearchString,
-        department: getFilterList(deferFilterState),
-      })}`
-    );
+  // const deferSearchString = useDeferredValue(searchString);
+  // const deferFilterState = useDeferredValue(filterState);
+  // useEffect(() => {
+  //   const apiController = new AbortController();
+  //   // console.log(
+  //   //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+  //   //     searchString: deferSearchString,
+  //   //     department: getFilterList(deferFilterState),
+  //   //   })}`
+  //   // );
 
-    fetch(
-      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-        searchString: deferSearchString,
-        department: getFilterList(deferFilterState),
-      })}`,
-      {
-        signal: apiController.signal,
-        cache: "no-store",
-        next: {
-          revalidate: false,
-        },
-      }
-    )
-      .then((data) => data.json())
-      .then((data) => setResultPathway(data))
-      .catch((err) => {
-        if (err.name === "AbortError") return;
-        console.error("Fetching Error: ", err);
-      });
+  //   fetch(
+  //     `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+  //       searchString: deferSearchString,
+  //       department: getFilterList(deferFilterState),
+  //     })}`,
+  //     {
+  //       signal: apiController.signal,
+  //       cache: "no-store",
+  //       next: {
+  //         revalidate: false,
+  //       },
+  //     }
+  //   )
+  //     .then((data) => data.json())
+  //     .then((data) => setResultPathway(data))
+  //     .catch((err) => {
+  //       if (err.name === "AbortError") return;
+  //       console.error("Fetching Error: ", err);
+  //     });
 
-    return () => apiController.abort("Cancelled");
-  }, [deferFilterState, deferSearchString]);
+  //   return () => apiController.abort("Cancelled");
+  // }, [deferFilterState, deferSearchString]);
 
   return (
     <>
