@@ -3,6 +3,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { appReducer } from "./AppReducer";
 import { SET_CATALOG } from "../actions";
+import pathwaysCategories from "@/public/data/pathwaysCategories";
 
 const courseState = [
   "Completed",
@@ -14,8 +15,9 @@ const courseState = [
 
 const appInitialState = {
   catalog_year: 2023,
-  courseState,
 };
+
+const constantApplicationValue = { courseState, pathwaysCategories };
 
 const AppContext = createContext(appInitialState);
 
@@ -29,7 +31,9 @@ const AppContextProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ ...state, setCatalog }}>
+    <AppContext.Provider
+      value={{ ...state, ...constantApplicationValue, setCatalog }}
+    >
       {children}
     </AppContext.Provider>
   );
