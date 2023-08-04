@@ -73,7 +73,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Electronic Arts",
                     "Studio Arts",
                     "Video, Performance, and Social Practice"
@@ -136,7 +136,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Music"
                 ]
             }
@@ -161,7 +161,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Chinese"
                 ]
             },
@@ -192,7 +192,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Graphic Design",
                     "Interactive Media Design"
                 ]
@@ -219,7 +219,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Narrative and Storytelling"
                 ]
             },
@@ -244,7 +244,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Writing",
                     "Strategic Communications"
                 ]
@@ -273,7 +273,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Media and Culture"
                 ]
             }
@@ -312,7 +312,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Cognitive Science",
                     "Cognitive Science of Artificial Intelligence"
                 ]
@@ -358,7 +358,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Behavioral and Cognitive Neuroscience",
                     "General Psychology",
                     "Psychological Science"
@@ -401,7 +401,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Philosophy",
                     "Philosophy of Logic, Computation, and Mind"
                 ]
@@ -426,7 +426,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Economics",
                     "Economics of Banking and Finance",
                     "Economics of Healthcare Markets",
@@ -462,7 +462,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Science, Technology, and Society"
                 ]
             }
@@ -606,7 +606,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Public Health"
                 ]
             },
@@ -681,7 +681,7 @@ const pathways = [
                         ]
                     }
                 ],
-                "minors": [
+                "compatibleMinor": [
                     "Well-Being"
                 ]
             }
@@ -698,9 +698,13 @@ export async function GET(request: NextRequest) {
   if (params.get("department")) {
     blob = blob.filter((c) =>
       departments.includes(c["department"])
-    )[0]["pathways"];
-  } else {
-    blob = blob.map((c) => c["pathways"]).flat();
+    );
+  }
+  blob = blob.map((c) => c["pathways"]).flat();
+
+  for(var [k,c] of Object.entries(blob)) {
+    c["courses"] = c["clusters"].map((b) => b["courses"]).flat().concat(c["required"] != null ? c["required"] : [])
+    c["clusters"] = undefined;
   }
 
   if (params.get("searchString")) {
