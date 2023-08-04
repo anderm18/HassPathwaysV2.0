@@ -11,6 +11,7 @@ const pathways = [
                 "clusters": [
                     {
                         "name": "Studio Art",
+                        "desciption": "
                         "courses": [
                             "ARTS-1050",
                             "ARTS-1200",
@@ -447,6 +448,7 @@ const pathways = [
                         "name": "Science, Technology, and Society",
                         "courses": [
                             "INQR-1100",
+                            "STSO-1100",
                             "INQR-1110",
                             "INQR-1220",
                             "ITWS-1220",
@@ -464,6 +466,35 @@ const pathways = [
                 ],
                 "compatibleMinor": [
                     "Science, Technology, and Society"
+                ]
+            },
+            {
+                "name": "Sustainability Studies",
+                "description": "The pathway in Sustainability focuses on the interactions between various systems - social, political, cultural, economic, technological, and ecological - that undergird environmental sustainability. Students use interdisciplinary approaches to investigate environmental problems.",
+                "required": [
+                    "STSO-2300"
+                ],
+                "clusters": [
+                    {
+                        "name": "Sustainability Studies",
+                        "courses": [
+                            "INQR-1100",
+                            "STSO-1100",
+                            "INQR-1110",
+                            "INQR-1240",
+                            "INQR-1250",
+                            "INQR-1320",
+                            "STSO-4260",
+                            "STSO-4280",
+                            "STSO-4320",
+                            "STSO-4330",
+                            "STSO-4340",
+                            "STSO-4350",
+                            "STSO-4500",
+                            "STSO-4510",
+                            "STSO-4600"
+                        ]
+                    }
                 ]
             }
         ]
