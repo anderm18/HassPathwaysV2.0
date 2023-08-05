@@ -731,11 +731,14 @@ export async function GET(request: NextRequest) {
     );
   }
   blob = blob.map((c) => c["pathways"]).flat();
-
+  
   for(var [k,c] of Object.entries(blob)) {
-    c["courses"] = c["clusters"].map((b) => b["courses"]).flat().concat(c["required"] != null ? c["required"] : [])
-    c["clusters"] = undefined;
+    c["courses"] = c["clusters"]
+      .map((b) => b["courses"])
+      .flat()
+      .concat(c["required"] != null ? c["required"] : [])
   }
+  blob = Object.fromEntries(Object.entries(blob).filter(([k,v]) => k != "clusters"));
 
   if (params.get("searchString")) {
     blob = blob.filter((c) =>
