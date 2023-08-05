@@ -11,7 +11,6 @@ const pathways = [
                 "clusters": [
                     {
                         "name": "Studio Art",
-                        "desciption": "
                         "courses": [
                             "ARTS-1050",
                             "ARTS-1200",
