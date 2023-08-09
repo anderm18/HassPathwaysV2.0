@@ -14,7 +14,7 @@ import {
 } from "@/app/components/pathway/FilterComponent";
 
 const getFilterList = (pathwayCategory, filterMask) => {
-  const filterList = pathwaysLists
+  const filterList = pathwayCategory
     .filter((_, i) => {
       return (1 << i) & filterMask;
     })
@@ -22,7 +22,7 @@ const getFilterList = (pathwayCategory, filterMask) => {
       if (acc === null) return pathwayCategory.value;
       return acc + "," + pathwayCategory.value;
     }, null);
-  return filterList;
+  return filterList === null ? "" : filterList;
 };
 
 const SearchCourse = () => {
@@ -77,33 +77,44 @@ const SearchCourse = () => {
     },
   ]);
 
-  // const deferSearchString = useDeferredValue(searchString);
-  // const deferFilterState = useDeferredValue(filterState);
-  // useEffect(() => {
-  //   const apiController = new AbortController();
+  const deferSearchString = useDeferredValue(searchString);
+  const deferFilterState = useDeferredValue(filterState);
+  useEffect(() => {
+    const apiController = new AbortController();
 
-  //   fetch(
-  //     `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-  //       searchString: deferSearchString,
-  //       department: getFilterList(pathwaysCategories,deferFilterState),
-  //     })}`,
-  //     {
-  //       signal: apiController.signal,
-  //       cache: "no-store",
-  //       next: {
-  //         revalidate: false,
-  //       },
-  //     }
-  //   )
-  //     .then((data) => data.json())
-  //     .then((data) => setResultPathway(data))
-  //     .catch((err) => {
-  //       if (err.name === "AbortError") return;
-  //       console.error("Fetching Error: ", err);
-  //     });
+    console.log(getFilterList(pathwaysCategories, deferFilterState));
+    console.log(
+      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+        searchString: deferSearchString,
+        department: getFilterList(pathwaysCategories, deferFilterState),
+      })}`
+    );
 
-  //   return () => apiController.abort("Cancelled");
-  // }, [deferFilterState, deferSearchString]);
+    fetch(
+      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+        searchString: deferSearchString,
+        department: getFilterList(pathwaysCategories, deferFilterState),
+      })}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+        next: {
+          revalidate: false,
+        },
+      }
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data);
+        setResultPathway(data);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Fetching Error: ", err);
+      });
+
+    return () => apiController.abort("Cancelled");
+  }, [deferFilterState, deferSearchString]);
 
   return (
     <>
@@ -145,6 +156,7 @@ const SearchCourse = () => {
               name={pathway.name}
               courses={pathway.courses}
               key={pathway.name}
+              category={pathway.department}
             />
           );
         })}

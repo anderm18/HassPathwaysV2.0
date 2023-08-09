@@ -8,10 +8,10 @@ const pathwaysCategories = [
   { display: "CogSci", value: "Cognitive Science" },
   { display: "Comm", value: "Communication & Media" },
   { display: "Econ", value: "Economics" },
+  { display: "STS", value: "STS" },
   { display: "Inter", value: "Interdisciplinary" },
   // {display: "Lang", value: ""}
   // { display: "Major Restricted", value: "Major Restricted" },
-  { display: "STS", value: "STS" },
 ];
 
 export default pathwaysCategories;
