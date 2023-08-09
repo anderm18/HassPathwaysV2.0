@@ -47,7 +47,7 @@ const NavigationBar = (props) => {
         onClick={() => {
           setMenuOpen((open) => !open);
         }}
-        className="z-20 block md:hidden"
+        className="z-20 block md:hidden cursor-pointer"
       >
         {menuOpen ? <CloseButton /> : <MenuBurger />}
       </div>
