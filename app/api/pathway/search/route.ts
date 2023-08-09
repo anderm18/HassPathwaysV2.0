@@ -692,7 +692,17 @@ export async function GET(request: NextRequest) {
   if (params.get("department")) {
     blob = blob.filter((c) => departments.includes(c["department"]));
   }
-  blob = blob.map((c) => c["pathways"]).flat();
+  blob = blob.flatMap((dep) => {
+    return dep.pathways.map((path) => {
+      return {
+        name: path.name,
+        clusters: path.clusters,
+        department: dep.department,
+        required: path.required,
+      };
+    });
+  });
+  //   blob = blob.map((c) => c["pathways"]).flat();
 
   for (var [k, c] of Object.entries(blob)) {
     c["courses"] = c["clusters"]
@@ -711,7 +721,14 @@ export async function GET(request: NextRequest) {
   }
 
   // Convert Blob to array
-  blob = Object.entries(blob).map((v) => v[1]);
+  blob = Object.entries(blob).map((v) => {
+    const data = v[1];
+    return {
+      name: data.name,
+      courses: data.courses,
+      department: data.department,
+    };
+  });
 
   return NextResponse.json(blob);
 }
