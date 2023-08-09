@@ -8,54 +8,55 @@ import PathwayCard from "../components/pathway/PathwayCard";
 import Link from "next/link";
 import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
 import { useAppContext } from "../contexts/appContext/AppProvider";
+import { noBookmarkedText, noMatchedText } from "@/public/data/staticData";
 
 // !! Temporary Data, Remove Later
-const pathwayList = [
-  {
-    name: "Graphic and Interactive Media Design",
-    category: "Communication & Media",
-    courses: [
-      {
-        title: "abc",
-        courseCode: "ARTS-1050",
-        tag: [],
-      },
-      {
-        title: "jir",
-        courseCode: "ARTS-1200",
-        tag: [],
-      },
-      {
-        title: "kri",
-        courseCode: "ARTS-2200",
-        tag: [],
-      },
-    ],
-  },
-  {
-    name: "Information Technology and Web Science",
-    category: "Inter",
-    courses: [
-      {
-        title: "abc",
-        courseCode: "ARTS-1050",
-        tag: [],
-      },
-      {
-        title: "jir",
-        courseCode: "ARTS-1200",
-        tag: [],
-      },
-      {
-        title: "kri",
-        courseCode: "ARTS-2200",
-        tag: [],
-      },
-    ],
-  },
-];
+// const pathwayList = [
+//   {
+//     name: "Graphic and Interactive Media Design",
+//     category: "Communication & Media",
+//     courses: [
+//       {
+//         title: "abc",
+//         courseCode: "ARTS-1050",
+//         tag: [],
+//       },
+//       {
+//         title: "jir",
+//         courseCode: "ARTS-1200",
+//         tag: [],
+//       },
+//       {
+//         title: "kri",
+//         courseCode: "ARTS-2200",
+//         tag: [],
+//       },
+//     ],
+//   },
+//   {
+//     name: "Information Technology and Web Science",
+//     category: "Inter",
+//     courses: [
+//       {
+//         title: "abc",
+//         courseCode: "ARTS-1050",
+//         tag: [],
+//       },
+//       {
+//         title: "jir",
+//         courseCode: "ARTS-1200",
+//         tag: [],
+//       },
+//       {
+//         title: "kri",
+//         courseCode: "ARTS-2200",
+//         tag: [],
+//       },
+//     ],
+//   },
+// ];
 
-// const pathwayList = [];
+const pathwayList = [];
 
 const MyPathways = () => {
   const { pathwaysCategories } = useAppContext();
@@ -149,7 +150,7 @@ const NothingToShow = ({ bookmarkedState }) => {
           No <span>{bookmarkedState ? "Bookmarked" : "Matching"}</span> Pathways
         </h3>
         <p className="text-sm md:text-xl font-medium  text-gray-500">
-          Explore our newest pathways in the catalog
+          {bookmarkedState ? noBookmarkedText : noMatchedText}
         </p>
       </header>
       <div className="flex flex-col-reverse fold:flex-row items-center gap-8 text-sm md:text-md font-semibold">
@@ -159,12 +160,22 @@ const NothingToShow = ({ bookmarkedState }) => {
         >
           Learn More
         </Link>
-        <Link
-          href="/pathways/search"
-          className="rounded-lg px-[18px] py-2.5 bg-primary-600 text-white"
-        >
-          Explore Pathways
-        </Link>
+        {bookmarkedState && (
+          <Link
+            href="/pathways/search"
+            className="rounded-lg px-[18px] py-2.5 bg-primary-600 text-white"
+          >
+            Explore Pathways
+          </Link>
+        )}
+        {!bookmarkedState && (
+          <Link
+            href="/courses/search"
+            className="rounded-lg px-[18px] py-2.5 bg-primary-600 text-white"
+          >
+            Explore Courses
+          </Link>
+        )}
       </div>
     </section>
   );
