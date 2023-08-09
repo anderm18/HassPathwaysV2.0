@@ -1,15 +1,27 @@
-interface subCourseFilter {
-  displayName: string;
-  value: string | number;
-}
+import { IcourseStatus, IpathwayData, IcourseFilter } from "./staticInterface";
 
-interface courseFilter {
-  displayName: string;
-  apiName: string;
-  options: Array<subCourseFilter>;
-}
+export const APPLICATION_STATE_KEY = "application";
 
-export const courseFilters: Array<courseFilter> = [
+export const pathwaysCategories: Array<IpathwayData> = [
+  { display: "Art", value: "Arts" },
+  { display: "CogSci", value: "Cognitive Science" },
+  { display: "Comm", value: "Communication & Media" },
+  { display: "Econ", value: "Economics" },
+  { display: "STS", value: "STS" },
+  { display: "Inter", value: "Interdisciplinary" },
+  // {display: "Lang", value: ""}
+  // { display: "Major Restricted", value: "Major Restricted" },
+];
+
+export const courseState: Array<IcourseStatus> = [
+  { display: "Completed", value: 1 },
+  { display: "In Progress", value: 2 },
+  { display: "Planned", value: 3 },
+  { display: "Interested", value: 4 },
+  { display: "Not Selected", value: 5 },
+];
+
+export const courseFilters: Array<IcourseFilter> = [
   {
     displayName: "Filter",
     apiName: "filter",

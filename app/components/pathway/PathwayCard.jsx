@@ -31,14 +31,16 @@ const PathwayCard = ({ name: pathwayName, category, courses }) => {
         </div>
       </header>
       <div className="flex gap-3 flex-col">
-        {courses.map((course, i) => {
+        {/* {
+        courses.map((course, i) => {
           return (
             <div className="courselist" key={course.courseCode}>
               <StatusIndicator {...course} />
               <span>{course.title}</span>
             </div>
           );
-        })}
+        })
+        } */}
       </div>
     </section>
   );

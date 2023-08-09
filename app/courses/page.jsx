@@ -24,16 +24,15 @@ const MyCourses = () => {
               setCourseFilter(0);
             }}
           />
-          {courseState.map((state, i) => {
-            const idx = i + 1;
+          {courseState.map((state) => {
             return (
               <ModeRadioButton
-                checked={idx === courseFilter}
-                label={state}
+                checked={state.value === courseFilter}
+                label={state.display}
                 tag={0}
-                key={state}
+                key={state.display}
                 clickCallback={() => {
-                  setCourseFilter(idx);
+                  setCourseFilter(state.value);
                 }}
               />
             );

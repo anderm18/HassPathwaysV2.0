@@ -7,7 +7,7 @@ import {
   CheckBoxUnChecked,
 } from "@/app/components/utils/Icon";
 import { Fragment, useState, useDeferredValue, useEffect } from "react";
-import { courseFilters } from "@/public/data/courseFilter";
+import { courseFilters } from "@/public/data/staticData";
 import CourseCard from "./CourseCard";
 
 export const FilterAction = {
