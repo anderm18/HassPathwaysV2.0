@@ -1,6 +1,7 @@
 import BreadcrumbChevron from "@/public/assets/svg/breadcrumb-chevron-right.svg?svgr";
 import BreadcrumbHome from "@/public/assets/svg/breadcrumb-home.svg?svgr";
 import Link from "next/link";
+import { Fragment } from "react";
 
 interface BreadcrumbLink {
   display: string;
@@ -21,19 +22,19 @@ const BreadCrumb = ({ path }: BreadcrumbProps) => {
         if (index !== 0 && index !== path.length - 1) {
           if (index === 1)
             return (
-              <>
+              <Fragment key={index}>
                 <BreadcrumbChevron />
                 <Link href={link.link}>
                   <span className="text-sm ml-3 text-gray-600 font-medium">
                     ...
                   </span>
                 </Link>
-              </>
+              </Fragment>
             );
           return null;
         }
         return (
-          <>
+          <Fragment key={index}>
             <BreadcrumbChevron
               className={
                 index === path.length - 1 ? undefined : "hidden fold:block"
@@ -50,7 +51,7 @@ const BreadCrumb = ({ path }: BreadcrumbProps) => {
                 {link.display}
               </span>
             </Link>
-          </>
+          </Fragment>
         );
       })}
     </div>

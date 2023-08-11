@@ -57,6 +57,10 @@
   .title {
     @apply text-display-xs sm:text-display-sm md:text-display-md font-semibold;
   }
+
+  .p-text {
+    @apply text-sm lg:text-md;
+  }
 }
 
 @layer components {
