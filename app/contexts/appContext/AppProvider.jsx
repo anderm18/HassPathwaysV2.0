@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { appReducer } from "./AppReducer";
-import { SET_CATALOG } from "../actions";
+import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
 import {
   courseState,
   pathwaysCategories,
@@ -21,10 +21,15 @@ const getInitialState = () => {
   return initialState ? JSON.parse(initialState) : defaultInitialState;
 };
 
-const AppContext = createContext(getInitialState());
+const AppContext = createContext(defaultInitialState);
 
 const AppContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, getInitialState());
+  const [state, dispatch] = useReducer(appReducer, defaultInitialState);
+
+  // Get data from localStorage
+  useEffect(() => {
+    dispatch({ type: INITIAL_LOAD_DATA, payload: getInitialState() });
+  }, []);
 
   // Update localStorage
   useEffect(() => {
