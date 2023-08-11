@@ -144,6 +144,7 @@ Note: Case sensitive.
 ```js
 {
   title: String, // name of the pathway
+  department: String, // the department of the pathway
   courses: [CourseSchema] // all course in the pathway
 }
 ```
@@ -194,6 +195,16 @@ Note: Case sensitive.
 {
   description: String, // pathway's description
   compatibleMinor: [String], // list of minor name
-  courses: [CourseSchema] // all course in the pathway
+  courses: [CourseSchema] || [CourseClusterSchema] // all course in the pathway or if the pathway have multiple cluster
+}
+```
+
+###### CourseClusterSchema
+
+```js
+{
+  name: String, // name of the cluster
+  description: String, // cluster's description based on the pathway pdf
+  courses: [CourseSchema] // all course in the cluster
 }
 ```
