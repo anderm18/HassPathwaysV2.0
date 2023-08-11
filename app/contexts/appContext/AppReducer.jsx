@@ -1,7 +1,9 @@
-import { SET_CATALOG } from "../actions";
+import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
 
 export const appReducer = (state, action) => {
   switch (action.type) {
+    case INITIAL_LOAD_DATA:
+      return action.payload;
     case SET_CATALOG:
       return {
         ...state,
