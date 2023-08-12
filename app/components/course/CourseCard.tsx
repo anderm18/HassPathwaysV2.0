@@ -1,6 +1,7 @@
 import React from "react";
+import { CourseCardProps } from "@/app/model/CourseInterface";
 
-const CourseCard = ({ title, courseCode, tag }) => {
+const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
   return (
     <section className="course-card">
       <div className="flex flex-col fold:flex-row justify-between items-start">

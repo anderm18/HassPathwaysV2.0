@@ -9,6 +9,14 @@ import {
 import { Fragment, useState, useDeferredValue, useEffect } from "react";
 import { courseFilters } from "@/public/data/staticData";
 import CourseCard from "./CourseCard";
+import {
+  FilterProps,
+  FilterSectionProps,
+  IFilterState,
+  SearchInputProps,
+} from "@/app/model/CourseInterface";
+import { ICourseSchema } from "@/public/data/dataInterface";
+import { flattenFilterParams } from "../utils/url";
 
 export const FilterAction = {
   ADD: "add",
@@ -20,7 +28,7 @@ export const DesktopFilterSection = ({
   filterDispatch,
   searchString,
   setSearchString,
-}) => {
+}: FilterSectionProps) => {
   return (
     <>
       <div className="filters flex justify-start items-start gap-8 mb-4 md:mb-8">
@@ -47,7 +55,7 @@ export const FilterSection = ({
   filterDispatch,
   setSearchString,
   searchString,
-}) => {
+}: FilterSectionProps) => {
   return (
     <>
       <div className="filters flex justify-between gap-4 mb-4 md:mb-8">
@@ -65,7 +73,7 @@ export const FilterSection = ({
   );
 };
 
-const SearchInput = ({ searchString, setSearchString }) => {
+const SearchInput = ({ searchString, setSearchString }: SearchInputProps) => {
   return (
     <label htmlFor="course-input" className="basis-0 grow">
       <div className="px-3.5 py-2.5 flex items-center gap-2 cursor-text border-gray-300 border border-solid rounded-lg input-wrapper">
@@ -84,7 +92,7 @@ const SearchInput = ({ searchString, setSearchString }) => {
   );
 };
 
-const DesktopFilter = ({ filterState, filterDispatch }) => {
+const DesktopFilter = ({ filterState, filterDispatch }: FilterProps) => {
   return (
     <div className="rounded-lg shadow-lg p-6 min-w-[290px] max-w-xs grid grid-flow-row gap-2 border border-solid border-gray-100">
       {courseFilters.map((section) => {
@@ -138,7 +146,7 @@ const DesktopFilter = ({ filterState, filterDispatch }) => {
   );
 };
 
-const FilterDropdown = ({ filterState, filterDispatch }) => {
+const FilterDropdown = ({ filterState, filterDispatch }: FilterProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -212,25 +220,32 @@ const FilterDropdown = ({ filterState, filterDispatch }) => {
   );
 };
 
-const CourseList = ({ searchString, filterState }) => {
-  const [courseData, setCourseData] = useState([]);
+const CourseList = ({
+  searchString,
+  filterState,
+}: {
+  searchString: string;
+  filterState: IFilterState;
+}) => {
+  const [courseData, setCourseData] = useState<Array<ICourseSchema>>([]);
   const deferSearchString = useDeferredValue(searchString);
   const deferFilterState = useDeferredValue(filterState);
   useEffect(() => {
     const apiController = new AbortController();
 
-    fetch(
-      `http://localhost:3000/api/course/search?${new URLSearchParams({
-        searchString: deferSearchString,
-        ...deferFilterState,
-      })}`,
+    const fetchUrl: string = `http://localhost:3000/api/course/search?${new URLSearchParams(
       {
-        signal: apiController.signal,
-        next: {
-          revalidate: false,
-        },
+        searchString: deferSearchString,
+        ...flattenFilterParams(deferFilterState),
       }
-    )
+    )}`;
+
+    fetch(fetchUrl, {
+      signal: apiController.signal,
+      next: {
+        revalidate: false,
+      },
+    })
       .then((data) => data.json())
       .then(setCourseData)
       .catch((err) => {
@@ -243,10 +258,8 @@ const CourseList = ({ searchString, filterState }) => {
 
   return (
     <section className="flex flex-col gap-3">
-      {courseData.map((course) => {
-        return (
-          <CourseCard {...course} key={course.title + course.courseCode} />
-        );
+      {courseData.map((course, i) => {
+        return <CourseCard {...course} key={i} />;
       })}
     </section>
   );

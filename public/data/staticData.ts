@@ -46,15 +46,15 @@ export const courseFilters: Array<IcourseFilter> = [
     options: [
       {
         displayName: "1000",
-        value: 1,
+        value: "1",
       },
       {
         displayName: "2000",
-        value: 2,
+        value: "2",
       },
       {
         displayName: "4000",
-        value: 4,
+        value: "4",
       },
     ],
   },

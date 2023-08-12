@@ -10,7 +10,7 @@ export interface IcourseStatus {
 
 interface IsubCourseFilter {
   displayName: string;
-  value: string | number;
+  value: string;
 }
 
 export interface IcourseFilter {

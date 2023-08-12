@@ -6,10 +6,11 @@ import {
   DesktopFilterSection,
   FilterAction,
 } from "@/app/components/course/SearchComponent";
+import { IFilterDispatch, IFilterState } from "@/app/model/CourseInterface";
 
 const SearchCourse = () => {
   const [filterState, filterDispatch] = useReducer(
-    (state, action) => {
+    (state: IFilterState, action: IFilterDispatch) => {
       switch (action.type) {
         case FilterAction.ADD:
           return {
@@ -23,7 +24,7 @@ const SearchCourse = () => {
           return {
             ...state,
             [action.payload.group]: state[action.payload.group].filter(
-              (e) => e !== action.payload.value
+              (e: string) => e !== action.payload.value
             ),
           };
         default:
@@ -39,7 +40,7 @@ const SearchCourse = () => {
     }
   );
 
-  const [searchString, setSearchString] = useState("");
+  const [searchString, setSearchString] = useState<string>("");
 
   return (
     <>
