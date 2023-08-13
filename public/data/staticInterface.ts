@@ -18,3 +18,8 @@ export interface IcourseFilter {
   apiName: string;
   options: Array<IsubCourseFilter>;
 }
+
+export type ICatalogList = Array<{
+  text: string;
+  value: number;
+}>;

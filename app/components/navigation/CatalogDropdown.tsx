@@ -4,43 +4,26 @@ import React, { useEffect, useRef, useState } from "react";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
 import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
-
-const catalogList = [
-  {
-    text: "2022 - 2023 Catalog",
-    value: 2023,
-  },
-  {
-    text: "2021 - 2022 Catalog",
-    value: 2022,
-  },
-  {
-    text: "2020 - 2021 Catalog",
-    value: 2021,
-  },
-  {
-    text: "2019 - 2020 Catalog",
-    value: 2020,
-  },
-  {
-    text: "2018 - 2019 Catalog",
-    value: 2019,
-  },
-];
+import { catalogList } from "@/public/data/staticData";
 
 const CatalogDropdown = () => {
   const { catalog_year, setCatalog } = useAppContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const catalogText = catalogList.filter((cat) => cat.value === catalog_year)[0]
-    .text;
+  // Find the displaying text for catalog
+  const catalogText: string = catalogList.filter(
+    (cat) => cat.value === catalog_year
+  )[0].text;
 
   useEffect(() => {
     if (!dropdownOpen) return;
 
-    const outsideDropdown = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target))
+    const outsideDropdown = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      )
         setDropdownOpen(false);
     };
     document.addEventListener("click", outsideDropdown);
@@ -69,7 +52,7 @@ const CatalogDropdown = () => {
               <div
                 className="dropdown-choice"
                 key={choice.value}
-                value={choice.value}
+                data-value={choice.value}
                 onClick={() => {
                   setCatalog(choice.value);
                 }}

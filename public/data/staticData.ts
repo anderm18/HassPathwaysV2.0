@@ -1,4 +1,9 @@
-import { IcourseStatus, IpathwayData, IcourseFilter } from "./staticInterface";
+import {
+  IcourseStatus,
+  IpathwayData,
+  IcourseFilter,
+  ICatalogList,
+} from "./staticInterface";
 
 export const APPLICATION_STATE_KEY = "application";
 
@@ -149,3 +154,26 @@ export const courseFilters: Array<IcourseFilter> = [
 export const noBookmarkedText: string = "Explore our pathways in the catalog";
 export const noMatchedText: string =
   "Explore our courses and select your course to see compatible pathways!";
+
+export const catalogList: ICatalogList = [
+  {
+    text: "2022 - 2023 Catalog",
+    value: 2023,
+  },
+  {
+    text: "2021 - 2022 Catalog",
+    value: 2022,
+  },
+  {
+    text: "2020 - 2021 Catalog",
+    value: 2021,
+  },
+  {
+    text: "2019 - 2020 Catalog",
+    value: 2020,
+  },
+  {
+    text: "2018 - 2019 Catalog",
+    value: 2019,
+  },
+];

@@ -45,3 +45,9 @@ export interface IPathwayDescriptionSchema {
   compatibleMinor: Array<string>;
   courses: Array<ICourseSchema> | Array<ICourseClusterSchema>;
 }
+
+export type IFAQ = {
+  question: string;
+  answer: string;
+  icon: string;
+};

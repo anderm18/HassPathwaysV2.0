@@ -1,6 +1,7 @@
 import * as Icon from "../components/utils/Icon";
 import NavigationBar from "../components/navigation/NavigationBar";
 import Footer from "../components/navigation/Footer";
+import { IFAQ } from "@/public/data/dataInterface";
 
 async function getFAQ() {
   const res = await fetch("http://localhost:3000/api/faq");
@@ -9,7 +10,7 @@ async function getFAQ() {
 }
 
 const FAQ = async () => {
-  const faqQuestions = await getFAQ();
+  const faqQuestions: Array<IFAQ> = await getFAQ();
 
   return (
     <div className="flex flex-col min-h-screen">

@@ -12,16 +12,21 @@ import {
   SearchInput,
   FilterCheckBox,
 } from "@/app/components/pathway/FilterComponent";
+import { IpathwayData } from "@/public/data/staticInterface";
+import { IPathwaySchema } from "@/public/data/dataInterface";
 
-const getFilterList = (pathwayCategory, filterMask) => {
+const getFilterList: (
+  pathwayCategory: IpathwayData[],
+  filterMask: number
+) => string = (pathwayCategory, filterMask) => {
   const filterList = pathwayCategory
     .filter((_, i) => {
       return (1 << i) & filterMask;
     })
     .reduce((acc, pathwayCategory) => {
-      if (acc === null) return pathwayCategory.value;
+      if (acc === "") return pathwayCategory.value;
       return acc + "," + pathwayCategory.value;
-    }, null);
+    }, "");
   return filterList === null ? "" : filterList;
 };
 
@@ -30,23 +35,34 @@ const SearchCourse = () => {
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
-  const [filterState, dispatchFilter] = useReducer((state, action) => {
-    const rep = 1 << action.payload;
-    if (action.payload === MAX_FILTER) {
-      if (state === action.payload) return 0;
-      else return MAX_FILTER;
-    }
-    if (state & rep) state -= rep;
-    else state += rep;
-    return state;
-  }, 0);
-  const activeFilter = (state, index) => state & (1 << index);
+  const [filterState, dispatchFilter] = useReducer(
+    (
+      state: number,
+      action: {
+        payload: number;
+      }
+    ) => {
+      const rep = 1 << action.payload;
+      if (action.payload === MAX_FILTER) {
+        if (state === action.payload) return 0;
+        else return MAX_FILTER;
+      }
+      if (state & rep) state -= rep;
+      else state += rep;
+      return state;
+    },
+    0
+  );
+  const activeFilter: (state: number, index: number) => boolean = (
+    state,
+    index
+  ) => (state & (1 << index)) !== 0;
 
   const [searchString, setSearchString] = useState("");
-  const [resultPathway, setResultPathway] = useState([
+  const [resultPathway, setResultPathway] = useState<IPathwaySchema[]>([
     {
-      name: "Visual and Media Arts",
-      category: "Arts",
+      title: "Visual and Media Arts",
+      department: "Arts",
       courses: [
         {
           title: "abc",
@@ -82,13 +98,13 @@ const SearchCourse = () => {
   useEffect(() => {
     const apiController = new AbortController();
 
-    console.log(getFilterList(pathwaysCategories, deferFilterState));
-    console.log(
-      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-        searchString: deferSearchString,
-        department: getFilterList(pathwaysCategories, deferFilterState),
-      })}`
-    );
+    // console.log(getFilterList(pathwaysCategories, deferFilterState));
+    // console.log(
+    //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+    //     searchString: deferSearchString,
+    //     department: getFilterList(pathwaysCategories, deferFilterState),
+    //   })}`
+    // );
 
     fetch(
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
@@ -105,7 +121,6 @@ const SearchCourse = () => {
     )
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
         setResultPathway(data);
       })
       .catch((err) => {
@@ -151,14 +166,7 @@ const SearchCourse = () => {
       </div>
       <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
         {resultPathway.map((pathway, i) => {
-          return (
-            <PathwayCard
-              name={pathway.name}
-              courses={pathway.courses}
-              key={pathway.name}
-              category={pathway.department}
-            />
-          );
+          return <PathwayCard {...pathway} key={i} />;
         })}
       </section>
     </>

@@ -9,6 +9,7 @@ import Link from "next/link";
 import ChevronRight from "@/public/assets/svg/chevron-right.svg?svgr";
 import { useAppContext } from "../contexts/appContext/AppProvider";
 import { noBookmarkedText, noMatchedText } from "@/public/data/staticData";
+import { IPathwaySchema } from "@/public/data/dataInterface";
 
 // !! Temporary Data, Remove Later
 // const pathwayList = [
@@ -56,7 +57,7 @@ import { noBookmarkedText, noMatchedText } from "@/public/data/staticData";
 //   },
 // ];
 
-const pathwayList = [];
+const pathwayList: Array<IPathwaySchema> = [];
 
 const MyPathways = () => {
   const { pathwaysCategories } = useAppContext();
@@ -65,17 +66,25 @@ const MyPathways = () => {
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
-  const [filterState, dispatchFilter] = useReducer((state, action) => {
-    const rep = 1 << action.payload;
-    if (action.payload === MAX_FILTER) {
-      if (state === action.payload) return 0;
-      else return MAX_FILTER;
-    }
-    if (state & rep) state -= rep;
-    else state += rep;
-    return state;
-  }, 0);
-  const activeFilter = (state, index) => state & (1 << index);
+  const [filterState, dispatchFilter] = useReducer(
+    (
+      state: number,
+      action: {
+        payload: number;
+      }
+    ) => {
+      const rep = 1 << action.payload;
+      if (action.payload === MAX_FILTER) {
+        if (state === action.payload) return 0;
+        else return MAX_FILTER;
+      }
+      if (state & rep) state -= rep;
+      else state += rep;
+      return state;
+    },
+    0
+  );
+  const activeFilter = (state: number, index: number) => state & (1 << index);
 
   return (
     <>
@@ -128,13 +137,7 @@ const MyPathways = () => {
       ) : (
         <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
           {pathwayList.map((pathway, i) => {
-            return (
-              <PathwayCard
-                name={pathway.name}
-                courses={pathway.courses}
-                key={pathway.name}
-              />
-            );
+            return <PathwayCard {...pathway} key={i} />;
           })}
         </section>
       )}
@@ -142,7 +145,7 @@ const MyPathways = () => {
   );
 };
 
-const NothingToShow = ({ bookmarkedState }) => {
+const NothingToShow = ({ bookmarkedState }: { bookmarkedState: boolean }) => {
   return (
     <section className="flex flex-col justify-center items-center grow gap-8 my-4">
       <header className="text-center">

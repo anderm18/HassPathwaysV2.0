@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useReducer, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  ReactNode,
+} from "react";
 import { appReducer } from "./AppReducer";
 import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
 import {
@@ -8,22 +14,25 @@ import {
   pathwaysCategories,
   APPLICATION_STATE_KEY,
 } from "@/public/data/staticData";
+import { ApplicationContext } from "@/app/model/AppContextInterface";
 
 const constantApplicationValue = { courseState, pathwaysCategories };
 
-const defaultInitialState = {
+const defaultInitialState: ApplicationContext = {
   catalog_year: 2023,
-  // all course with status
+  // TODO: all course with status
+  setCatalog: () => {},
+  ...constantApplicationValue,
 };
 
-const getInitialState = () => {
+const getInitialState: () => ApplicationContext = () => {
   const initialState = localStorage.getItem(APPLICATION_STATE_KEY);
   return initialState ? JSON.parse(initialState) : defaultInitialState;
 };
 
-const AppContext = createContext(defaultInitialState);
+const AppContext = createContext<ApplicationContext>(defaultInitialState);
 
-const AppContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(appReducer, defaultInitialState);
 
   // Get data from localStorage
@@ -38,14 +47,12 @@ const AppContextProvider = ({ children }) => {
 
   // Declare any state function here
   // and pass through value props in AppContext.Provider
-  const setCatalog = (catalog_year) => {
+  const setCatalog = (catalog_year: number) => {
     dispatch({ type: SET_CATALOG, payload: catalog_year });
   };
 
   return (
-    <AppContext.Provider
-      value={{ ...state, ...constantApplicationValue, setCatalog }}
-    >
+    <AppContext.Provider value={{ ...state, setCatalog }}>
       {children}
     </AppContext.Provider>
   );

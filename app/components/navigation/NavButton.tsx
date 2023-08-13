@@ -4,7 +4,17 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavButton = ({ link, text, Icon, keyword }) => {
+const NavButton = ({
+  link,
+  text,
+  Icon,
+  keyword,
+}: {
+  link: string;
+  text: string;
+  Icon: any;
+  keyword: string;
+}) => {
   const pathname = usePathname();
   const selected = pathname.match(new RegExp(`${keyword}$`, "gm"));
 

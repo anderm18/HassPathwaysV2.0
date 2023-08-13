@@ -8,40 +8,18 @@ import { BarChart, HomeLine } from "../utils/Icon";
 import MenuBurger from "@/public/assets/svg/menu-04.svg?svgr";
 import CloseButton from "@/public/assets/svg/x-close.svg?svgr";
 
-const NavigationBar = (props) => {
+const NavigationBar = ({ className }: { className?: string }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
     <nav
-      className={`relative navigation-bar flex gap-y-3 flex-row items-start md:items-center justify-between ${props.className}`}
+      className={`relative navigation-bar flex gap-y-3 flex-row items-start md:items-center justify-between ${className}`}
     >
       <Link href="/">
         <header className="text-md lg:text-xl font-semibold">
           <span className="text-primary-900">Hass</span> Pathways
         </header>
       </Link>
-
-      {/* <div
-        className={`block md:hidden absolute rounded-lg top-0 right-0 p-8 pt-16 border border-solid border-gray-300 bg-white  ${
-          menuOpen ? "block" : "hidden"
-        }`}
-      >
-        <ul className="flex flex-col items-start gap-5 md:px-4 self-stretch">
-          <NavButton
-            link="/courses"
-            text="My Courses"
-            Icon={<HomeLine />}
-            keyword="courses"
-          />
-          <NavButton
-            link="/pathways"
-            text="My Pathways"
-            Icon={<BarChart />}
-            keyword="pathways"
-          />
-          <CatalogDropdown />
-        </ul>
-      </div> */}
 
       <div
         onClick={() => {
