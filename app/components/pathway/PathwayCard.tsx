@@ -1,7 +1,8 @@
 import React from "react";
 import { Bookmark, BookmarkChecked, HelpIcon } from "../utils/Icon";
+import { IPathwaySchema } from "@/public/data/dataInterface";
 
-const PathwayCard = ({ name: pathwayName, category, courses }) => {
+const PathwayCard = ({ title, department, courses }: IPathwaySchema) => {
   // TODO: use courses to determine the compatibility
   // TODO: change to bookmark state and update React Context
   // TODO: Compute tooltip
@@ -14,8 +15,8 @@ const PathwayCard = ({ name: pathwayName, category, courses }) => {
       <header className="flex justify-between w-full items-start">
         <div className="w-[367px] mb-2">
           <div className="flex flex-col md:flex-row gap-2 items-start py-1">
-            <h3 className="pathway-title flex-1">{pathwayName}</h3>
-            <p className="tag">{category}</p>
+            <h3 className="pathway-title flex-1">{title}</h3>
+            <p className="tag">{department}</p>
           </div>
           <div className="progress-bar">
             <div className="flex gap-1">
@@ -46,7 +47,7 @@ const PathwayCard = ({ name: pathwayName, category, courses }) => {
   );
 };
 
-const StatusIndicator = (status) => {
+const StatusIndicator = (status: string) => {
   return (
     <div className="w-4 h-4 basis-4 grow-0 shrink-0 rounded-lg bg-gray-100 border border-solid border-gray-300"></div>
   );

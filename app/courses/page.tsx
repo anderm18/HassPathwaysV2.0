@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import CourseCard from "../components/course/CourseCard";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
 import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
@@ -40,15 +40,23 @@ const MyCourses = () => {
         </div>
       </section>
       <section className="my-4 grid grid-flow-row gap-y-3">
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+        <CourseCard tag={["T"]} courseCode="TEST-3000" title="Test1" />
       </section>
     </>
   );
 };
 
-const ModeRadioButton = ({ checked, label, tag, clickCallback }) => {
+const ModeRadioButton = ({
+  checked,
+  label,
+  tag,
+  clickCallback,
+}: {
+  checked: boolean;
+  label: string;
+  tag: number;
+  clickCallback: MouseEventHandler;
+}) => {
   const tagStyle = checked ? "tag-primary" : "tag-gray";
 
   const fontStyle = checked ? "text-primary-700" : "text-gray-500";

@@ -1,8 +1,17 @@
+import { MouseEventHandler } from "react";
 import { CheckBoxChecked, CheckBoxUnChecked } from "../utils/Icon";
 
 import { SearchIcon } from "../utils/Icon";
 
-export const SearchInput = ({ searchString, setSearchString }) => {
+type SearchInputProps = {
+  searchString: string;
+  setSearchString: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export const SearchInput = ({
+  searchString,
+  setSearchString,
+}: SearchInputProps) => {
   return (
     <label htmlFor="course-input" className="basis-0 grow">
       <div className="px-3.5 py-2.5 flex items-center gap-2 cursor-text border-gray-300 border border-solid rounded-lg input-wrapper">
@@ -21,7 +30,17 @@ export const SearchInput = ({ searchString, setSearchString }) => {
   );
 };
 
-export const FilterCheckBox = ({ checked, label, clickCallback }) => {
+type FilterCheckBoxProps = {
+  checked: boolean;
+  label: string;
+  clickCallback: MouseEventHandler;
+};
+
+export const FilterCheckBox = ({
+  checked,
+  label,
+  clickCallback,
+}: FilterCheckBoxProps) => {
   return (
     <button
       className={`checkbox-group ${checked ? "checked" : ""}`}
@@ -33,7 +52,17 @@ export const FilterCheckBox = ({ checked, label, clickCallback }) => {
   );
 };
 
-export const ModeRadioButton = ({ checked, label, clickCallback }) => {
+type ModeRadioButtonProps = {
+  checked: boolean;
+  label: string;
+  clickCallback: MouseEventHandler;
+};
+
+export const ModeRadioButton = ({
+  checked,
+  label,
+  clickCallback,
+}: ModeRadioButtonProps) => {
   return (
     <button
       className={`checkbox-group !border-solid ${

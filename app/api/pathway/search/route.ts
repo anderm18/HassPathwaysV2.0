@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import cors from "cors";
+import { IPathwaySchema } from "@/public/data/dataInterface";
 
 const pathways = [
   {
@@ -686,13 +687,13 @@ const pathways = [
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
 
-  const departments = params.get("department").split(",");
-
-  var blob = pathways;
-  if (params.get("department")) {
+  let blob = pathways;
+  const departmentString = params.get("department");
+  if (departmentString) {
+    const departments = departmentString.split(",");
     blob = blob.filter((c) => departments.includes(c["department"]));
   }
-  blob = blob.flatMap((dep) => {
+  let flatten = blob.flatMap((dep) => {
     return dep.pathways.map((path) => {
       return {
         name: path.name,
@@ -704,31 +705,32 @@ export async function GET(request: NextRequest) {
   });
   //   blob = blob.map((c) => c["pathways"]).flat();
 
-  for (var [k, c] of Object.entries(blob)) {
+  for (var [k, c] of Object.entries(flatten)) {
     c["courses"] = c["clusters"]
       .map((b) => b["courses"])
       .flat()
       .concat(c["required"] != null ? c["required"] : []);
   }
-  blob = Object.fromEntries(
-    Object.entries(blob).filter(([k, v]) => k != "clusters")
+  flatten = Object.fromEntries(
+    Object.entries(flatten).filter(([k, v]) => k != "clusters")
   );
 
-  if (params.get("searchString")) {
-    blob = blob.filter((c) =>
-      c["name"].toLowerCase().includes(params.get("searchString").toLowerCase())
+  const searchString = params.get("searchString");
+  if (searchString) {
+    flatten = flatten.filter((c) =>
+      c["name"].toLowerCase().includes(searchString.toLowerCase())
     );
   }
 
   // Convert Blob to array
-  blob = Object.entries(blob).map((v) => {
+  const output: Array<IPathwaySchema> = Object.entries(flatten).map((v) => {
     const data = v[1];
     return {
-      name: data.name,
+      title: data.name,
       courses: data.courses,
       department: data.department,
     };
   });
 
-  return NextResponse.json(blob);
+  return NextResponse.json(output);
 }
