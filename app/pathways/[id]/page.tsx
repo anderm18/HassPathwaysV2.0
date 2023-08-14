@@ -76,8 +76,19 @@ const pathwayTempData: IPathwayDescriptionSchema = {
 //   ],
 // };
 
-const PathwayDescriptionPage: FC = () => {
+type IPathwayID = {
+  params: {
+    id: string;
+  };
+};
+
+const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
+  // Convert pathname to pathwayName
+  const pathwayName: string = data.params.id.replaceAll("%20", " ");
+
   const pathwayData: IPathwayDescriptionSchema = pathwayTempData;
+
+  // TODO: check if pathway exists, or return something empty
 
   return (
     <>
@@ -89,13 +100,13 @@ const PathwayDescriptionPage: FC = () => {
               link: "/",
             },
             {
-              display: "Extent and Limits of Rationality",
+              display: pathwayName,
               link: "/",
             },
           ]}
         />
         <h1 className="mt-5 text-display-xs md:text-display-sm font-semibold">
-          Extent and Limits of Rationality
+          {pathwayName}
         </h1>
       </header>
       <section className="mb-4 md:mb-8">
