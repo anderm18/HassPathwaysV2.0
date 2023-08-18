@@ -153,6 +153,7 @@ Note: Case sensitive.
 
 ```js
 {
+  title: String // course's name
   description: String, // course's description
   prereqs: PrereqSchema,
   term: [Term]
