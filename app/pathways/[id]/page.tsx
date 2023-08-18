@@ -8,29 +8,6 @@ import {
   IPathwayDescriptionSchema,
 } from "@/public/data/dataInterface";
 
-const pathwayTempData: IPathwayDescriptionSchema = {
-  description: `This course embraces the science of psychology. The aim is for
-  students to learn how using the scientific method provides important
-  insights about mind, brain, and behavior. This course integrates
-  research on neuroscience throughout all the standard topics in an
-  introductory course in psychology. The course presents advances across
-  all subfields of psychology. In addition to standard exams, there are
-  online assignments for each chapter and online laboratory experiences.`,
-  compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
-  courses: [
-    {
-      title: "Introduction to abc",
-      courseCode: "ACBD-1234",
-      tag: ["Fall", "Spring"],
-    },
-    {
-      title: "Introduction to React",
-      courseCode: "ract-1234",
-      tag: ["Fall", "Spring"],
-    },
-  ],
-};
-
 // const pathwayTempData: IPathwayDescriptionSchema = {
 //   description: `This course embraces the science of psychology. The aim is for
 //   students to learn how using the scientific method provides important
@@ -42,39 +19,62 @@ const pathwayTempData: IPathwayDescriptionSchema = {
 //   compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
 //   courses: [
 //     {
-//       name: "Art1",
-//       description: "this is art",
-//       courses: [
-//         {
-//           title: "art",
-//           courseCode: "arts-4937",
-//           tag: ["Fall"],
-//         },
-//         {
-//           title: "art",
-//           courseCode: "arts-1957",
-//           tag: ["Fall"],
-//         },
-//       ],
+//       title: "Introduction to abc",
+//       courseCode: "ACBD-1234",
+//       tag: ["Fall", "Spring"],
 //     },
 //     {
-//       name: "Elec",
-//       description: "this is art",
-//       courses: [
-//         {
-//           title: "ele",
-//           courseCode: "arts-8294",
-//           tag: ["Fall"],
-//         },
-//         {
-//           title: "ele2",
-//           courseCode: "arts-9854",
-//           tag: ["Fall"],
-//         },
-//       ],
+//       title: "Introduction to React",
+//       courseCode: "ract-1234",
+//       tag: ["Fall", "Spring"],
 //     },
 //   ],
 // };
+
+const pathwayTempData: IPathwayDescriptionSchema = {
+  description: `This course embraces the science of psychology. The aim is for
+  students to learn how using the scientific method provides important
+  insights about mind, brain, and behavior. This course integrates
+  research on neuroscience throughout all the standard topics in an
+  introductory course in psychology. The course presents advances across
+  all subfields of psychology. In addition to standard exams, there are
+  online assignments for each chapter and online laboratory experiences.`,
+  compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
+  courses: [
+    {
+      name: "Art1",
+      description: "this is art",
+      courses: [
+        {
+          title: "art",
+          courseCode: "arts-4937",
+          tag: ["Fall"],
+        },
+        {
+          title: "art",
+          courseCode: "arts-1957",
+          tag: ["Fall"],
+        },
+      ],
+    },
+    {
+      name: "Elec",
+      description: "this is art",
+      courses: [
+        {
+          title: "ele",
+          courseCode: "arts-8294",
+          tag: ["Fall"],
+        },
+        {
+          title: "ele2",
+          courseCode: "arts-9854",
+          tag: ["Fall"],
+        },
+      ],
+    },
+  ],
+};
 
 type IPathwayID = {
   params: {
@@ -96,12 +96,12 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <BreadCrumb
           path={[
             {
-              display: "Pathway",
-              link: "/",
+              display: "Pathways",
+              link: "/pathways/search",
             },
             {
               display: pathwayName,
-              link: "/",
+              link: "",
             },
           ]}
         />
@@ -109,42 +109,34 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
           {pathwayName}
         </h1>
       </header>
-      <section className="mb-4 md:mb-8">
-        <header className="mb-2">
-          <h3 className="text-xl md:text-display-xs font-semibold">
-            Pathway Description
-          </h3>
+      <section className="description-section">
+        <header>
+          <h3>Pathway Description</h3>
         </header>
-        <p className="p-text">{pathwayData.description}</p>
+        <p>{pathwayData.description}</p>
       </section>
-      <section className="mb-4 md:mb-8">
-        <header className="mb-2">
-          <h3 className="text-xl md:text-display-xs font-semibold">
-            Compatible Minor
-          </h3>
+      <section className="description-section">
+        <header>
+          <h3>Compatible Minor</h3>
         </header>
-        <ul className="p-text">
+        <ul>
           {pathwayData.compatibleMinor.map((minor, i) => {
             return <li key={i}>- {minor}</li>;
           })}
         </ul>
       </section>
-      <section className="mb-4 md:mb-8">
-        <header className="mb-2">
-          <h3 className="text-xl md:text-display-xs font-semibold">
-            Requirement
-          </h3>
+      <section className="description-section">
+        <header>
+          <h3>Requirement</h3>
         </header>
-        <p className="p-text">
+        <p>
           Students must choose a minimum of 12 credits as from the course list
           below.
         </p>
       </section>
-      <section className="mb-4 md:mb-8">
-        <header className="mb-2">
-          <h3 className="text-xl md:text-display-xs font-semibold">
-            Available Courses
-          </h3>
+      <section className="description-section">
+        <header>
+          <h3>Available Courses</h3>
         </header>
         <CourseSection courses={pathwayData.courses} />
       </section>
@@ -174,7 +166,11 @@ const CourseSection: FC<CourseSectionProps> = ({ courses }) => {
     <>
       {haveCluster && (
         <>
-          <ul className="rounded-lg flex flex-col sm:flex-row gap-2 p-1 bg-gray-50 border border-1 border-gray-200 list-none">
+          <ul
+            className="rounded-lg flex flex-col sm:flex-row gap-2 p-1 
+          bg-gray-50 border border-1 border-gray-200 list-none 
+          w-full sm:w-[500px] md:w-[723px] lg:w-full lg:max-w-[723px]"
+          >
             {courses.map((cluster: any, i: number) => {
               return (
                 <CourseClusterSelection
