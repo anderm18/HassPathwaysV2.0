@@ -29,6 +29,7 @@ interface ITerm {
 }
 
 export interface ICourseDescriptionSchema {
+  title: string;
   description: string;
   prereqs: IPrereqSchema;
   term: Array<ITerm>;
