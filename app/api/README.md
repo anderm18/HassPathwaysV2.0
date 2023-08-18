@@ -155,7 +155,7 @@ Note: Case sensitive.
 {
   title: String // course's name
   description: String, // course's description
-  prereqs: PrereqSchema,
+  prereqs: PrereqSchema || null,
   term: [Term]
 }
 ```

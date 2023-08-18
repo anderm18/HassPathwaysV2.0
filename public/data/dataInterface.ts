@@ -16,7 +16,7 @@ interface IPrereqSchema {
   course?: string;
 }
 
-interface ISemesterData {
+export interface ISemesterData {
   instructor: Array<string>;
   seats: string;
 }
@@ -31,7 +31,7 @@ interface ITerm {
 export interface ICourseDescriptionSchema {
   title: string;
   description: string;
-  prereqs: IPrereqSchema;
+  prereqs?: IPrereqSchema;
   term: Array<ITerm>;
 }
 
