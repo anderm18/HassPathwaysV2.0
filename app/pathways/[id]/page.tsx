@@ -8,29 +8,6 @@ import {
   IPathwayDescriptionSchema,
 } from "@/public/data/dataInterface";
 
-// const pathwayTempData: IPathwayDescriptionSchema = {
-//   description: `This course embraces the science of psychology. The aim is for
-//   students to learn how using the scientific method provides important
-//   insights about mind, brain, and behavior. This course integrates
-//   research on neuroscience throughout all the standard topics in an
-//   introductory course in psychology. The course presents advances across
-//   all subfields of psychology. In addition to standard exams, there are
-//   online assignments for each chapter and online laboratory experiences.`,
-//   compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
-//   courses: [
-//     {
-//       title: "Introduction to abc",
-//       courseCode: "ACBD-1234",
-//       tag: ["Fall", "Spring"],
-//     },
-//     {
-//       title: "Introduction to React",
-//       courseCode: "ract-1234",
-//       tag: ["Fall", "Spring"],
-//     },
-//   ],
-// };
-
 const pathwayTempData: IPathwayDescriptionSchema = {
   description: `This course embraces the science of psychology. The aim is for
   students to learn how using the scientific method provides important
@@ -42,39 +19,62 @@ const pathwayTempData: IPathwayDescriptionSchema = {
   compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
   courses: [
     {
-      name: "Art1",
-      description: "this is art",
-      courses: [
-        {
-          title: "art",
-          courseCode: "arts-4937",
-          tag: ["Fall"],
-        },
-        {
-          title: "art",
-          courseCode: "arts-1957",
-          tag: ["Fall"],
-        },
-      ],
+      title: "Introduction to abc",
+      courseCode: "ACBD-1234",
+      tag: ["Fall", "Spring"],
     },
     {
-      name: "Elec",
-      description: "this is art",
-      courses: [
-        {
-          title: "ele",
-          courseCode: "arts-8294",
-          tag: ["Fall"],
-        },
-        {
-          title: "ele2",
-          courseCode: "arts-9854",
-          tag: ["Fall"],
-        },
-      ],
+      title: "Introduction to React",
+      courseCode: "ract-1234",
+      tag: ["Fall", "Spring"],
     },
   ],
 };
+
+// const pathwayTempData: IPathwayDescriptionSchema = {
+//   description: `This course embraces the science of psychology. The aim is for
+//   students to learn how using the scientific method provides important
+//   insights about mind, brain, and behavior. This course integrates
+//   research on neuroscience throughout all the standard topics in an
+//   introductory course in psychology. The course presents advances across
+//   all subfields of psychology. In addition to standard exams, there are
+//   online assignments for each chapter and online laboratory experiences.`,
+//   compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
+//   courses: [
+//     {
+//       name: "Art1",
+//       description: "this is art",
+//       courses: [
+//         {
+//           title: "art",
+//           courseCode: "arts-4937",
+//           tag: ["Fall"],
+//         },
+//         {
+//           title: "art",
+//           courseCode: "arts-1957",
+//           tag: ["Fall"],
+//         },
+//       ],
+//     },
+//     {
+//       name: "Elec",
+//       description: "this is art",
+//       courses: [
+//         {
+//           title: "ele",
+//           courseCode: "arts-8294",
+//           tag: ["Fall"],
+//         },
+//         {
+//           title: "ele2",
+//           courseCode: "arts-9854",
+//           tag: ["Fall"],
+//         },
+//       ],
+//     },
+//   ],
+// };
 
 type IPathwayID = {
   params: {
