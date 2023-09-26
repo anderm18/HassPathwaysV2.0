@@ -55,6 +55,7 @@ const CatalogDropdown = () => {
                 data-value={choice.value}
                 onClick={() => {
                   setCatalog(choice.value);
+                  location.reload(); // refresh page if catalog year changed
                 }}
               >
                 {choice.text}
