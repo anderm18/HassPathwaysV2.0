@@ -30,10 +30,10 @@ const getInitialState: () => ApplicationContext = () => {
   return initialState ? JSON.parse(initialState) : defaultInitialState;
 };
 
-const AppContext = createContext<ApplicationContext>(defaultInitialState);
+const AppContext = createContext<ApplicationContext>(getInitialState());
 
 const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(appReducer, defaultInitialState);
+  const [state, dispatch] = useReducer(appReducer, getInitialState());
 
   // Get data from localStorage
   useEffect(() => {
