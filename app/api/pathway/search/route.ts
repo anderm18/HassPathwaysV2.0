@@ -3,13 +3,18 @@ import { IPathwaySchema } from "@/public/data/dataInterface";
 import * as fs from "fs";
 import cors from "cors";
 import path from "path";
-
-const pathways = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), "json") + "/pathways.json", "utf8")
-);
+import { useAppContext } from "@/app/contexts/appContext/AppProvider";
 
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
+
+  const { catalog_year } = useAppContext();
+  const pathways = JSON.parse(
+    fs.readFileSync(
+      path.join(process.cwd(), "json") + `/${catalog_year}` + "/pathways.json",
+      "utf8"
+    )
+  );
 
   let blob = pathways;
 
