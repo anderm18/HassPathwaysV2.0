@@ -1,80 +1,12 @@
 "use client";
 import CourseCard from "@/app/components/course/CourseCard";
 import BreadCrumb from "@/app/components/navigation/Breadcrumb";
-import React, { FC, MouseEventHandler, useState } from "react";
+import React, { FC, MouseEventHandler, useState, useEffect } from "react";
 import {
   ICourseClusterSchema,
   ICourseSchema,
   IPathwayDescriptionSchema,
 } from "@/public/data/dataInterface";
-
-const pathwayTempData: IPathwayDescriptionSchema = {
-  description: `This course embraces the science of psychology. The aim is for
-  students to learn how using the scientific method provides important
-  insights about mind, brain, and behavior. This course integrates
-  research on neuroscience throughout all the standard topics in an
-  introductory course in psychology. The course presents advances across
-  all subfields of psychology. In addition to standard exams, there are
-  online assignments for each chapter and online laboratory experiences.`,
-  compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
-  courses: [
-    {
-      title: "Introduction to abc",
-      courseCode: "ACBD-1234",
-      tag: ["Fall", "Spring"],
-    },
-    {
-      title: "Introduction to React",
-      courseCode: "ract-1234",
-      tag: ["Fall", "Spring"],
-    },
-  ],
-};
-
-// const pathwayTempData: IPathwayDescriptionSchema = {
-//   description: `This course embraces the science of psychology. The aim is for
-//   students to learn how using the scientific method provides important
-//   insights about mind, brain, and behavior. This course integrates
-//   research on neuroscience throughout all the standard topics in an
-//   introductory course in psychology. The course presents advances across
-//   all subfields of psychology. In addition to standard exams, there are
-//   online assignments for each chapter and online laboratory experiences.`,
-//   compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
-//   courses: [
-//     {
-//       name: "Art1",
-//       description: "this is art",
-//       courses: [
-//         {
-//           title: "art",
-//           courseCode: "arts-4937",
-//           tag: ["Fall"],
-//         },
-//         {
-//           title: "art",
-//           courseCode: "arts-1957",
-//           tag: ["Fall"],
-//         },
-//       ],
-//     },
-//     {
-//       name: "Elec",
-//       description: "this is art",
-//       courses: [
-//         {
-//           title: "ele",
-//           courseCode: "arts-8294",
-//           tag: ["Fall"],
-//         },
-//         {
-//           title: "ele2",
-//           courseCode: "arts-9854",
-//           tag: ["Fall"],
-//         },
-//       ],
-//     },
-//   ],
-// };
 
 type IPathwayID = {
   params: {
@@ -86,7 +18,55 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   // Convert pathname to pathwayName
   const pathwayName: string = data.params.id.replaceAll("%20", " ");
 
-  const pathwayData: IPathwayDescriptionSchema = pathwayTempData;
+  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema[]>([{
+    description: `This course embraces the science of psychology. The aim is for
+    students to learn how using the scientific method provides important
+    insights about mind, brain, and behavior. This course integrates
+    research on neuroscience throughout all the standard topics in an
+    introductory course in psychology. The course presents advances across
+    all subfields of psychology. In addition to standard exams, there are
+    online assignments for each chapter and online laboratory experiences.`,
+    compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
+    courses: [
+      {
+        title: "Introduction to abc",
+        courseCode: "ACBD-1234",
+        tag: ["Fall", "Spring"],
+      },
+      {
+        title: "Introduction to React",
+        courseCode: "ract-1234",
+        tag: ["Fall", "Spring"],
+      },
+    ],
+  }]);
+  
+  
+  useEffect(() => {
+    const apiController = new AbortController();
+  
+    fetch(
+      `http://localhost:3000/api/pathway/{:data.params.id}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+        next: {
+          revalidate: false,
+        },
+      }
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        setPathway(data);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Fetching Error: ", err);
+      });
+    return () => apiController.abort("Cancelled");
+  }, []);
+
+  const pathwayData: IPathwayDescriptionSchema[] = Pathway;
 
   // TODO: check if pathway exists, or return something empty
 
@@ -120,9 +100,9 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
           <h3>Compatible Minor</h3>
         </header>
         <ul>
-          {pathwayData.compatibleMinor.map((minor, i) => {
+          {/* {pathwayData.compatibleMinor.map((minor, i) => {
             return <li key={i}>- {minor}</li>;
-          })}
+          })} */}
         </ul>
       </section>
       <section className="description-section">
