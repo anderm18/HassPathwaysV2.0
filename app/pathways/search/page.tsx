@@ -31,7 +31,7 @@ const getFilterList: (
 };
 
 const SearchCourse = () => {
-  const { pathwaysCategories } = useAppContext();
+  const { pathwaysCategories, catalog_year } = useAppContext();
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
@@ -110,6 +110,7 @@ const SearchCourse = () => {
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
         department: getFilterList(pathwaysCategories, deferFilterState),
+        catalogYear: catalog_year.toString(),
       })}`,
       {
         signal: apiController.signal,
