@@ -18,7 +18,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   // Convert pathname to pathwayName
   const pathwayName: string = data.params.id.replaceAll("%20", " ");
 
-  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema[]>([{
+  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
     description: `This course embraces the science of psychology. The aim is for
     students to learn how using the scientific method provides important
     insights about mind, brain, and behavior. This course integrates
@@ -39,14 +39,14 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         tag: ["Fall", "Spring"],
       },
     ],
-  }]);
+  });
   
   
   useEffect(() => {
     const apiController = new AbortController();
   
     fetch(
-      `http://localhost:3000/api/pathway/{:data.params.id}`,
+      `http://localhost:3000/api/pathway/${data.params.id}`,
       {
         signal: apiController.signal,
         cache: "no-store",
@@ -64,9 +64,11 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         console.error("Fetching Error: ", err);
       });
     return () => apiController.abort("Cancelled");
-  }, []);
+  }, [data.params.id]);
 
-  const pathwayData: IPathwayDescriptionSchema[] = Pathway;
+  console.log(Pathway.description);
+
+  const pathwayData: IPathwayDescriptionSchema = Pathway;
 
   // TODO: check if pathway exists, or return something empty
 
@@ -131,7 +133,7 @@ interface CourseSectionProps {
 const CourseSection: FC<CourseSectionProps> = ({ courses }) => {
   const [clusterIndex, setClusterIndex] = useState(0);
 
-  if (courses.length === 0) return <></>;
+  // if (courses.length === 0) return <></>;
 
   function instanceOfCluster(object: any): object is ICourseClusterSchema {
     return "name" in object;
