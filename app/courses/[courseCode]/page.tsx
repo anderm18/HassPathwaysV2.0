@@ -15,6 +15,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
   // TODO: Fetch data from backend with courseCode
+
   // Temporary Data
   const tmpCourseDescription: ICourseDescriptionSchema = {
     title: "Introduction to Psychological Science (PSYC-1200)",
