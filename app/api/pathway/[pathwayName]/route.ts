@@ -3,22 +3,18 @@ import { NextRequest, NextResponse } from "next/server";
 import * as fs from "fs";
 import path from "path";
 
+const pathways = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), "json") + "/pathways.json", "utf8")
+);
+
 type PathwayRequest = {
   params: {
-    catalogYear: number;
     pathwayName: string;
   };
 };
 
 export async function GET(request: NextRequest, data: PathwayRequest) {
-  const { catalogYear, pathwayName } = data.params;
-
-  const pathways = JSON.parse(
-    fs.readFileSync(
-      path.join(process.cwd(), "json") + `/${catalogYear}` + "/pathways.json",
-      "utf8"
-    )
-  );
+  const { pathwayName } = data.params;
 
   let blob = pathways
     .flatMap((dep) => dep["pathways"])
