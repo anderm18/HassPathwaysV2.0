@@ -46,7 +46,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
     const apiController = new AbortController();
   
     fetch(
-      `http://localhost:3000/api/pathway/${data.params.id}`,
+      `http://localhost:3000/api/pathway/${pathwayName}`,
       {
         signal: apiController.signal,
         cache: "no-store",
@@ -54,9 +54,15 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
           revalidate: false,
         },
       }
-    )
-      .then((data) => data.json())
+    ).then((data) => {
+      if(data.ok) {
+        return data.json();
+      } else {
+        throw new Error('AbortError');
+      }
+    })
       .then((data) => {
+        //console.log(data);
         setPathway(data);
       })
       .catch((err) => {
@@ -64,12 +70,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         console.error("Fetching Error: ", err);
       });
     return () => apiController.abort("Cancelled");
-  }, [data.params.id]);
-
-  console.log(Pathway.description);
+  }, [pathwayName]);
 
   const pathwayData: IPathwayDescriptionSchema = Pathway;
-
+  console.log(Pathway);
   // TODO: check if pathway exists, or return something empty
 
   return (
@@ -95,7 +99,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Pathway Description</h3>
         </header>
-        <p>{pathwayData.description}</p>
+        <p>{Pathway.description}</p>
       </section>
       <section className="description-section">
         <header>
@@ -120,7 +124,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Available Courses</h3>
         </header>
-        <CourseSection courses={pathwayData.courses} />
+        {/* <CourseSection courses={pathwayData.courses} /> */}
       </section>
     </>
   );
@@ -133,7 +137,7 @@ interface CourseSectionProps {
 const CourseSection: FC<CourseSectionProps> = ({ courses }) => {
   const [clusterIndex, setClusterIndex] = useState(0);
 
-  // if (courses.length === 0) return <></>;
+  if (courses.length === 0) return <></>;
 
   function instanceOfCluster(object: any): object is ICourseClusterSchema {
     return "name" in object;
