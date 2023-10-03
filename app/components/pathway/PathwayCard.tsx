@@ -1,6 +1,7 @@
 import React from "react";
 import { Bookmark, BookmarkChecked, HelpIcon } from "../utils/Icon";
 import { IPathwaySchema } from "@/public/data/dataInterface";
+import Link from "next/link";
 
 const PathwayCard = ({ title, department, courses }: IPathwaySchema) => {
   // TODO: use courses to determine the compatibility
@@ -15,7 +16,12 @@ const PathwayCard = ({ title, department, courses }: IPathwaySchema) => {
       <header className="flex justify-between w-full items-start">
         <div className="w-[367px] mb-2">
           <div className="flex flex-col md:flex-row gap-2 items-start py-1">
-            <h3 className="pathway-title flex-1">{title}</h3>
+            <Link
+              href={"/pathways/"+title}
+              className="pathway-title flex-1"
+              >
+              {title}
+            </Link>
             <p className="tag">{department}</p>
           </div>
           <div className="progress-bar">
