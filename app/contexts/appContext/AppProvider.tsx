@@ -26,7 +26,7 @@ const defaultInitialState: ApplicationContext = {
 };
 
 const getInitialState: () => ApplicationContext = () => {
-  const initialState = localStorage.getItem(APPLICATION_STATE_KEY);
+  const initialState = localStorage.getItem(APPLICATION_STATE_KEY) ?? undefined;
   return initialState ? JSON.parse(initialState) : defaultInitialState;
 };
 
