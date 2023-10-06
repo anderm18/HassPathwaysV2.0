@@ -3,7 +3,7 @@ import {
   ICourseDescriptionSchema,
   ISemesterData,
 } from "@/public/data/dataInterface";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 type ICourseCode = {
   params: {
@@ -15,8 +15,9 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
   // TODO: Fetch data from backend with courseCode
+  const url = `/course/{:courseCode}`
 
-  // Temporary Data
+  
   const tmpCourseDescription: ICourseDescriptionSchema = {
     title: "Introduction to Psychological Science (PSYC-1200)",
     description:
