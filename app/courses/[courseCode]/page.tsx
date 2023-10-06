@@ -1,9 +1,12 @@
+"use client";
+
 import BreadCrumb from "@/app/components/navigation/Breadcrumb";
 import {
   ICourseDescriptionSchema,
   ISemesterData,
 } from "@/public/data/dataInterface";
-import React, { Fragment, useEffect, useState } from "react";
+// import { URLSearchParams } from "next/dist/compiled/@edge-runtime/primitives/url";
+import React, { Fragment, useDeferredValue, useEffect, useState } from "react";
 
 type ICourseCode = {
   params: {
@@ -15,9 +18,27 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
   // TODO: Fetch data from backend with courseCode
-  const url = `/course/{:courseCode}`
+  const url = `/course/{:courseCode}`;
+  console.log(courseCode);
+  // const deferCourseCode = useDeferredValue(courseCode);
+  const apiController = new AbortController();
 
-  
+  fetch(
+    `http://localhost:3000/api/course/search?${new URLSearchParams({
+      searchString: "",
+      // maybe seperate the course prefix from the course code for course prefix
+    })}`,
+    {
+      signal: apiController.signal,
+      cache: "no-store",
+      next: {
+        revalidate: false,
+      },
+    }
+  )
+    .then((data) => data.json())
+    .then((data) => console.log(data));
+
   const tmpCourseDescription: ICourseDescriptionSchema = {
     title: "Introduction to Psychological Science (PSYC-1200)",
     description:

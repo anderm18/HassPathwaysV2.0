@@ -76,6 +76,9 @@ export async function GET(request: NextRequest) {
       c["title"]
         .toLowerCase()
         .includes(params.get("searchString").toLowerCase())
+        || 
+        c['courseCode'].toLowerCase()
+        .includes(params.get("searchString").toLowerCase())
     );
   }
 

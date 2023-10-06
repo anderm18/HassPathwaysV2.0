@@ -106,6 +106,8 @@ const SearchCourse = () => {
     //   })}`
     // );
 
+    // fetch (`http://localhost:3000/api/pathway/search?searchString=${deferrvalue}&)
+
     fetch(
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
