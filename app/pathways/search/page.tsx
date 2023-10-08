@@ -103,6 +103,7 @@ const SearchCourse = () => {
     //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
     //     searchString: deferSearchString,
     //     department: getFilterList(pathwaysCategories, deferFilterState),
+    //     catalogYear: catalog_year == -1 ? "2023" : catalog_year.toString(),
     //   })}`
     // );
 
@@ -110,7 +111,8 @@ const SearchCourse = () => {
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
         department: getFilterList(pathwaysCategories, deferFilterState),
-        catalogYear: catalog_year.toString(),
+        // this is a temporary fix, maybe use a spinner instead when waiting for catalog_year (default value is -1, invalid in API)
+        catalogYear: catalog_year == -1 ? "2023" : catalog_year.toString(),
       })}`,
       {
         signal: apiController.signal,

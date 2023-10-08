@@ -46,8 +46,10 @@ export async function GET(request: NextRequest) {
 
   const searchString = params.get("searchString");
   if (searchString) {
-    flatten = flatten.filter((c) =>
-      c["name"].toLowerCase().includes(searchString.toLowerCase())
+    flatten = Object.fromEntries(
+      Object.entries(flatten).filter(([k, v]) =>
+        v["name"].toLowerCase().includes(searchString.toLocaleLowerCase())
+      )
     );
   }
 
