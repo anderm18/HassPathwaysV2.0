@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
   if (searchString) {
     flatten = Object.fromEntries(
       Object.entries(flatten).filter(([k, v]) =>
-        v["name"].toLowerCase().includes(searchString.toLocaleLowerCase())
+        v["name"].toLowerCase().includes(searchString.toLowerCase())
       )
     );
   }
