@@ -18,7 +18,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   // Convert pathname to pathwayName
   const pathwayName: string = data.params.id.replaceAll("%20", " ");
 
-  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
+  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema[]>([{
     description: `This course embraces the science of psychology. The aim is for
     students to learn how using the scientific method provides important
     insights about mind, brain, and behavior. This course integrates
@@ -27,21 +27,20 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
     all subfields of psychology. In addition to standard exams, there are
     online assignments for each chapter and online laboratory experiences.`,
     compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
-    courses: [
-      {
-        title: "Introduction to abc",
-        courseCode: "ACBD-1234",
-        tag: ["Fall", "Spring"],
-      },
-      {
-        title: "Introduction to React",
-        courseCode: "ract-1234",
-        tag: ["Fall", "Spring"],
-      },
+    courses: [{
+      name: "",
+      description: "",
+      courses: [{
+        title: "None",
+        courseCode: "ARTS-1100",
+        tag: ["Fall"],
+      }],
+    }
     ],
-  });
+  }]);
   
   
+
   useEffect(() => {
     const apiController = new AbortController();
   
@@ -61,20 +60,47 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         throw new Error('AbortError');
       }
     })
-      .then((data) => {
-        //console.log(data);
+    .then((data) => {
         setPathway(data);
       })
       .catch((err) => {
         if (err.name === "AbortError") return;
         console.error("Fetching Error: ", err);
       });
+    
     return () => apiController.abort("Cancelled");
   }, [pathwayName]);
 
-  const pathwayData: IPathwayDescriptionSchema = Pathway;
-  console.log(Pathway);
+  const pathwayData: IPathwayDescriptionSchema = Pathway[0];
+  
   // TODO: check if pathway exists, or return something empty
+
+  let minors;
+  if(pathwayData.compatibleMinor.length == 1){
+    minors = <>
+      <header>
+      <h3>Compatible Minor</h3>
+      </header>
+      <ul>
+        {pathwayData.compatibleMinor.map((minor, i) => {
+          return <li key={i}>- {minor}</li>;
+        })}
+      </ul>
+    </>
+  } else if(pathwayData.compatibleMinor.length){
+    minors = <>
+      <header>
+      <h3>Compatible Minors</h3>
+      </header>
+      <ul>
+        {pathwayData.compatibleMinor.map((minor, i) => {
+          return <li key={i}>- {minor}</li>;
+        })}
+      </ul>
+    </>
+  } else {
+    minors = <></>
+  }
 
   return (
     <>
@@ -99,17 +125,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Pathway Description</h3>
         </header>
-        <p>{Pathway.description}</p>
+        <p>{pathwayData.description}</p>
       </section>
       <section className="description-section">
-        <header>
-          <h3>Compatible Minor</h3>
-        </header>
-        <ul>
-          {/* {pathwayData.compatibleMinor.map((minor, i) => {
-            return <li key={i}>- {minor}</li>;
-          })} */}
-        </ul>
+        {minors}
       </section>
       <section className="description-section">
         <header>
@@ -124,7 +143,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Available Courses</h3>
         </header>
-        {/* <CourseSection courses={pathwayData.courses} /> */}
+        <CourseSection courses={pathwayData.courses} />
       </section>
     </>
   );
