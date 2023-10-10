@@ -34,6 +34,7 @@ export async function GET(request: NextRequest) {
       ).json()
     ).filter((c) => hass_prefixes.includes(c[0].substring(0, 4)))
   );
+
   const hass_courses_attributes = Object.entries(
     await (
       await fetch(
@@ -69,16 +70,18 @@ export async function GET(request: NextRequest) {
       title: hass_courses_desc[c[0]]["name"],
       courseCode: c[0],
       tag: c[1]["attributes"],
+      description: hass_courses_desc[c[0]]["description"],
     })
   );
   if (params.get("searchString")) {
-    res = res.filter((c) =>
-      c["title"]
-        .toLowerCase()
-        .includes(params.get("searchString").toLowerCase())
-        || 
-        c['courseCode'].toLowerCase()
-        .includes(params.get("searchString").toLowerCase())
+    res = res.filter(
+      (c) =>
+        c["title"]
+          .toLowerCase()
+          .includes(params.get("searchString").toLowerCase()) ||
+        c["courseCode"]
+          .toLowerCase()
+          .includes(params.get("searchString").toLowerCase())
     );
   }
 

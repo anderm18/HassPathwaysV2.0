@@ -25,7 +25,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
 
   fetch(
     `http://localhost:3000/api/course/search?${new URLSearchParams({
-      searchString: "",
+      searchString: courseCode,
       // maybe seperate the course prefix from the course code for course prefix
     })}`,
     {
