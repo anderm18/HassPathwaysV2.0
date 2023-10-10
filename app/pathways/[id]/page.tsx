@@ -18,26 +18,20 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   // Convert pathname to pathwayName
   const pathwayName: string = data.params.id.replaceAll("%20", " ");
 
-  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema[]>([{
-    description: `This course embraces the science of psychology. The aim is for
-    students to learn how using the scientific method provides important
-    insights about mind, brain, and behavior. This course integrates
-    research on neuroscience throughout all the standard topics in an
-    introductory course in psychology. The course presents advances across
-    all subfields of psychology. In addition to standard exams, there are
-    online assignments for each chapter and online laboratory experiences.`,
-    compatibleMinor: ["1234", "123435", "52", "General Psychological Minor"],
+  const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
+    description: `Empty Description`,
+    compatibleMinor: ["General Minor"],
     courses: [{
-      name: "",
-      description: "",
+      name: "NULL",
+      description: "NULL",
       courses: [{
-        title: "None",
-        courseCode: "ARTS-1100",
+        title: "NULL",
+        courseCode: "NULL-1100",
         tag: ["Fall"],
       }],
     }
     ],
-  }]);
+  });
   
   
 
@@ -61,7 +55,31 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       }
     })
     .then((data) => {
-        setPathway(data);
+        for(let i = 0; i < data[0].courses.length; i++){
+          for(let j = 0; j < data[0].courses[i].courses.length; j++){
+            fetch(
+              `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+                searchString: data[0].courses[i].courses[j],
+              })}`,
+              {
+                signal: apiController.signal,
+                cache: "no-store",
+                next: {
+                  revalidate: false,
+                },
+              }
+            )
+              .then((res) => res.json())
+              .then((res) => {
+                data[0].courses[i].courses[j] = res;
+              })
+              .catch((err) => {
+                if (err.name === "AbortError") return;
+                console.error("Fetching Error: ", err);
+              });
+          }
+        }
+        setPathway(data[0]);
       })
       .catch((err) => {
         if (err.name === "AbortError") return;
@@ -71,7 +89,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
     return () => apiController.abort("Cancelled");
   }, [pathwayName]);
 
-  const pathwayData: IPathwayDescriptionSchema = Pathway[0];
+  const pathwayData: IPathwayDescriptionSchema = Pathway;
   
   // TODO: check if pathway exists, or return something empty
 
