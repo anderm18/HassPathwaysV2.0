@@ -4,12 +4,16 @@ import * as fs from "fs";
 import cors from "cors";
 import path from "path";
 
-const pathways = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), "json") + "/pathways.json", "utf8")
-);
-
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
+
+  const catalogYear = params.get("catalogYear");
+  const pathways = JSON.parse(
+    fs.readFileSync(
+      path.join(process.cwd(), "json") + `/${catalogYear}` + "/pathways.json",
+      "utf8"
+    )
+  );
 
   let blob = pathways;
 
@@ -42,8 +46,10 @@ export async function GET(request: NextRequest) {
 
   const searchString = params.get("searchString");
   if (searchString) {
-    flatten = flatten.filter((c) =>
-      c["name"].toLowerCase().includes(searchString.toLowerCase())
+    flatten = Object.fromEntries(
+      Object.entries(flatten).filter(([k, v]) =>
+        v["name"].toLowerCase().includes(searchString.toLowerCase())
+      )
     );
   }
 

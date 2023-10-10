@@ -31,7 +31,7 @@ const getFilterList: (
 };
 
 const SearchCourse = () => {
-  const { pathwaysCategories } = useAppContext();
+  const { pathwaysCategories, catalog_year } = useAppContext();
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
@@ -103,6 +103,7 @@ const SearchCourse = () => {
     //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
     //     searchString: deferSearchString,
     //     department: getFilterList(pathwaysCategories, deferFilterState),
+    //     catalogYear: catalog_year == -1 ? "2023" : catalog_year.toString(),
     //   })}`
     // );
 
@@ -110,6 +111,8 @@ const SearchCourse = () => {
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
         department: getFilterList(pathwaysCategories, deferFilterState),
+        // this is a temporary fix, maybe use a spinner instead when waiting for catalog_year (default value is -1, invalid in API)
+        catalogYear: catalog_year == -1 ? "2023" : catalog_year.toString(),
       })}`,
       {
         signal: apiController.signal,
