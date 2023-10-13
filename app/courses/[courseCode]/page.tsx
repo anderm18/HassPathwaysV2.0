@@ -5,6 +5,7 @@ import {
   ICourseDescriptionSchema,
   ISemesterData,
 } from "@/public/data/dataInterface";
+import { TemplateContext } from "next/dist/shared/lib/app-router-context";
 // import { URLSearchParams } from "next/dist/compiled/@edge-runtime/primitives/url";
 import React, { Fragment, useDeferredValue, useEffect, useState } from "react";
 
@@ -14,32 +15,68 @@ type ICourseCode = {
   };
 };
 
+const emptyCourse: ICourseDescriptionSchema = {
+  title: "course not found",
+  description: "des not found",
+  prereqs: undefined,
+  term: [{ year: "2023" }],
+};
+
 const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
+  // Here I use use state state to fetch data and repace the template data:
+  const [courseDescription, setCourseDescription] =
+    useState<ICourseDescriptionSchema>(emptyCourse);
+
+  useEffect(() => {
+    const apiController = new AbortController();
+
+    fetch(
+      `http://localhost:3000/api/course/search?${new URLSearchParams({
+        searchString: courseCode,
+        // maybe separate the course prefix from the course code for course prefix
+      })}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+      }
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        // Update state with fetched data
+        console.log(data);
+        setCourseDescription({
+          title: data.title,
+          description: data.description,
+          prereqs: data.prereqs,
+          term: data.term,
+        });
+
+        console.log("Current state:", courseDescription); // Log the current state
+      })
+      .catch((error) => {
+        // Handle fetch error
+        console.error(error);
+      });
+
+    return () => {
+      apiController.abort();
+    };
+  }, [courseCode]);
+
+  const term = courseDescription?.term ?? "Unfound Terms";
+  const courseName = courseDescription?.title ?? "Unfound Course";
+  const description =
+    courseDescription?.description ?? "Unfound Course description";
+  const prereqs = courseDescription?.prereqs ?? "Unfound Prereqs";
+  // Use these variables in your JSX
+
   // TODO: Fetch data from backend with courseCode
-  const url = `/course/{:courseCode}`;
-  console.log(courseCode);
   // const deferCourseCode = useDeferredValue(courseCode);
   const apiController = new AbortController();
 
-  fetch(
-    `http://localhost:3000/api/course/search?${new URLSearchParams({
-      searchString: courseCode,
-      // maybe seperate the course prefix from the course code for course prefix
-    })}`,
-    {
-      signal: apiController.signal,
-      cache: "no-store",
-      next: {
-        revalidate: false,
-      },
-    }
-  )
-    .then((data) => data.json())
-    .then((data) => console.log(data));
-
-  const tmpCourseDescription: ICourseDescriptionSchema = {
+  let tmpCourseDescription: ICourseDescriptionSchema = {
     title: "Introduction to Psychological Science (PSYC-1200)",
     description:
       "This course embraces the science of psychology. The aim is for students to learn how using the scientific method provides important insights about mind, brain, and behavior. This course integrates research on neuroscience throughout all the standard topics in an introductory course in psychology. The course presents advances across all subfields of psychology. In addition to standard exams, there are online assignments for each chapter and online laboratory experiences.",
@@ -54,8 +91,26 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
       },
     ],
   };
-  const courseName = tmpCourseDescription.title;
-  const { description, prereqs, term } = tmpCourseDescription;
+
+  // const [courseDescription, setCourseDescription] =
+  //   useState<ICourseDescriptionSchema>({
+  //     title: "Introduction to Psychological Science (PSYC-1200)",
+  //     description:
+  //       "This course embraces the science of psychology. The aim is for students to learn how using the scientific method provides important insights about mind, brain, and behavior. This course integrates research on neuroscience throughout all the standard topics in an introductory course in psychology. The course presents advances across all subfields of psychology. In addition to standard exams, there are online assignments for each chapter and online laboratory experiences.",
+  //     prereqs: undefined,
+  //     term: [
+  //       {
+  //         year: "2023",
+  //         fall: {
+  //           instructor: ["Patiphon Loetsuthakun"],
+  //           seats: "13/20 Seat",
+  //         },
+  //       },
+  //     ],
+  //   });
+
+  // const courseName = tmpCourseDescription.title;
+  // const { description, prereqs, term } = tmpCourseDescription;
 
   return (
     <Fragment>
@@ -66,19 +121,19 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
             { display: courseCode, link: "" },
           ]}
         />
-        <h1>{courseName}</h1>
+        <h1>{courseDescription.title}</h1>
       </header>
       <section className="description-section">
         <header>
           <h3>Course Description</h3>
         </header>
-        <p>{description}</p>
+        <p>{courseDescription.description}</p>
       </section>
       <section className="description-section">
         <header>
           <h3>Prerequisites</h3>
         </header>
-        {!prereqs && <p>None</p>}
+        {!courseDescription.prereqs && <p>None</p>}
       </section>
       <section className="description-section">
         <header>
@@ -89,7 +144,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
           <div className="table-header">Spring</div>
           <div className="table-header">Summer</div>
           <div className="table-header">Fall</div>
-          {term.map((t) => {
+          {/* {term.map((t) => {
             return (
               <Fragment key={t.year}>
                 <header className="font-medium">{t.year}</header>
@@ -98,7 +153,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
                 <TableData data={t.fall} />
               </Fragment>
             );
-          })}
+          })} */}
         </section>
       </section>
     </Fragment>
