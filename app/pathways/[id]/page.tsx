@@ -55,11 +55,13 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       }
     })
     .then((data) => {
+
         for(let i = 0; i < data[0].courses.length; i++){
           for(let j = 0; j < data[0].courses[i].courses.length; j++){
             fetch(
-              `http://localhost:3000/api/pathway/search?${new URLSearchParams({
-                searchString: data[0].courses[i].courses[j],
+              `http://localhost:3000/api/course/search?${new URLSearchParams({
+                prefix: data[0].courses[i].courses[j],
+                level: data[0].courses[i].courses[j],
               })}`,
               {
                 signal: apiController.signal,
@@ -71,14 +73,19 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
             )
               .then((res) => res.json())
               .then((res) => {
-                data[0].courses[i].courses[j] = res;
-              })
+                for(let k = 0; k < res.length; k++){
+                  if(res[k].courseCode == data[0].courses[i].courses[j]){
+                    data[0].courses[i].courses[j] = res[k];
+                  }
+                }
+                return res;})
               .catch((err) => {
                 if (err.name === "AbortError") return;
                 console.error("Fetching Error: ", err);
               });
           }
         }
+        
         setPathway(data[0]);
       })
       .catch((err) => {
@@ -90,7 +97,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   }, [pathwayName]);
 
   const pathwayData: IPathwayDescriptionSchema = Pathway;
-  
+  //console.log(pathwayData);
   // TODO: check if pathway exists, or return something empty
 
   let minors;
