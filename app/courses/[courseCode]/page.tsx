@@ -48,19 +48,12 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         // Update state with fetched data
         console.log("Fetched data: ", data);
         console.log("look into the data", data.title, data.description);
-        // setCourseDescription({
-        //   title: data.title,
-        //   description: data.description,
-        //   prereqs: data.prereqs,
-        //   term: data.term,
-        // });
         setCourseDescription((prev) => {
           return {
             ...prev,
             title: data.title,
             description: data.description,
             prereqs: data.prereqs,
-            term: data.term,
           };
         });
         console.log("Current state:", courseDescription); // Log the current state
@@ -69,11 +62,12 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         // Handle fetch error
         console.error(error);
       });
-
     return () => {
       apiController.abort();
     };
   }, [courseCode]);
+
+  // TODO: Still need the Prereq and semester offered data being updated.
 
   useEffect(() => {
     console.log("Current courseDescription:", courseDescription);
@@ -84,47 +78,6 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const description =
     courseDescription?.description ?? "Unfound Course description";
   const prereqs = courseDescription?.prereqs ?? "Unfound Prereqs";
-  // Use these variables in your JSX
-
-  // TODO: Fetch data from backend with courseCode
-  // const deferCourseCode = useDeferredValue(courseCode);
-  const apiController = new AbortController();
-
-  let tmpCourseDescription: ICourseDescriptionSchema = {
-    title: "Introduction to Psychological Science (PSYC-1200)",
-    description:
-      "This course embraces the science of psychology. The aim is for students to learn how using the scientific method provides important insights about mind, brain, and behavior. This course integrates research on neuroscience throughout all the standard topics in an introductory course in psychology. The course presents advances across all subfields of psychology. In addition to standard exams, there are online assignments for each chapter and online laboratory experiences.",
-    prereqs: undefined,
-    term: [
-      {
-        year: "2023",
-        fall: {
-          instructor: ["Patiphon Loetsuthakun"],
-          seats: "13/20 Seat",
-        },
-      },
-    ],
-  };
-
-  // const [courseDescription, setCourseDescription] =
-  //   useState<ICourseDescriptionSchema>({
-  //     title: "Introduction to Psychological Science (PSYC-1200)",
-  //     description:
-  //       "This course embraces the science of psychology. The aim is for students to learn how using the scientific method provides important insights about mind, brain, and behavior. This course integrates research on neuroscience throughout all the standard topics in an introductory course in psychology. The course presents advances across all subfields of psychology. In addition to standard exams, there are online assignments for each chapter and online laboratory experiences.",
-  //     prereqs: undefined,
-  //     term: [
-  //       {
-  //         year: "2023",
-  //         fall: {
-  //           instructor: ["Patiphon Loetsuthakun"],
-  //           seats: "13/20 Seat",
-  //         },
-  //       },
-  //     ],
-  //   });
-
-  // const courseName = tmpCourseDescription.title;
-  // const { description, prereqs, term } = tmpCourseDescription;
 
   return (
     <Fragment>
@@ -135,7 +88,9 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
             { display: courseCode, link: "" },
           ]}
         />
-        <h1>{courseDescription.title}</h1>
+        <h1>
+          {courseDescription.title} ({courseCode})
+        </h1>
       </header>
       <section className="description-section">
         <header>

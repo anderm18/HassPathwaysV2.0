@@ -41,7 +41,10 @@ export async function GET(request: NextRequest) {
         "https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json"
       )
     ).json()
-  ).filter((c) => Object.keys(hass_courses_desc).includes(c[0]));
+  ).filter((c) => {
+    const [key, _] = c;
+    return Object.keys(hass_courses_desc).includes(key);
+  });
 
   var blob = hass_courses_attributes;
   if (params.get("prefix")) {
@@ -65,12 +68,13 @@ export async function GET(request: NextRequest) {
     );
   }
   var res = [];
-  blob.forEach((c) =>
+  blob.forEach(([code, values]) =>
     res.push({
-      title: hass_courses_desc[c[0]]["name"],
-      courseCode: c[0],
-      tag: c[1]["attributes"],
-      description: hass_courses_desc[c[0]]["description"],
+      title: hass_courses_desc[code]["name"],
+      courseCode: code,
+      tag: values["attributes"],
+      description: hass_courses_desc[code]["description"],
+      prereqs: values["prerequisites"],
     })
   );
   if (params.get("searchString")) {
