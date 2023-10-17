@@ -7,6 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import PathwayCard from "@/app/components/pathway/PathwayCard";
+import Spinner from "@/app/components/utils/Spinner";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
 import {
   SearchInput,
@@ -32,6 +33,7 @@ const getFilterList: (
 
 const SearchCourse = () => {
   const { pathwaysCategories, catalog_year } = useAppContext();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
@@ -107,6 +109,8 @@ const SearchCourse = () => {
     //   })}`
     // );
 
+    setIsLoading(true);
+
     fetch(
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
@@ -126,6 +130,7 @@ const SearchCourse = () => {
       .then((data) => {
         setResultPathway(data);
       })
+      .then(() => setIsLoading(false)) // TODO: Uncomment this!!!
       .catch((err) => {
         if (err.name === "AbortError") return;
         console.error("Fetching Error: ", err);
@@ -167,11 +172,16 @@ const SearchCourse = () => {
           </div>
         </div>
       </div>
-      <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-        {resultPathway.map((pathway, i) => {
-          return <PathwayCard {...pathway} key={i} />;
-        })}
-      </section>
+
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
+          {resultPathway.map((pathway, i) => {
+            return <PathwayCard {...pathway} key={i} />;
+          })}
+        </section>
+      )}
     </>
   );
 };
