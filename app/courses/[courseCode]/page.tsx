@@ -43,16 +43,26 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
       }
     )
       .then((data) => data.json())
+      .then((data) => data[0])
       .then((data) => {
         // Update state with fetched data
-        console.log(data);
-        setCourseDescription({
-          title: data.title,
-          description: data.description,
-          prereqs: data.prereqs,
-          term: data.term,
+        console.log("Fetched data: ", data);
+        console.log("look into the data", data.title, data.description);
+        // setCourseDescription({
+        //   title: data.title,
+        //   description: data.description,
+        //   prereqs: data.prereqs,
+        //   term: data.term,
+        // });
+        setCourseDescription((prev) => {
+          return {
+            ...prev,
+            title: data.title,
+            description: data.description,
+            prereqs: data.prereqs,
+            term: data.term,
+          };
         });
-
         console.log("Current state:", courseDescription); // Log the current state
       })
       .catch((error) => {
@@ -64,6 +74,10 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
       apiController.abort();
     };
   }, [courseCode]);
+
+  useEffect(() => {
+    console.log("Current courseDescription:", courseDescription);
+  }, [courseDescription]);
 
   const term = courseDescription?.term ?? "Unfound Terms";
   const courseName = courseDescription?.title ?? "Unfound Course";
