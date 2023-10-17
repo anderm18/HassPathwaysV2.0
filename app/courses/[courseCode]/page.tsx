@@ -47,7 +47,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
       .then((data) => {
         // Update state with fetched data
         console.log("Fetched data: ", data);
-        console.log("look into the data", data.title, data.description);
+        console.log("Fetched data prereqs", data.prereqs);
         setCourseDescription((prev) => {
           return {
             ...prev,
@@ -56,7 +56,6 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
             prereqs: data.prereqs,
           };
         });
-        console.log("Current state:", courseDescription); // Log the current state
       })
       .catch((error) => {
         // Handle fetch error
@@ -67,7 +66,8 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
     };
   }, [courseCode]);
 
-  // TODO: Still need the Prereq and semester offered data being updated.
+  // TODO: Still need the semester offered data being updated.
+  // TODO: Need to Parse Prereqs for better display (nested, and, or)
 
   useEffect(() => {
     console.log("Current courseDescription:", courseDescription);
