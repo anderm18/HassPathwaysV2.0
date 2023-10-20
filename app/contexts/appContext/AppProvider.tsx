@@ -8,7 +8,7 @@ import {
   ReactNode,
 } from "react";
 import { appReducer } from "./AppReducer";
-import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
+import { INITIAL_LOAD_DATA, SET_CATALOG, SET_COURSE_STATE} from "../actions";
 import {
   courseState,
   pathwaysCategories,
@@ -20,7 +20,10 @@ const constantApplicationValue = { courseState, pathwaysCategories };
 
 const defaultInitialState: ApplicationContext = {
   catalog_year: 2023,
+  course_value: 5,
   // TODO: all course with status
+  setCourseState: () => {},
+  ...constantApplicationValue,
   setCatalog: () => {},
   ...constantApplicationValue,
 };
@@ -56,6 +59,17 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </AppContext.Provider>
   );
+
+  const setCourseState = (course_value: number) => {
+    dispatch({ type: SET_COURSE_STATE, payload: course_value });
+  };
+
+  return (
+    <AppContext.Provider value={{ ...state, setCourseState}}>
+      {children}
+    </AppContext.Provider>
+  );
+
 };
 
 export const useAppContext = () => useContext(AppContext);
