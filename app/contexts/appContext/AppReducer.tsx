@@ -2,7 +2,7 @@ import {
   ApplicationContext,
   ApplicationDispatch,
 } from "@/app/model/AppContextInterface";
-import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
+import { INITIAL_LOAD_DATA, SET_CATALOG, SET_COURSE_STATE} from "../actions";
 
 export const appReducer: (
   state: ApplicationContext,
@@ -19,6 +19,12 @@ export const appReducer: (
         ...state,
         catalog_year: action.payload,
       };
+    case SET_COURSE_STATE:
+        return {
+          ...state,
+          course_value: action.payload, // Update the course_value
+      };
+      
     default:
       return state;
   }
