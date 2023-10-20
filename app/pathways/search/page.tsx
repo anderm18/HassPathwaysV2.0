@@ -7,7 +7,6 @@ import React, {
   useEffect,
 } from "react";
 import PathwayCard from "@/app/components/pathway/PathwayCard";
-import Spinner from "@/app/components/utils/Spinner";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
 import {
   SearchInput,
@@ -15,6 +14,9 @@ import {
 } from "@/app/components/pathway/FilterComponent";
 import { IpathwayData } from "@/public/data/staticInterface";
 import { IPathwaySchema } from "@/public/data/dataInterface";
+import dynamic from "next/dynamic";
+
+const Spinner = dynamic(() => import("@/app/components/utils/Spinner"));
 
 const getFilterList: (
   pathwayCategory: IpathwayData[],

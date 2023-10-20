@@ -17,7 +17,9 @@ import {
 } from "@/app/model/CourseInterface";
 import { ICourseSchema } from "@/public/data/dataInterface";
 import { flattenFilterParams } from "../utils/url";
-import Spinner from "../utils/Spinner";
+import dynamic from "next/dynamic";
+
+const Spinner = dynamic(() => import("@/app/components/utils/Spinner"));
 
 export const FilterAction = {
   ADD: "add",
