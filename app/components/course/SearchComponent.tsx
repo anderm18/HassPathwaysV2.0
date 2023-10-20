@@ -17,6 +17,9 @@ import {
 } from "@/app/model/CourseInterface";
 import { ICourseSchema } from "@/public/data/dataInterface";
 import { flattenFilterParams } from "../utils/url";
+import dynamic from "next/dynamic";
+
+const Spinner = dynamic(() => import("@/app/components/utils/Spinner"));
 
 export const FilterAction = {
   ADD: "add",
@@ -230,6 +233,8 @@ const CourseList = ({
   const [courseData, setCourseData] = useState<Array<ICourseSchema>>([]);
   const deferSearchString = useDeferredValue(searchString);
   const deferFilterState = useDeferredValue(filterState);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   useEffect(() => {
     const apiController = new AbortController();
 
@@ -240,6 +245,7 @@ const CourseList = ({
       }
     )}`;
 
+    setIsLoading(true);
     fetch(fetchUrl, {
       signal: apiController.signal,
       next: {
@@ -248,6 +254,7 @@ const CourseList = ({
     })
       .then((data) => data.json())
       .then(setCourseData)
+      .then((_) => setIsLoading(false))
       .catch((err) => {
         if (err.name === "AbortError") return;
         console.error("Fetching Error: ", err);
@@ -258,9 +265,13 @@ const CourseList = ({
 
   return (
     <section className="flex flex-col gap-3">
-      {courseData.map((course, i) => {
-        return <CourseCard {...course} key={i} />;
-      })}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        courseData.map((course, i) => {
+          return <CourseCard {...course} key={i} />;
+        })
+      )}
     </section>
   );
 };
