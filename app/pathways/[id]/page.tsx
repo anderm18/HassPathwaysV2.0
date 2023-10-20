@@ -56,42 +56,15 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
     })
     .then((data) => {
 
-        // for(let i = 0; i < data[0].courses.length; i++){
-        //   for(let j = 0; j < data[0].courses[i].courses.length; j++){
-        //     fetch(
-        //       `http://localhost:3000/api/course/search?${new URLSearchParams({
-        //         prefix: data[0].courses[i].courses[j],
-        //         level: data[0].courses[i].courses[j],
-        //       })}`,
-        //       {
-        //         signal: apiController.signal,
-        //         cache: "no-store",
-        //         next: {
-        //           revalidate: false,
-        //         },
-        //       }
-        //     )
-        //       .then((res) => res.json())
-        //       .then((res) => {
-        //         for(let k = 0; k < res.length; k++){
-        //           if(res[k].courseCode == data[0].courses[i].courses[j]){
-        //             data[0].courses[i].courses[j] = res[k];
-        //           }
-        //         }
-        //         return res;})
-        //       .catch((err) => {
-        //         if (err.name === "AbortError") return;
-        //         console.error("Fetching Error: ", err);
-        //       });
-        //   }
-        // }
-        var obj = eval('(' + JSON.stringify(data[0].courses) + ')');
+      for(let i = 0; i < data[0].courses.length; i++){
+        var obj = JSON.parse(JSON.stringify(data[0].courses[i].courses));
         var res = [];
           
-        for(var i in obj)
-            res.push(obj[i]);
-        console.log(res);
-        data[0].courses = res;
+        for(var j in obj)
+            res.push(obj[j]);
+
+        data[0].courses[i].courses = res;
+      }
 
         setPathway(data[0]);
       })
@@ -265,7 +238,7 @@ interface CourseListProps {
 }
 
 const CourseList: FC<CourseListProps> = ({ courses }) => {
-  console.log(courses);
+  //console.log(courses);
   return (
     <div className="my-3 grid grid-flow-row gap-y-3">
       {courses.map((course) => {
