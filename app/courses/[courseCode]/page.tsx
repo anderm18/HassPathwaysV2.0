@@ -69,6 +69,8 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   // TODO: Still need the semester offered data being updated.
   // TODO: Need to Parse Prereqs for better display (nested, and, or)
 
+  // Test
+
   useEffect(() => {
     console.log("Current courseDescription:", courseDescription);
   }, [courseDescription]);

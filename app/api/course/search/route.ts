@@ -46,6 +46,7 @@ export async function GET(request: NextRequest) {
     return Object.keys(hass_courses_desc).includes(key);
   });
 
+
   var blob = hass_courses_attributes;
   if (params.get("prefix")) {
     blob = blob.filter((c) =>
