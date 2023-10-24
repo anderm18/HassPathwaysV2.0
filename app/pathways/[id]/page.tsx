@@ -55,17 +55,6 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       }
     })
     .then((data) => {
-
-      for(let i = 0; i < data[0].courses.length; i++){
-        var obj = JSON.parse(JSON.stringify(data[0].courses[i].courses));
-        var res = [];
-          
-        for(var j in obj)
-            res.push(obj[j]);
-
-        data[0].courses[i].courses = res;
-      }
-
         setPathway(data[0]);
       })
       .catch((err) => {
@@ -132,7 +121,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Pathway Description</h3>
         </header>
-        <p>{pathwayData.description}</p>
+        <p>{pathwayData.description.replaceAll("&#xA0;", "\n")}</p>
       </section>
       <section className="description-section">
         {minors}
