@@ -90,7 +90,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       </header>
       <ul>
         {pathwayData.compatibleMinor.map((minor, i) => {
-          return <li key={i}>- {minor}</li>;
+          return <li key={i}>• {minor}</li>;
         })}
       </ul>
     </>
@@ -101,7 +101,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       </header>
       <ul>
         {pathwayData.compatibleMinor.map((minor, i) => {
-          return <li key={i}>- {minor}</li>;
+          return <li key={i}>• {minor}</li>;
         })}
       </ul>
     </>
@@ -119,13 +119,13 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
               link: "/pathways/search",
             },
             {
-              display: pathwayName,
+              display: pathwayName.replaceAll("%2C", ","),
               link: "",
             },
           ]}
         />
         <h1 className="mt-5 text-display-xs md:text-display-sm font-semibold">
-          {pathwayName}
+          {pathwayName.replaceAll("%2C", ",")}
         </h1>
       </header>
       <section className="description-section">
@@ -238,7 +238,6 @@ interface CourseListProps {
 }
 
 const CourseList: FC<CourseListProps> = ({ courses }) => {
-  //console.log(courses);
   return (
     <div className="my-3 grid grid-flow-row gap-y-3">
       {courses.map((course) => {

@@ -22,8 +22,7 @@ export async function GET(request: NextRequest, data: PathwayRequest) {
   let res: IPathwayDescriptionSchema = blob.map((path) => {
     return {
       compatibleMinor: path.compatibleMinor,
-      courses:
-        path.clusters.length == 1 ? path.clusters[0].courses : path.clusters,
+      courses: path.clusters,
       description: path.description,
     };
   });
