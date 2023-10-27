@@ -9,12 +9,16 @@ import { TemplateContext } from "next/dist/shared/lib/app-router-context";
 // import { URLSearchParams } from "next/dist/compiled/@edge-runtime/primitives/url";
 import React, { Fragment, useDeferredValue, useEffect, useState } from "react";
 
+/**
+ * Interface for course code
+ */
 type ICourseCode = {
   params: {
     courseCode: string;
   };
 };
 
+// Empty course object template
 const emptyCourse: ICourseDescriptionSchema = {
   title: "course not found",
   description: "des not found",
@@ -22,6 +26,12 @@ const emptyCourse: ICourseDescriptionSchema = {
   term: [{ year: "2023" }],
 };
 
+/**
+ * React functional component for CoursePage.
+ * Fetches and displays course information based on the courseCode from params.
+ * 
+ * @param data - Object containing course code in params.
+ */
 const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
@@ -68,8 +78,8 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
 
   // TODO: Still need the semester offered data being updated.
   // TODO: Need to Parse Prereqs for better display (nested, and, or)
+  // Test the new route, see if it can fetch the new code: 
 
-  // Test
 
   useEffect(() => {
     console.log("Current courseDescription:", courseDescription);
@@ -130,7 +140,11 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
     </Fragment>
   );
 };
-
+/**
+ * TableData component to display instructor and available seats.
+ *
+ * @param data - Object containing instructor and seats data.
+ */
 const TableData = ({ data }: { data?: ISemesterData }) => {
   if (!data) return <div className="!text-gray-600">No Class</div>;
 
@@ -147,4 +161,5 @@ const TableData = ({ data }: { data?: ISemesterData }) => {
     </div>
   );
 };
+// Export the CoursePage component
 export default CoursePage;
