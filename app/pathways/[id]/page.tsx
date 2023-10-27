@@ -8,6 +8,7 @@ import {
   IPathwayDescriptionSchema,
 } from "@/public/data/dataInterface";
 
+// Get the pathway name from the parameters
 type IPathwayID = {
   params: {
     id: string;
@@ -15,30 +16,32 @@ type IPathwayID = {
 };
 
 const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
-  // Convert pathname to pathwayName
-  const pathwayName: string = data.params.id.replaceAll("%20", " ");
+  // Convert pathname to pathwayName, replace special charaters such as " ", ",", and ":"
+  const pathwayName: string = data.params.id.replaceAll("%20", " ").replaceAll("%2C", ",").replaceAll("%3A", ":");
 
+  // Intialize pathway information to PathwayDescriptionSchema
   const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
-    description: `Empty Description`,
-    compatibleMinor: ["General Minor"],
+    description: ``,
+    compatibleMinor: [""],
     courses: [{
-      name: "NULL",
-      description: "NULL",
+      name: "",
+      description: "",
       courses: [{
-        title: "NULL",
-        courseCode: "NULL-0000",
-        tag: ["Fall"],
+        title: "",
+        courseCode: "",
+        tag: [],
       }],
     }
     ],
   });
   
   
-
+  // Get the pathway data from the api using the Pathway Name
   useEffect(() => {
     const apiController = new AbortController();
   
     fetch(
+      // Fetch data
       `http://localhost:3000/api/pathway/${pathwayName}`,
       {
         signal: apiController.signal,
@@ -48,6 +51,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         },
       }
     ).then((data) => {
+      // Make sure data is valid
       if(data.ok) {
         return data.json();
       } else {
@@ -55,6 +59,8 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       }
     })
     .then((data) => {
+        // Set pathway to data (Data is returned as an array, in this case we only
+        //  care about the first element)
         setPathway(data[0]);
       })
       .catch((err) => {
@@ -71,33 +77,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   
   // TODO: check if pathway exists, or return something empty
 
-  let minors;
-  if(pathwayData.compatibleMinor.length == 1){
-    minors = <>
-      <header>
-      <h3>Compatible Minor</h3>
-      </header>
-      <ul>
-        {pathwayData.compatibleMinor.map((minor, i) => {
-          return <li key={i}>• {minor}</li>;
-        })}
-      </ul>
-    </>
-  } else if(pathwayData.compatibleMinor.length){
-    minors = <>
-      <header>
-      <h3>Compatible Minors</h3>
-      </header>
-      <ul>
-        {pathwayData.compatibleMinor.map((minor, i) => {
-          return <li key={i}>• {minor}</li>;
-        })}
-      </ul>
-    </>
-  } else {
-    minors = <></>
-  }
+  // Check if we need to display a minor as plural or not
+  let minor_string: string = pathwayData.compatibleMinor.length == 1 ? "Compatible Minor" : "Compatible Minors" ;
 
+  // Display the page
   return (
     <>
       <header className="mb-4 md:mb-8">
@@ -108,23 +91,30 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
               link: "/pathways/search",
             },
             {
-              display: pathwayName.replaceAll("%2C", ","),
+              display: pathwayName,
               link: "",
             },
           ]}
         />
         <h1 className="mt-5 text-display-xs md:text-display-sm font-semibold">
-          {pathwayName.replaceAll("%2C", ",")}
+          {pathwayName}
         </h1>
       </header>
       <section className="description-section">
         <header>
           <h3>Pathway Description</h3>
         </header>
-        <p>{pathwayData.description.replaceAll("&#xA0;", "\n")}</p>
+        <p>{pathwayData.description.replaceAll("&#xA0;", " ").replaceAll("&#xD;", " ")}</p>
       </section>
       <section className="description-section">
-        {minors}
+      <header>
+      <h3>{minor_string}</h3>
+      </header>
+      <ul>
+        {pathwayData.compatibleMinor.map((minor, i) => {
+          return <li key={i}>• {minor}</li>;
+        })}
+      </ul>
       </section>
       <section className="description-section">
         <header>
