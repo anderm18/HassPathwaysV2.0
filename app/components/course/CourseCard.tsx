@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { CourseCardProps } from "@/app/model/CourseInterface";
 import ChevronDown from "@/public/assets/svg/chevron-down-white.svg?svgr";
+import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
 import CourseDropdown from "./CourseDropdown";
 
 const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    setDropdownOpen((isOpen) => !isOpen); // Toggle the dropdown open/close state
   };
 
   return (
@@ -18,9 +19,9 @@ const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
           <p className="text-sm text-gray-600">{courseCode}</p>
         </header>
         <div className="w-[135px] h-10 px-4 py-2.5 bg-primary-700 rounded-lg shadow border border-gray-300 flex items-center justify-center gap-2">
-          <div className="text-sm font-semibold text-gray-25">Placeholder</div>
-          <div className="w-5 h-5 relative" onClick={toggleDropdown}>
-            <ChevronDown />
+          <div className="text-sm font-semibold text-gray-25" style={{ cursor: "pointer" }}> Placeholder</div>
+          <div className="w-5 h-5 relative" style={{ cursor: "pointer" }} onClick={toggleDropdown}>
+            {isDropdownOpen ? <ChevronUp /> : <ChevronDown />}
             {isDropdownOpen && <CourseDropdown />}
           </div>
         </div>
