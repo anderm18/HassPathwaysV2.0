@@ -251,6 +251,7 @@ const CourseList = ({
       next: {
         revalidate: false,
       },
+      cache: "force-cache",
     })
       .then((data) => data.json())
       .then(setCourseData)
