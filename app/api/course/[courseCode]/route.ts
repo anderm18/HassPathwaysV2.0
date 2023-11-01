@@ -32,5 +32,16 @@ export async function GET(request: NextRequest) {
     ).filter((course) => course[0] === params.get("courseCode"))
   );
 
-  
+  const hassCourseAttribute = Object.fromEntries(
+    Object.entries(
+      await (
+        await fetch(
+          "https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json"
+        )
+      ).json()
+    ).filter((course) => hass_prefixes.includes(course[0].substring(0, 4)))
+  );
+
+
+
 }
