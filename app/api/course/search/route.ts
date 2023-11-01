@@ -6,6 +6,7 @@ const tags_short_to_long = {
   CI: "Communication Intensive",
   PDII: "PDII Option for Engr Majors",
 };
+
 const hass_prefixes = [
   "ARTS",
   "COGS",

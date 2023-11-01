@@ -1,37 +1,36 @@
+// Course Prereq and Semester Listed json file:
+// https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json
+
 import { NextResponse, NextRequest } from "next/server";
 
-interface CoursePrerequisites {
-  prerequisites: string[];
-  // Add other properties if needed
-}
+const hass_prefixes = [
+  "ARTS",
+  "COGS",
+  "COMM",
+  "ECON",
+  "GSAS",
+  "INQR",
+  "ITWS",
+  "LANG",
+  "LITR",
+  "PHIL",
+  "PSYC",
+  "STSO",
+  "WRIT",
+];
 
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
 
-  // Fetching data from prerequisites.json
-  const prerequisitesData: Record<string, CoursePrerequisites> = await (
-    await fetch(
-      "https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json"
-    )
-  ).json();
+  const hassCourseDescription = Object.fromEntries(
+    Object.entries(
+      await (
+        await fetch(
+          "https://raw.githubusercontent.com/quatalog/data/master/catalog.json"
+        )
+      ).json()
+    ).filter((course) => course[0] === params.get("courseCode"))
+  );
 
-  const courseCode = params.get("courseCode");
-
-  if (!courseCode) {
-    // If courseCode is not provided, return an error or handle it appropriately.
-    return NextResponse.json({ error: "Course code not provided" });
-  }
-
-  // Find the data for the given course code
-  const courseData = prerequisitesData[courseCode];
-
-  if (!courseData) {
-    // If no data is found for the given course code, return an error or handle it appropriately.
-    return NextResponse.json({
-      error: "No data found for the provided course code",
-    });
-  }
-
-  // Return the found data
-  return NextResponse.json(courseData);
+  
 }
