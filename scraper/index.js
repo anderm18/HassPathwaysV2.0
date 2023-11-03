@@ -3,20 +3,34 @@ const { XMLParser } = require("fast-xml-parser");
 
 // Catalog API makes certain information an attribute, but don't 
 // want to include all attributes b/c of a lot of useless data
-const options = {
-    isArray: (name, jpath, isLeafNode, isAttribute) => {
-        if (name == "core") return true;
+const optionsAttributes = {
+    ignoreDeclaration: true,
+    ignoreAttributes: false ,
+    isArray: (name, jpath, isLeafNode, isAttribute) => { 
+        if( name == "core") return true;
     }
 };
-const parser = new XMLParser(options);
+const optionsNoAttributes = {
+    isArray: (name, jpath, isLeafNode, isAttribute) => { 
+        if( name == "core") return true;
+    }
+};
+
+const parser = new XMLParser(optionsNoAttributes);
+const parserN = new XMLParser(optionsAttributes);
 
 
 const BASE_URL = "http://rpi.apis.acalog.com/v1/"
 const DEFAULT_QUERY_PARAMS = "?key=3eef8a28f26fb2bcc514e6f1938929a1f9317628&format=xml"
 const CHUNK_SIZE = 100
 
-// Public url for catalog 
-const url = "http://rpi.apis.acalog.com/v1/content?key=3eef8a28f26fb2bcc514e6f1938929a1f9317628&format=xml&method=getItems&options[full]=1&catalog=26&type=programs&ids[]=8168&ids[]=7583&ids[]=7584&ids[]=7590&ids[]=8171&ids[]=7594&ids[]=8164&ids[]=8165&ids[]=7597&ids[]=7598&ids[]=7604&ids[]=8163&ids[]=8166&ids[]=8170&ids[]=7645&ids[]=8169&ids[]=7610&ids[]=7611&ids[]=8167&ids[]=7613&ids[]=7615&ids[]=7616&ids[]=8162&ids[]=7619"
+async function fetchXML(url) {
+    return new Promise(async (resolve, reject) => {
+        var response = await fetch(url);
+        var xml = await response.text();
+        resolve(parserN.parse(xml));
+    })
+}
 
 // Recursively gets all children of an object that are strings
 function getAllChildren(key, root) {
@@ -65,9 +79,42 @@ function findCourses(key, root, prereqs) {
     return objected;
 }
 
-function getCatalog() {
-
+async function getCatalogs() {
+    return new Promise(async (resolve, reject) => {
+        var url = `${BASE_URL}content${DEFAULT_QUERY_PARAMS}&method=getCatalogs`;
+        var results = await fetchXML(url);
+        let cataloged = [];
+        
+        for (var i = 0; i < results.catalogs.catalog.length; i++) {
+            year = (results.catalogs.catalog[i]["a:title"]["#text"]).split("Rensselaer Catalog ")[1];
+            id = (results.catalogs.catalog[i]["@_id"]).split("acalog-catalog-")[1];
+            let tmp = {};
+            tmp.id = id;
+            tmp.year = year;
+            cataloged.push(tmp);
+        }
+        resolve(cataloged);
+    })
 }
+
+async function getCourseIDS(cid) {
+    return new Promise(async (resolve, reject) => {
+        var url = `${BASE_URL}search/programs${DEFAULT_QUERY_PARAMS}&method=listing&options[limit]=0&catalog=${cid}` 
+        var results = await fetchXML(url);
+        var listed = [];
+        for (var i = 0; i < results.catalog.search.results.result.length; i++) {
+            if (JSON.stringify(results.catalog.search.results.result[i]).includes("Pathway")) {
+                listed.push(results.catalog.search.results.result[i].id);
+            }
+        }
+        var ans = "http://rpi.apis.acalog.com/v1/content?key=3eef8a28f26fb2bcc514e6f1938929a1f9317628&format=xml&method=getItems&options[full]=1&catalog=26&type=programs";
+        for (var i = 0; i < listed.length; i++) {
+            ans = ans.concat("&ids[]=", listed[i]);
+        }
+        resolve(ans);
+    })
+}
+
 
 function getAllStrings(arg) {
     if (typeof arg === "string") {
@@ -103,6 +150,7 @@ function clean(parsed, prereqs) {
 
 
         var desc = raw[i]["a:content"]["h:p"];
+        /*
         if (typeof desc != 'string') {
             desc = getAllStrings(desc).reduce(
                 function (a, b) {
@@ -111,7 +159,7 @@ function clean(parsed, prereqs) {
             );
             ; 
 
-        }
+        }*/
 
         pathway.description = desc;
         pathway.clusters = [];
@@ -208,8 +256,14 @@ async function format() {
 
 // RUN IT
 async function main() {
+    var catalog = await getCatalogs();
+    catalog = catalog.find((e) => e.year == "2022-2023");
+    url = await getCourseIDS(catalog.id);
+    console.log(url)
+
 
     await data();
     //await format();
 }
+
 main();
