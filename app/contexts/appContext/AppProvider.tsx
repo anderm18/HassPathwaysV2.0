@@ -53,19 +53,13 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const setCatalog = (catalog_year: number) => {
     dispatch({ type: SET_CATALOG, payload: catalog_year });
   };
-
-  return (
-    <AppContext.Provider value={{ ...state, setCatalog }}>
-      {children}
-    </AppContext.Provider>
-  );
-
+  
   const setCourseState = (course_value: number) => {
     dispatch({ type: SET_COURSE_STATE, payload: course_value });
   };
 
   return (
-    <AppContext.Provider value={{ ...state, setCourseState}}>
+    <AppContext.Provider value={{ ...state, setCatalog, setCourseState }}>
       {children}
     </AppContext.Provider>
   );
