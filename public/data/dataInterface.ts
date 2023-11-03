@@ -43,6 +43,7 @@ export interface ICourseClusterSchema {
 
 export interface IPathwayDescriptionSchema {
   description: string;
+  requirements: string;
   compatibleMinor: Array<string>;
   courses: Array<ICourseSchema> | Array<ICourseClusterSchema>;
 }

@@ -21,61 +21,145 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
 
   // Intialize pathway information to PathwayDescriptionSchema
   const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
-    description: ``,
-    compatibleMinor: [""],
-    courses: [{
-      name: "",
-      description: "",
-      courses: [{
-        title: "",
-        courseCode: "",
-        tag: [],
-      }],
-    }
+    description: "This pathway intergrates the theory and practice of graphic and interactive media design in print and digital media.&#xA0; Students are prepared to use creative and critical thinking to solve visual communication problems in diverse contexts, reaching target audiences with words, symbols, and images.&#xA0; Offerings in integrative design also prepare students for creating forms of multimedia communication and data representation.",
+    requirements: `To complete this integrative pathway, students must choose a minimum of 12
+    credits as from the course list below.
+    For the pathway, students may freely combine courses from both ‘Graphic Design’ and
+    ‘Interactive Media Design’ areas but should refer to the Minor requirements if they plan to
+    pursue one of the compatible minors listed above. *Note that many of the 4000 level courses
+    require COMM 2660 - Introduction to Graphic Design as a pre-requisite.`,
+    courses: [
+        {
+            "name": "Graphic Design courses",
+            "description": "",
+            "courses": [
+                {
+                    "title": "Typography",
+                    "courseCode": "COMM-2570",
+                    "tag": []
+                },
+                {
+                    "title": "Introduction to Graphic Design",
+                    "courseCode": "COMM-2660",
+                    "tag": [
+                        "Communication Intensive"
+                    ]
+                },
+                {
+                    "title": "Visual Design: Theory and Application",
+                    "courseCode": "COMM-4460",
+                    "tag": []
+                },
+                {
+                    "title": "Information Design",
+                    "courseCode": "COMM-4470",
+                    "tag": []
+                },
+                {
+                    "title": "Brand Identity Design",
+                    "courseCode": "COMM-4730",
+                    "tag": [
+                        "Communication Intensive"
+                    ]
+                },
+                {
+                    "title": "2D Motion Graphics",
+                    "courseCode": "COMM-4970",
+                    "tag": []
+                },
+                {
+                    "title": "Life in Color",
+                    "courseCode": "INQR-1562",
+                    "tag": [
+                        "HASS Inquiry"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Interactive Media Design Courses",
+            "description": "",
+            "courses": [
+                {
+                    "title": "Visual Poetics and Narrative",
+                    "courseCode": "COMM-4320",
+                    "tag": []
+                },
+                {
+                    "title": "Foundations of HCI Usability",
+                    "courseCode": "COMM-4420",
+                    "tag": []
+                },
+                {
+                    "title": "User Design Experience",
+                    "courseCode": "COMM-4770",
+                    "tag": []
+                },
+                {
+                    "title": "Interactive Narrative",
+                    "courseCode": "COMM-4780",
+                    "tag": [
+                        "Communication Intensive"
+                    ]
+                },
+                {
+                    "title": "Interactive Data Visualization",
+                    "courseCode": "COMM-4880",
+                    "tag": []
+                }
+            ]
+        }
     ],
-  });
+    compatibleMinor: [
+        "Graphic Design Minor",
+        "Interactive Media/Data Design Minor"
+    ]
+});
   
   
   // Get the pathway data from the api using the Pathway Name
-  useEffect(() => {
-    const apiController = new AbortController();
+  // useEffect(() => {
+  //   const apiController = new AbortController();
   
-    fetch(
-      // Fetch data
-      `http://localhost:3000/api/pathway/${pathwayName}`,
-      {
-        signal: apiController.signal,
-        cache: "no-store",
-        next: {
-          revalidate: false,
-        },
-      }
-    ).then((data) => {
-      // Make sure data is valid
-      if(data.ok) {
-        return data.json();
-      } else {
-        throw new Error('AbortError');
-      }
-    })
-    .then((data) => {
-        // Set pathway to data (Data is returned as an array, in this case we only
-        //  care about the first element)
-        setPathway(data[0]);
-      })
-      .catch((err) => {
-        if (err.name === "AbortError") return;
-        console.error("Fetching Error: ", err);
-      });
-      
-      
+  //   fetch(
+  //     // Fetch data
+  //     `http://localhost:3000/api/pathway/${pathwayName}`,
+  //     {
+  //       signal: apiController.signal,
+  //       cache: "no-store",
+  //       next: {
+  //         revalidate: false,
+  //       },
+  //     }
+  //   ).then((data) => {
+  //     // Make sure data is valid
+  //     if(data.ok) {
+  //       return data.json();
+  //     } else {
+  //       throw new Error('AbortError');
+  //     }
+  //   })
+  //   .then((data) => {
+  //       // Set pathway to data (Data is returned as an array, in this case we only
+  //       //  care about the first element)
+  //       setPathway(data[0]);
+  //     })
+  //     .catch((err) => {
+  //       if (err.name === "AbortError") return;
+  //       console.error("Fetching Error: ", err);
+  //     });
+  //   return () => apiController.abort("Cancelled");
 
-    return () => apiController.abort("Cancelled");
-  }, [pathwayName, Pathway]);
+  // }, [pathwayName, Pathway]);
 
   const pathwayData: IPathwayDescriptionSchema = Pathway;
   
   // TODO: check if pathway exists, or return something empty
+
+  // Fix
+  if(pathwayData.compatibleMinor.length == 0){
+    pathwayData.compatibleMinor.concat(["None"]);
+  }
 
   // Check if we need to display a minor as plural or not
   let minor_string: string = pathwayData.compatibleMinor.length == 1 ? "Compatible Minor" : "Compatible Minors" ;
@@ -118,11 +202,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       </section>
       <section className="description-section">
         <header>
-          <h3>Requirement</h3>
+          <h3>Requirements:</h3>
         </header>
         <p>
-          Students must choose a minimum of 12 credits as from the course list
-          below.
+          {pathwayData.requirements}
         </p>
       </section>
       <section className="description-section">
@@ -158,8 +241,8 @@ const CourseSection: FC<CourseSectionProps> = ({ courses }) => {
       {haveCluster && (
         <>
           <ul
-            className="rounded-lg flex flex-col sm:flex-row gap-2 p-1 
-          bg-gray-50 border border-1 border-gray-200 list-none 
+            className="rounded-lg flex flex-col sm:flex-row flex-wrap
+          gap-2 p-1 bg-gray-50 border border-1 border-gray-200 list-none 
           w-full sm:w-[500px] md:w-[723px] lg:w-full lg:max-w-[723px]"
           >
             {courses.map((cluster: any, i: number) => {
