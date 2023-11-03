@@ -111,8 +111,8 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         }
     ],
     compatibleMinor: [
-        "Graphic Design Minor",
-        "Interactive Media/Data Design Minor"
+        // "Graphic Design Minor",
+        // "Interactive Media/Data Design Minor"
     ]
 });
   
@@ -156,13 +156,13 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
   
   // TODO: check if pathway exists, or return something empty
 
-  // Fix
-  if(pathwayData.compatibleMinor.length == 0){
-    pathwayData.compatibleMinor.concat(["None"]);
-  }
-
   // Check if we need to display a minor as plural or not
   let minor_string: string = pathwayData.compatibleMinor.length == 1 ? "Compatible Minor" : "Compatible Minors" ;
+
+  // If no compatible minor exists, display none, which makes more sense than not displaying anything
+  if(pathwayData.compatibleMinor.length == 0){
+    pathwayData.compatibleMinor = ["None"];
+  }
 
   // Display the page
   return (

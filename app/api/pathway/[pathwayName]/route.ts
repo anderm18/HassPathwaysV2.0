@@ -17,13 +17,14 @@ export async function GET(request: NextRequest, data: PathwayRequest) {
   const { pathwayName } = data.params;
 
   let blob = pathways
-    .flatMap((dep) => dep["pathways"])
-    .filter((pw) => pw.name == pathwayName);
-  let res: IPathwayDescriptionSchema = blob.map((path) => {
+    .flatMap((dep : any) => dep["pathways"])
+    .filter((pw : any) => pw.name == pathwayName);
+  let res: IPathwayDescriptionSchema = blob.map((path : any) => {
     return {
       compatibleMinor: path.compatibleMinor,
       courses: path.clusters,
       description: path.description,
+      requirements: path.requirements,
     };
   });
 
