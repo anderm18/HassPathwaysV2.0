@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useRef, useState } from "react";
 import ChevronDown from "@/public/assets/svg/chevron-down-white.svg?svgr";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
@@ -8,10 +10,6 @@ const CourseDropdown = () => {
   const { course_value, setCourseState } = useAppContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Find the displaying text for course
-  const courseText: string | undefined = courseState
-    .filter((co) => co.value === course_value)[0]?.display;
 
   useEffect(() => {
     if (!dropdownOpen) return;
@@ -36,31 +34,27 @@ const CourseDropdown = () => {
         setDropdownOpen((open) => !open);
       }}
     >
-      <div className="grow">{courseText}</div>
+      <div className="grow">
+        {courseState.find((choice) => choice.value === course_value)?.display}
+      </div>
       <div>
-        {dropdownOpen ? (
-          <ChevronUp/> 
-        ) : (
-          <ChevronDown /> 
-        )}
+        {dropdownOpen ? <ChevronUp /> : <ChevronDown />}
       </div>
 
       {dropdownOpen && (
         <div className="dropdown-choices z-10 ut-shadow-lg">
-          {courseState.map((choice) => {
-            return (
-              <div
-                className="dropdown-choice"
-                key={choice.value}
-                data-value={choice.value}
-                onClick={() => {
-                  setCourseState(choice.value);
-                }}
-              >
-                {choice.display}
-              </div>
-            );
-          })}
+          {courseState.map((choice) => (
+            <div
+              className="dropdown-choice"
+              key={choice.value}
+              data-value={choice.value}
+              onClick={() => {
+                setCourseState(choice.value);
+              }}
+            >
+              {choice.display}
+            </div>
+          ))}
         </div>
       )}
     </div>

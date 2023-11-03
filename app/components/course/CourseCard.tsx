@@ -19,10 +19,15 @@ const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
           <p className="text-sm text-gray-600">{courseCode}</p>
         </header>
         <div className="w-[135px] h-10 px-4 py-2.5 bg-primary-700 rounded-lg shadow border border-gray-300 flex items-center justify-center gap-2">
-          <div className="text-sm font-semibold text-gray-25" style={{ cursor: "pointer" }}> Placeholder</div>
+          {isDropdownOpen ? (
+            <CourseDropdown /> // Render the CourseDropdown when open
+          ) : (
+            <div className="text-sm font-semibold text-gray-25" style={{ cursor: "pointer" }} onClick={toggleDropdown}>
+              Placeholder
+            </div>
+          )}
           <div className="w-5 h-5 relative" style={{ cursor: "pointer" }} onClick={toggleDropdown}>
             {isDropdownOpen ? <ChevronUp /> : <ChevronDown />}
-            {isDropdownOpen && <CourseDropdown />}
           </div>
         </div>
       </div>
@@ -40,3 +45,4 @@ const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
 };
 
 export default CourseCard;
+
