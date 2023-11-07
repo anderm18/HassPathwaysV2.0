@@ -23,6 +23,7 @@ export async function GET(request: NextRequest, data: PathwayRequest) {
     return {
       compatibleMinor: path.compatibleMinor,
       courses: path.clusters,
+      concentrations: path.concentrations,
       description: path.description,
       requirements: path.requirements,
     };

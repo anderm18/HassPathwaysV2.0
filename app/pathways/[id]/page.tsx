@@ -21,13 +21,8 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
 
   // Intialize pathway information to PathwayDescriptionSchema
   const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
-    description: "This pathway intergrates the theory and practice of graphic and interactive media design in print and digital media.&#xA0; Students are prepared to use creative and critical thinking to solve visual communication problems in diverse contexts, reaching target audiences with words, symbols, and images.&#xA0; Offerings in integrative design also prepare students for creating forms of multimedia communication and data representation.",
-    requirements: `To complete this integrative pathway, students must choose a minimum of 12
-    credits as from the course list below.
-    For the pathway, students may freely combine courses from both ‘Graphic Design’ and
-    ‘Interactive Media Design’ areas but should refer to the Minor requirements if they plan to
-    pursue one of the compatible minors listed above. *Note that many of the 4000 level courses
-    require COMM 2660 - Introduction to Graphic Design as a pre-requisite.`,
+    description: "This pathway intergrates the theory and practice of graphic and interactive media design in print and digital media. Students are prepared to use creative and critical thinking to solve visual communication problems in diverse contexts, reaching target audiences with words, symbols, and images. Offerings in integrative design also prepare students for creating forms of multimedia communication and data representation.",
+    requirements: "To complete this integrative pathway, students must choose a minimum of 12 credits as from the course list below.\nFor the pathway, students may freely combine courses from both ‘Graphic Design’ and ‘Interactive Media Design’ areas but should refer to the Minor requirements if they plan to pursue one of the compatible minors listed above.\n*Note that many of the 4000 level courses require COMM 2660 - Introduction to Graphic Design as a pre-requisite.",
     courses: [
         {
             "name": "Graphic Design courses",
@@ -110,9 +105,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
             ]
         }
     ],
+    concentrations: [ ],
     compatibleMinor: [
-        // "Graphic Design Minor",
-        // "Interactive Media/Data Design Minor"
+        "Graphic Design Minor",
+        "Interactive Media/Data Design Minor"
     ]
 });
   
@@ -164,6 +160,10 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
     pathwayData.compatibleMinor = ["None"];
   }
 
+  if(pathwayData.requirements == ""){
+    pathwayData.requirements = "To complete this integrative pathway, students must choose a minimum of 12 credits as from the course list below.";
+  }
+
   // Display the page
   return (
     <>
@@ -188,7 +188,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Pathway Description</h3>
         </header>
-        <p>{pathwayData.description.replaceAll("&#xA0;", " ").replaceAll("&#xD;", " ")}</p>
+        <p>{pathwayData.description}</p>
       </section>
       <section className="description-section">
       <header>
@@ -208,12 +208,18 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
           {pathwayData.requirements}
         </p>
       </section>
-      <section className="description-section">
+      {pathwayData.courses.length > 0 && <section className="description-section">
         <header>
           <h3>Available Courses</h3>
         </header>
         <CourseSection courses={pathwayData.courses} />
-      </section>
+      </section>}
+      {pathwayData.concentrations.length > 0 && <section className="description-section">
+        <header>
+          <h3>Optional Concentrations</h3>
+        </header>
+        <CourseSection courses={pathwayData.concentrations} />
+      </section>}
     </>
   );
 };

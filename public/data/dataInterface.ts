@@ -46,6 +46,7 @@ export interface IPathwayDescriptionSchema {
   requirements: string;
   compatibleMinor: Array<string>;
   courses: Array<ICourseSchema> | Array<ICourseClusterSchema>;
+  concentrations: Array<ICourseSchema> | Array<ICourseClusterSchema>;
 }
 
 export type IFAQ = {
