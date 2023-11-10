@@ -29,7 +29,7 @@ const emptyCourse: ICourseDescriptionSchema = {
 /**
  * React functional component for CoursePage.
  * Fetches and displays course information based on the courseCode from params.
- * 
+ *
  * @param data - Object containing course code in params.
  */
 const CoursePage: React.FC<ICourseCode> = (data) => {
@@ -76,11 +76,27 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
     };
   }, [courseCode]);
 
+  // Testing new API:
+  useEffect(() => {
+    const apiController = new AbortController();
+
+    fetch(
+      `http://localhost:3000/api/course/?${new URLSearchParams({
+        searchString: courseCode,
+      })}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+      }
+    ).then((data) => {
+      console.log(`the new data ${data}`);
+    });
+  });
+
   // TODO: Still need the semester offered data being updated.
   // braket slising
   // TODO: Need to Parse Prereqs for better display (nested, and, or)
-  // Test the new route, see if it can fetch the new code: 
-
+  // Test the new route, see if it can fetch the new code:
 
   useEffect(() => {
     console.log("Current courseDescription:", courseDescription);

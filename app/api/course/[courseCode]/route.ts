@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
           "https://raw.githubusercontent.com/quatalog/data/master/catalog.json"
         )
       ).json()
-    ).filter((course) => course[0] === params.get("courseCode"))
+    ).filter((course) => hass_prefixes.includes(course[0].substring(0, 4)))
   );
 
   const hassCourseAttribute = Object.fromEntries(
@@ -42,6 +42,22 @@ export async function GET(request: NextRequest) {
     ).filter((course) => hass_prefixes.includes(course[0].substring(0, 4)))
   );
 
+  // Here we return the response:
+  // Combine the data into one response object
+  const temp_response = {
+    courseDescription: hassCourseDescription,
+    courseAttribute: hassCourseAttribute,
+  };
 
+  interface Response {
+    courseCode: string;
+    courseName: string | null;
+    courseDescription: string | null;
+    coursePrerequisites: string | null;
+    courseSemesterOffered: string | null;
+  }
 
+  const courseCode = params.get("searchString")?.toLowerCase();
+  
+  const foundCourseDescription = hassCourseDescription.find((course) => {});
 }
