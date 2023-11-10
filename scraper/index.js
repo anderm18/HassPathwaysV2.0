@@ -107,7 +107,7 @@ async function getCourseIDS(cid) {
                 listed.push(results.catalog.search.results.result[i].id);
             }
         }
-        var ans = "http://rpi.apis.acalog.com/v1/content?key=3eef8a28f26fb2bcc514e6f1938929a1f9317628&format=xml&method=getItems&options[full]=1&catalog=26&type=programs";
+        var ans = `${BASE_URL}content${DEFAULT_QUERY_PARAMS}&format=xml&method=getItems&options[full]=1&catalog=${cid}&type=programs`;
         for (var i = 0; i < listed.length; i++) {
             ans = ans.concat("&ids[]=", listed[i]);
         }
