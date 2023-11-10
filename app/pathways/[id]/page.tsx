@@ -21,96 +21,198 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
 
   // Intialize pathway information to PathwayDescriptionSchema
   const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
-    description: "This pathway intergrates the theory and practice of graphic and interactive media design in print and digital media. Students are prepared to use creative and critical thinking to solve visual communication problems in diverse contexts, reaching target audiences with words, symbols, and images. Offerings in integrative design also prepare students for creating forms of multimedia communication and data representation.",
-    requirements: "To complete this integrative pathway, students must choose a minimum of 12 credits as from the course list below.\nFor the pathway, students may freely combine courses from both ‘Graphic Design’ and ‘Interactive Media Design’ areas but should refer to the Minor requirements if they plan to pursue one of the compatible minors listed above.\n*Note that many of the 4000 level courses require COMM 2660 - Introduction to Graphic Design as a pre-requisite.",
-    courses: [
+      description: "Discover Cognitive Science: a young but fast-growing field focused on the study of the mind from the perspectives of philosophy, psychology, neuroscience, linguistics, and artificial intelligence. This pathway will introduce students to the major ideas and theories from these areas, as they relate to the study of the mind and intelligence.",
+      requirements: "To complete this integrative pathway, students must choose a minimum of 12 credits as described below. Only four (4) credits can be applied from the HASS Inquiry (INQR) courses listed below to this pathway.",
+      courses: [
         {
-            "name": "Graphic Design courses",
-            "description": "",
-            "courses": [
-                {
-                    "title": "Typography",
-                    "courseCode": "COMM-2570",
-                    "tag": []
-                },
-                {
-                    "title": "Introduction to Graphic Design",
-                    "courseCode": "COMM-2660",
-                    "tag": [
-                        "Communication Intensive"
-                    ]
-                },
-                {
-                    "title": "Visual Design: Theory and Application",
-                    "courseCode": "COMM-4460",
-                    "tag": []
-                },
-                {
-                    "title": "Information Design",
-                    "courseCode": "COMM-4470",
-                    "tag": []
-                },
-                {
-                    "title": "Brand Identity Design",
-                    "courseCode": "COMM-4730",
-                    "tag": [
-                        "Communication Intensive"
-                    ]
-                },
-                {
-                    "title": "2D Motion Graphics",
-                    "courseCode": "COMM-4970",
-                    "tag": []
-                },
-                {
-                    "title": "Life in Color",
-                    "courseCode": "INQR-1562",
-                    "tag": [
-                        "HASS Inquiry"
-                    ]
-                }
-            ]
+          name: "Required:",
+          description: "",
+          courses: [
+            {
+              title: "Introduction to Cognitive Science",
+              courseCode: "COGS 2120",
+              tag: []
+            }
+          ]
         },
         {
-            "name": "Interactive Media Design Courses",
-            "description": "",
-            "courses": [
-                {
-                    "title": "Visual Poetics and Narrative",
-                    "courseCode": "COMM-4320",
-                    "tag": []
-                },
-                {
-                    "title": "Foundations of HCI Usability",
-                    "courseCode": "COMM-4420",
-                    "tag": []
-                },
-                {
-                    "title": "User Design Experience",
-                    "courseCode": "COMM-4770",
-                    "tag": []
-                },
-                {
-                    "title": "Interactive Narrative",
-                    "courseCode": "COMM-4780",
-                    "tag": [
-                        "Communication Intensive"
-                    ]
-                },
-                {
-                    "title": "Interactive Data Visualization",
-                    "courseCode": "COMM-4880",
-                    "tag": []
-                }
-            ]
-        }
-    ],
-    concentrations: [ ],
-    compatibleMinor: [
-        "Graphic Design Minor",
-        "Interactive Media/Data Design Minor"
-    ]
-});
+          name: "Choose remaining credits from the following:",
+          description: "",
+          courses: [
+              {
+                  title: "Introduction to Linguistics",
+                  courseCode: "COGS-2340",
+                  tag: []
+              },
+              {
+                  title: "Cognitive Modeling",
+                  courseCode: "COGS-4210",
+                  tag: []
+              },
+              {
+                  title: "Animal Cognition and Interaction with Humans",
+                  courseCode: "COGS-4220",
+                  tag: []
+              },
+              {
+                  title: "Introduction to Cognitive Neuroscience",
+                  courseCode: "COGS-4330",
+                  tag: []
+              },
+              {
+                  title: "The Linguistics of Computational Linguistics",
+                  courseCode: "COGS-4340",
+                  tag: [
+                      "Communication Intensive"
+                  ]
+              },
+              {
+                  title: "Behavioral Neuroscience",
+                  courseCode: "COGS-4360",
+                  tag: []
+              },
+              {
+                  title: "Programming for Cognitive Science and Artificial Intelligence",
+                  courseCode: "COGS-4410",
+                  tag: []
+              },
+              {
+                  title: "Learning and Advanced Game AI",
+                  courseCode: "COGS-4430",
+                  tag: []
+              },
+              {
+                  title: "Game AI",
+                  courseCode: "COGS-4420",
+                  tag: []
+              },
+              {
+                  title: "Sensibilities",
+                  courseCode: "COGS-4440",
+                  tag: [
+                      "Communication Intensive"
+                  ]
+              },
+              {
+                  title: "Cross-linguistic Perspectives",
+                  courseCode: "COGS-4560",
+                  tag: [
+                      "Communication Intensive"
+                  ]
+              },
+              {
+                  title: "Cognition and the Brain",
+                  courseCode: "COGS-4600",
+                  tag: []
+              },
+              {
+                  title: "Stress and the Brain",
+                  courseCode: "COGS-4610",
+                  tag: []
+              },
+              {
+                  title: "Intelligent Virtual Agents",
+                  courseCode: "COGS-4640",
+                  tag: []
+              },
+              {
+                  title: "Hormones, Brain, and Behavior",
+                  courseCode: "COGS-4700",
+                  tag: []
+              },
+              {
+                  title: "Advanced Topics in Linguistics",
+                  courseCode: "COGS-4780",
+                  tag: [
+                      "Communication Intensive"
+                  ]
+              },
+              {
+                  title: "Language-Endowed Intelligent Agents",
+                  courseCode: "COGS-4880",
+                  tag: []
+              },
+              {
+                  title: "Minds and Machines",
+                  courseCode: "INQR-1140",
+                  tag: [
+                      "Communication Intensive",
+                      "HASS Inquiry"
+                  ]
+              },
+              {
+                  title: "Are Humans Rational?",
+                  courseCode: "INQR-1235",
+                  tag: []
+              },
+              {
+                  title: "Cognitive Psychology",
+                  courseCode: "PSYC-4370",
+                  tag: []
+              },
+              {
+                  title: "Sensation and Perception",
+                  courseCode: "PSYC-4410",
+                  tag: []
+              }
+          ]
+      }],
+      compatibleMinor: [
+        "Cognitive Science Minor",
+        "Cognitive Science of Artificial Intelligence Minor"
+      ],
+      concentrations: [
+        {
+          name: "Artificial Intelligence (AI):",
+          description: "Students who are specifically interested in artificial intellegence (AI) may wish to choose their free course selections from the following list:",
+          courses: [
+              {
+                  title: "Cognitive Modeling",
+                  courseCode: "COGS-4210",
+                  tag: []
+              },
+              {
+                  title: "Programming for Cognitive Science and Artificial Intelligence",
+                  courseCode: "COGS-4410",
+                  tag: []
+              },
+              {
+                  title: "Game AI",
+                  courseCode: "COGS-4420",
+                  tag: []
+              },
+              {
+                  title: "Learning and Advanced Game AI",
+                  courseCode: "COGS-4430",
+                  tag: []
+              },
+              {
+                  title: "Intelligent Virtual Agents",
+                  courseCode: "COGS-4640",
+                  tag: []
+              },
+              {
+                  title: "Language-Endowed Intelligent Agents",
+                  courseCode: "COGS-4880",
+                  tag: []
+              },
+              {
+                  title: "Minds and Machines",
+                  courseCode: "INQR-1140",
+                  tag: [
+                      "Communication Intensive",
+                      "HASS Inquiry"
+                  ]
+              },
+              {
+                  title: "Are Humans Rational?",
+                  courseCode: "INQR-1235",
+                  tag: []
+              }
+          ]
+      }
+      ],
+    });
   
   
   // Get the pathway data from the api using the Pathway Name
@@ -218,6 +320,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
         <header>
           <h3>Optional Concentrations</h3>
         </header>
+          <p>Courses listed here are suggested, optional concentrations a student may take within a pathway</p>
         <CourseSection courses={pathwayData.concentrations} />
       </section>}
     </>
