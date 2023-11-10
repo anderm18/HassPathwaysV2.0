@@ -20,7 +20,8 @@ const hass_prefixes = [
 ];
 
 export async function GET(request: NextRequest) {
-  const params = request.nextUrl.searchParams;
+  const pathParts = request.nextUrl.pathname.split("/");
+  const selectedCourseCode = pathParts[pathParts.length - 1].toUpperCase();
 
   const hassCourseDescription = Object.fromEntries(
     Object.entries(
@@ -45,19 +46,12 @@ export async function GET(request: NextRequest) {
   // Here we return the response:
   // Combine the data into one response object
   const temp_response = {
-    courseDescription: hassCourseDescription,
-    courseAttribute: hassCourseAttribute,
+    courseCode: selectedCourseCode,
+    courseDescription: hassCourseDescription[selectedCourseCode],
+    courseAttribute: hassCourseAttribute[selectedCourseCode],
   };
 
-  interface Response {
-    courseCode: string;
-    courseName: string | null;
-    courseDescription: string | null;
-    coursePrerequisites: string | null;
-    courseSemesterOffered: string | null;
-  }
+  return NextResponse.json(temp_response);
 
-  const courseCode = params.get("searchString")?.toLowerCase();
-  
-  const foundCourseDescription = hassCourseDescription.find((course) => {});
+  // const foundCourseDescription = hassCourseDescription.find((course) => {});
 }

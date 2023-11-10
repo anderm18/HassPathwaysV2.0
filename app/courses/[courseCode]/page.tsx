@@ -77,21 +77,41 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   }, [courseCode]);
 
   // Testing new API:
+  // useEffect(() => {
+  //   const apiController = new AbortController();
+
+  //   fetch(
+  //     `http://localhost:3000/api/course/?${new URLSearchParams({
+  //       searchString: courseCode,
+  //     })}`,
+  //     {
+  //       signal: apiController.signal,
+  //       cache: "no-store",
+  //     }
+  //   ).then((data) => {
+  //     console.log(`the new data ${data}`);
+  //   });
+  // });
+
   useEffect(() => {
     const apiController = new AbortController();
 
-    fetch(
-      `http://localhost:3000/api/course/?${new URLSearchParams({
-        searchString: courseCode,
-      })}`,
-      {
-        signal: apiController.signal,
-        cache: "no-store",
-      }
-    ).then((data) => {
-      console.log(`the new data ${data}`);
-    });
-  });
+    fetch(`http://localhost:3000/api/course/${courseCode}`, {
+      signal: apiController.signal,
+      cache: "no-store",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("the new data", data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    return () => {
+      apiController.abort();
+    };
+  }, [courseCode]);
 
   // TODO: Still need the semester offered data being updated.
   // braket slising
