@@ -1,5 +1,6 @@
 import React from "react";
 import { CourseCardProps } from "@/app/model/CourseInterface";
+import Dropdown from "@/app/components/Dropdown"; // Adjust the import path as needed
 
 const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
   return (
@@ -9,9 +10,7 @@ const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
           <h3 className="text-md font-semibold break-normal">{title}</h3>
           <p className="text-sm text-gray-600">{courseCode}</p>
         </header>
-        <div className="text-sm font-semibold text-gray-25 bg-primary-700 px-4 py-2.5 border border-solid border-gray-300 rounded-lg">
-          Placeholder
-        </div>
+        <Dropdown /> {/* Use the Dropdown component here */}
       </div>
       <div className="flex gap-x-1 flex-wrap flex-grow-0 flex-shrink-0">
         {tag?.map((t) => {
@@ -27,3 +26,4 @@ const CourseCard = ({ title, courseCode, tag }: CourseCardProps) => {
 };
 
 export default CourseCard;
+
