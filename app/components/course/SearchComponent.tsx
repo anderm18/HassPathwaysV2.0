@@ -236,6 +236,7 @@ const CourseList = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log("Fetching Course Data");
     const apiController = new AbortController();
 
     const fetchUrl: string = `http://localhost:3000/api/course/search?${new URLSearchParams(

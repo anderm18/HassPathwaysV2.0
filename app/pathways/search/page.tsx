@@ -5,6 +5,7 @@ import React, {
   useReducer,
   useDeferredValue,
   useEffect,
+  Suspense,
 } from "react";
 import PathwayCard from "@/app/components/pathway/PathwayCard";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
@@ -63,45 +64,21 @@ const SearchCourse = () => {
   ) => (state & (1 << index)) !== 0;
 
   const [searchString, setSearchString] = useState("");
-  const [resultPathway, setResultPathway] = useState<IPathwaySchema[]>([
-    {
-      title: "Visual and Media Arts",
-      department: "Arts",
-      courses: [
-        {
-          title: "abc",
-          courseCode: "ARTS-1050",
-          tag: [],
-        },
-        {
-          title: "jir",
-          courseCode: "ARTS-1200",
-          tag: [],
-        },
-        {
-          title: "kri",
-          courseCode: "ARTS-2200",
-          tag: [],
-        },
-        {
-          title: ",o",
-          courseCode: "ARTS-2090",
-          tag: [],
-        },
-        {
-          title: "inu",
-          courseCode: "ARTS-2210",
-          tag: [],
-        },
-      ],
-    },
-  ]);
+  const [resultPathways, setResultPathways] = useState<IPathwaySchema[]>([]);
 
   const deferSearchString = useDeferredValue(searchString);
+  const deferResultPathways = useDeferredValue(resultPathways);
   const deferFilterState = useDeferredValue(filterState);
+
+  // TODO: Remove this
+  useEffect(() => {
+    console.log("pathway search page rerender");
+  });
+
   useEffect(() => {
     const apiController = new AbortController();
 
+    // For testing purpose:
     // console.log(getFilterList(pathwaysCategories, deferFilterState));
     // console.log(
     //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
@@ -112,7 +89,6 @@ const SearchCourse = () => {
     // );
 
     setIsLoading(true);
-
     fetch(
       `http://localhost:3000/api/pathway/search?${new URLSearchParams({
         searchString: deferSearchString,
@@ -130,9 +106,9 @@ const SearchCourse = () => {
     )
       .then((data) => data.json())
       .then((data) => {
-        setResultPathway(data);
+        setResultPathways(data);
+        setIsLoading(false);
       })
-      .then(() => setIsLoading(false)) // TODO: Uncomment this!!!
       .catch((err) => {
         if (err.name === "AbortError") return;
         console.error("Fetching Error: ", err);
@@ -148,10 +124,12 @@ const SearchCourse = () => {
       </header>
       <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
         <div className="w-full fold:w-[320px]">
-          <SearchInput
-            setSearchString={setSearchString}
-            searchString={searchString}
-          />
+          <Suspense>
+            <SearchInput
+              setSearchString={setSearchString}
+              searchString={searchString}
+            />
+          </Suspense>
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold lg:hidden">Department</h3>
@@ -175,11 +153,20 @@ const SearchCourse = () => {
         </div>
       </div>
 
+      {/* TODO: reduce network request */}
+      {/* <Suspense fallback={<Spinner />}>
+        <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
+          {deferResultPathways.map((pathway, i) => {
+            return <PathwayCard {...pathway} key={i} />;
+          })}
+        </section>
+      </Suspense> */}
+
       {isLoading ? (
         <Spinner />
       ) : (
         <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-          {resultPathway.map((pathway, i) => {
+          {deferResultPathways.map((pathway, i) => {
             return <PathwayCard {...pathway} key={i} />;
           })}
         </section>
