@@ -56,8 +56,6 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
       .then((data) => data[0])
       .then((data) => {
         // Update state with fetched data
-        console.log("Fetched data: ", data);
-        console.log("Fetched data prereqs", data.prereqs);
         setCourseDescription((prev) => {
           return {
             ...prev,
@@ -77,22 +75,6 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   }, [courseCode]);
 
   // Testing new API:
-  // useEffect(() => {
-  //   const apiController = new AbortController();
-
-  //   fetch(
-  //     `http://localhost:3000/api/course/?${new URLSearchParams({
-  //       searchString: courseCode,
-  //     })}`,
-  //     {
-  //       signal: apiController.signal,
-  //       cache: "no-store",
-  //     }
-  //   ).then((data) => {
-  //     console.log(`the new data ${data}`);
-  //   });
-  // });
-
   useEffect(() => {
     const apiController = new AbortController();
 
@@ -119,7 +101,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   // Test the new route, see if it can fetch the new code:
 
   useEffect(() => {
-    console.log("Current courseDescription:", courseDescription);
+    // console.log("Current courseDescription:", courseDescription);
   }, [courseDescription]);
 
   const term = courseDescription?.term ?? "Unfound Terms";
