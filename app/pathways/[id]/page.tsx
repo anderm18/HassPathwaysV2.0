@@ -304,7 +304,7 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
       </section>
       <section className="description-section">
         <header>
-          <h3>Requirements:</h3>
+          <h3>Requirements</h3>
         </header>
         <p>
           {pathwayData.requirements}
