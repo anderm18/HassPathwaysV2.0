@@ -1,47 +1,47 @@
 [
   {
     "question": "Is HASS pathway a requirement?",
-    "answer": "Yes, ..........",
+    "answer": "Yes, all undergraduate students are required to take a 12-credit HASS Integretive Pathway.",
     "icon": "Certificate"
   },
   {
     "question": "Can I change my pathway later?",
-    "answer": "..., ..........",
+    "answer": "Yes, as long as you are able to complete the requirements of the pathway before you graduate.",
     "icon": "SwitchHorizontal"
   },
   {
-    "question": "Is IHSS course a requirement?",
-    "answer": "No, ..........",
+    "question": "Is a HASS Inquiry course required as a part of a pathway?",
+    "answer": "While a HASS inquiry course is a HASS Core requirement, it can be sperate from your pathway. However, some pathways require completion of an Inquiry Course as a part of its requirements",
     "icon": "BookOpen"
   },
   {
     "question": "Is 4000-level course a requirement?",
-    "answer": "No, ..........",
+    "answer": "Depending on your pathway, you may be required to take a 4000-level course. However, make sure to check the individual pathway requirements",
     "icon": "GraduationHat"
   },
   {
     "question": "Is CI course a requirement?",
-    "answer": "No, ..........",
+    "answer": "No, you are not required to take a Communication Intensive as a part of your pathway.",
     "icon": "Announcement"
   },
   {
     "question": "Can I create my own pathway?",
-    "answer": "No, ..........",
+    "answer": "No, students cannot create their own pathway.",
     "icon": "Plus"
   },
   {
     "question": "Can my pathway count toward minor?",
-    "answer": "No, ..........",
+    "answer": "Yes, lots of pathways even have an associated minor which sometimes might only require one more course to achieve!",
     "icon": "Share"
   },
   {
     "question": "Can I use the pathway from other years?",
-    "answer": "No, ..........",
+    "answer": "No, you may only complete a pathway from the academic catalog year you started at RPI.",
     "icon": "User"
   },
   {
     "question": "Can any course in the pathway be designated as P/NC?",
-    "answer": "No, ..........",
+    "answer": "No, you cannot Pass/No Credit a class in your HASS Pathway.",
     "icon": "Archive"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "question": "How do I declare a pathway?",
-    "answer": "No, ..........",
+    "answer": "You can declare your pathway in SIS.",
     "icon": "Star"
   }
 ]
