@@ -49,12 +49,14 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         // Assuming the data structure is similar to your previous API
         setCourseDescription((prev) => ({
           ...prev,
-          title: data.title,
+          title: data.name,
           description: data.description,
-          prereqs: data.prereqs,
+          prerequisite: data.prerequisites,
+
         }));
       })
       .catch((error) => {
