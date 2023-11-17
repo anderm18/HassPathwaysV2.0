@@ -39,41 +39,6 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const [courseDescription, setCourseDescription] =
     useState<ICourseDescriptionSchema>(emptyCourse);
 
-  useEffect(() => {
-    const apiController = new AbortController();
-
-    fetch(
-      `http://localhost:3000/api/course/search?${new URLSearchParams({
-        searchString: courseCode,
-        // maybe separate the course prefix from the course code for course prefix
-      })}`,
-      {
-        signal: apiController.signal,
-        cache: "no-store",
-      }
-    )
-      .then((data) => data.json())
-      .then((data) => data[0])
-      .then((data) => {
-        // Update state with fetched data
-        setCourseDescription((prev) => {
-          return {
-            ...prev,
-            title: data.title,
-            description: data.description,
-            prereqs: data.prereqs,
-          };
-        });
-      })
-      .catch((error) => {
-        // Handle fetch error
-        console.error(error);
-      });
-    return () => {
-      apiController.abort();
-    };
-  }, [courseCode]);
-
   // Testing new API:
   useEffect(() => {
     const apiController = new AbortController();
@@ -84,7 +49,13 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("the new data", data);
+        // Assuming the data structure is similar to your previous API
+        setCourseDescription((prev) => ({
+          ...prev,
+          title: data.title,
+          description: data.description,
+          prereqs: data.prereqs,
+        }));
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
