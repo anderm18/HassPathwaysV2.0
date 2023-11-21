@@ -244,7 +244,6 @@ const CourseList = ({
 
   const debouncedFetchCourses = useCallback(
     debounce(() => {
-      console.log("debounce is working");
       const apiController = new AbortController();
 
       const fetchUrl: string = `http://localhost:3000/api/course/search?${new URLSearchParams(
@@ -272,6 +271,7 @@ const CourseList = ({
 
       return () => apiController.abort("Cancelled");
     }, 500), // delay 500ms
+
     [deferFilterState, deferSearchString, setIsLoading, setCourseData]
   );
 
