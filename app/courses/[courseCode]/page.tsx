@@ -56,6 +56,8 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
           title: data.name,
           description: data.description,
           prerequisite: data.prerequisites,
+          attributes: data.attributes
+          
 
         }));
       })

@@ -1,5 +1,6 @@
 // Course Prereq and Semester Listed json file:
 // https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json
+// semester offered: https://raw.githubusercontent.com/quatalog/quatalog/main/src/terms_offered.json
 import { NextResponse, NextRequest } from "next/server";
 
 // Define your data structures
@@ -34,12 +35,21 @@ export async function GET(request: NextRequest) {
   const courseAttributes: CourseDatabase =
     (await courseAttributesResponse.json()) as CourseDatabase;
 
+  // Fetch course Semester offfered:
+  const courseSemesterOfferedResponse = await fetch(
+    "https://raw.githubusercontent.com/quatalog/quatalog/main/src/terms_offered.json"
+  );
+  const courseSemesterOffered: CourseDatabase =
+    (await courseSemesterOfferedResponse.json()) as CourseDatabase;
+
   // Access the specific course description and attribute
   const courseDescription = courseDescriptions[selectedCourseCode];
   const courseAttribute = courseAttributes[selectedCourseCode];
+  const courseSemester = courseSemesterOffered[selectedCourseCode];
   const combinedCourseData = {
     ...courseDescription,
     ...courseAttribute,
+    courseSemester,
   };
 
   // Construct the response
