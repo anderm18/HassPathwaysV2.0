@@ -6,7 +6,13 @@ import {
   CheckBoxChecked,
   CheckBoxUnChecked,
 } from "@/app/components/utils/Icon";
-import { Fragment, useState, useDeferredValue, useEffect } from "react";
+import {
+  Fragment,
+  useState,
+  useDeferredValue,
+  useEffect,
+  useCallback,
+} from "react";
 import { courseFilters } from "@/public/data/staticData";
 import CourseCard from "./CourseCard";
 import {
@@ -18,6 +24,7 @@ import {
 import { ICourseSchema } from "@/public/data/dataInterface";
 import { flattenFilterParams } from "../utils/url";
 import dynamic from "next/dynamic";
+import { debounce } from "lodash";
 
 const Spinner = dynamic(() => import("@/app/components/utils/Spinner"));
 
@@ -235,35 +242,46 @@ const CourseList = ({
   const deferFilterState = useDeferredValue(filterState);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const debouncedFetchCourses = useCallback(
+    debounce(() => {
+      console.log("debounce is working");
+      const apiController = new AbortController();
+
+      const fetchUrl: string = `http://localhost:3000/api/course/search?${new URLSearchParams(
+        {
+          searchString: deferSearchString,
+          ...flattenFilterParams(deferFilterState),
+        }
+      )}`;
+
+      setIsLoading(true);
+      fetch(fetchUrl, {
+        signal: apiController.signal,
+        next: {
+          revalidate: false,
+        },
+        cache: "force-cache",
+      })
+        .then((data) => data.json())
+        .then(setCourseData)
+        .then((_) => setIsLoading(false))
+        .catch((err) => {
+          if (err.name === "AbortError") return;
+          console.error("Fetching Error: ", err);
+        });
+
+      return () => apiController.abort("Cancelled");
+    }, 500), // delay 500ms
+    [deferFilterState, deferSearchString, setIsLoading, setCourseData]
+  );
+
   useEffect(() => {
-    console.log("Fetching Course Data");
-    const apiController = new AbortController();
+    debouncedFetchCourses();
 
-    const fetchUrl: string = `http://localhost:3000/api/course/search?${new URLSearchParams(
-      {
-        searchString: deferSearchString,
-        ...flattenFilterParams(deferFilterState),
-      }
-    )}`;
-
-    setIsLoading(true);
-    fetch(fetchUrl, {
-      signal: apiController.signal,
-      next: {
-        revalidate: false,
-      },
-      cache: "force-cache",
-    })
-      .then((data) => data.json())
-      .then(setCourseData)
-      .then((_) => setIsLoading(false))
-      .catch((err) => {
-        if (err.name === "AbortError") return;
-        console.error("Fetching Error: ", err);
-      });
-
-    return () => apiController.abort("Cancelled");
-  }, [deferFilterState, deferSearchString]);
+    return () => {
+      debouncedFetchCourses.cancel();
+    };
+  }, [debouncedFetchCourses]);
 
   return (
     <section className="flex flex-col gap-3">
