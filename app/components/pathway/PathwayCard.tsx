@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Bookmark, BookmarkChecked, HelpIcon } from "../utils/Icon";
 import { IPathwaySchema } from "@/public/data/dataInterface";
 
@@ -7,8 +7,33 @@ const PathwayCard = ({ title, department, courses }: IPathwaySchema) => {
   // TODO: change to bookmark state and update React Context
   // TODO: Compute tooltip
 
-  const bookmark = false;
-  const tooltip = null;
+  const [bookmark, setBookmark] = useState(false);
+
+  const getBookmarks = () => {
+    var bmks = localStorage.getItem("bookmarks")
+    if (bmks == null) {
+      localStorage.setItem("bookmarks", "[]");
+    }
+    else {
+      setBookmark(JSON.parse(bmks).find(x => x.title === title) != undefined);
+    }
+  }
+
+  const toggleBookmark = () => {
+    let current: IPathwaySchema[] = JSON.parse(localStorage.getItem("bookmarks"));
+    if (bookmark)
+      current = current.filter(i => i.title != title);
+    else if (current.find(x => x.title === title) == undefined) {
+      current.push({ title: title, department: department, courses: courses });
+    }
+    localStorage.setItem("bookmarks", JSON.stringify(current));
+    setBookmark(!bookmark);
+  }
+
+  useEffect(() => {
+    console.log(title)
+    getBookmarks();
+  }, [])
 
   return (
     <section className="pathway-card">
@@ -27,7 +52,7 @@ const PathwayCard = ({ title, department, courses }: IPathwaySchema) => {
             <HelpIcon />
           </div>
         </div>
-        <div className="p-2">
+        <div onClick={toggleBookmark} className="p-2">
           {bookmark ? <BookmarkChecked /> : <Bookmark />}
         </div>
       </header>
