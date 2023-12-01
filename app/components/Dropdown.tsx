@@ -10,7 +10,7 @@ function classNames(...classes) {
 export default function Example() {
     const [selectedItem, setSelectedItem] = useState("Not Selected");
     const [open, setOpen] = useState(false);
-    const dropdownRef = useRef(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const handleSelect = (item) => {
         setSelectedItem(item);
@@ -18,27 +18,24 @@ export default function Example() {
     };
 
     useEffect(() => {
-        function handleOutsideClick(event) {
-            console.log("handling outside click")
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        const outsideDropdown = (e: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
                 setOpen(false);
             }
-        }
-    
-        if (open) {
-          document.addEventListener('mousedown', handleOutsideClick);
-        }
-    
-        return () => {
-          document.removeEventListener('mousedown', handleOutsideClick);
         };
-      }, [open]);
-    
 
+        if (open) {
+            document.addEventListener("click", outsideDropdown);
+        }
+
+        return () => {
+            document.removeEventListener("click", outsideDropdown);
+        };
+    }, [open]);
 
     return (
         <Menu as="div" className="relative inline-block text-left">
-            <div>
+            <div ref={dropdownRef}>
                 <Menu.Button
                     className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                     onClick={() => setOpen(!open)}
