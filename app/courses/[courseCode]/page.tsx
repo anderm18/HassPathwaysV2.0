@@ -56,9 +56,8 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
           title: data.name,
           description: data.description,
           prerequisite: data.prerequisites,
-          attributes: data.attributes
-          
-
+          attributes: data.attributes,
+          semesterOffered: data.courseSemester,
         }));
       })
       .catch((error) => {
@@ -84,6 +83,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
   const description =
     courseDescription?.description ?? "Unfound Course description";
   const prereqs = courseDescription?.prereqs ?? "Unfound Prereqs";
+  // const thsemesterOffered = courseDescription?.semesterOffered ?? "Unfound Course SemesterOfferend"
 
   return (
     <Fragment>
@@ -119,7 +119,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
           <div className="table-header">Spring</div>
           <div className="table-header">Summer</div>
           <div className="table-header">Fall</div>
-          {/* {term.map((t) => {
+          {term.map((t) => {
             return (
               <Fragment key={t.year}>
                 <header className="font-medium">{t.year}</header>
@@ -128,7 +128,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
                 <TableData data={t.fall} />
               </Fragment>
             );
-          })} */}
+          })}
         </section>
       </section>
     </Fragment>
