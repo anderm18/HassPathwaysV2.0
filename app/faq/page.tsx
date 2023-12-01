@@ -6,10 +6,12 @@ import { IFAQ } from "@/public/data/dataInterface";
 async function getFAQ() {
   const res = await fetch("http://localhost:3000/api/faq");
   const faq = res.json();
+  
   return faq;
 }
 
 const FAQ = async () => {
+  console.log((await fetch("http://localhost:3000/api/faq")).json());
   const faqQuestions: Array<IFAQ> = await getFAQ();
 
   return (
@@ -24,7 +26,7 @@ const FAQ = async () => {
             </h1>
           </section>
           <p className="text-center text-md md:text-xl">
-            Have questions? We're here to help.
+            Have questions? We&apos;re here to help.
           </p>
         </header>
         <section className="flex justify-center items-start gap-x-8 gap-y-16 flex-wrap mb-24">
@@ -54,6 +56,13 @@ const FAQ = async () => {
           })}
         </section>
       </main>
+      <section className="justify-left px-8">
+          <div className="font-semibold">
+            <h5>More Resources:</h5>
+            <a href="https://hass.rpi.edu/advising/hass-integrative-pathways">Official RPI Integrative Pathways Website</a><br></br>
+            <a href="https://hass.rpi.edu/advising/hass-core">HASS core requirements</a>
+          </div>
+        </section>
       <Footer />
     </div>
   );
