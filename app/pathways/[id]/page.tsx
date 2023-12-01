@@ -21,234 +21,48 @@ const PathwayDescriptionPage: FC<IPathwayID> = (data: IPathwayID) => {
 
   // Intialize pathway information to PathwayDescriptionSchema
   const [Pathway, setPathway] = useState<IPathwayDescriptionSchema>({
-      description: "Discover Cognitive Science: a young but fast-growing field focused on the study of the mind from the perspectives of philosophy, psychology, neuroscience, linguistics, and artificial intelligence. This pathway will introduce students to the major ideas and theories from these areas, as they relate to the study of the mind and intelligence.",
-      requirements: "To complete this integrative pathway, students must choose a minimum of 12 credits as described below. Only four (4) credits can be applied from the HASS Inquiry (INQR) courses listed below to this pathway.",
-      courses: [
-        {
-          name: "Required:",
-          description: "",
-          courses: [
-            {
-              title: "Introduction to Cognitive Science",
-              courseCode: "COGS 2120",
-              tag: []
-            }
-          ]
-        },
-        {
-          name: "Choose remaining credits from the following:",
-          description: "",
-          courses: [
-              {
-                  title: "Introduction to Linguistics",
-                  courseCode: "COGS-2340",
-                  tag: []
-              },
-              {
-                  title: "Cognitive Modeling",
-                  courseCode: "COGS-4210",
-                  tag: []
-              },
-              {
-                  title: "Animal Cognition and Interaction with Humans",
-                  courseCode: "COGS-4220",
-                  tag: []
-              },
-              {
-                  title: "Introduction to Cognitive Neuroscience",
-                  courseCode: "COGS-4330",
-                  tag: []
-              },
-              {
-                  title: "The Linguistics of Computational Linguistics",
-                  courseCode: "COGS-4340",
-                  tag: [
-                      "Communication Intensive"
-                  ]
-              },
-              {
-                  title: "Behavioral Neuroscience",
-                  courseCode: "COGS-4360",
-                  tag: []
-              },
-              {
-                  title: "Programming for Cognitive Science and Artificial Intelligence",
-                  courseCode: "COGS-4410",
-                  tag: []
-              },
-              {
-                  title: "Learning and Advanced Game AI",
-                  courseCode: "COGS-4430",
-                  tag: []
-              },
-              {
-                  title: "Game AI",
-                  courseCode: "COGS-4420",
-                  tag: []
-              },
-              {
-                  title: "Sensibilities",
-                  courseCode: "COGS-4440",
-                  tag: [
-                      "Communication Intensive"
-                  ]
-              },
-              {
-                  title: "Cross-linguistic Perspectives",
-                  courseCode: "COGS-4560",
-                  tag: [
-                      "Communication Intensive"
-                  ]
-              },
-              {
-                  title: "Cognition and the Brain",
-                  courseCode: "COGS-4600",
-                  tag: []
-              },
-              {
-                  title: "Stress and the Brain",
-                  courseCode: "COGS-4610",
-                  tag: []
-              },
-              {
-                  title: "Intelligent Virtual Agents",
-                  courseCode: "COGS-4640",
-                  tag: []
-              },
-              {
-                  title: "Hormones, Brain, and Behavior",
-                  courseCode: "COGS-4700",
-                  tag: []
-              },
-              {
-                  title: "Advanced Topics in Linguistics",
-                  courseCode: "COGS-4780",
-                  tag: [
-                      "Communication Intensive"
-                  ]
-              },
-              {
-                  title: "Language-Endowed Intelligent Agents",
-                  courseCode: "COGS-4880",
-                  tag: []
-              },
-              {
-                  title: "Minds and Machines",
-                  courseCode: "INQR-1140",
-                  tag: [
-                      "Communication Intensive",
-                      "HASS Inquiry"
-                  ]
-              },
-              {
-                  title: "Are Humans Rational?",
-                  courseCode: "INQR-1235",
-                  tag: []
-              },
-              {
-                  title: "Cognitive Psychology",
-                  courseCode: "PSYC-4370",
-                  tag: []
-              },
-              {
-                  title: "Sensation and Perception",
-                  courseCode: "PSYC-4410",
-                  tag: []
-              }
-          ]
-      }],
-      compatibleMinor: [
-        "Cognitive Science Minor",
-        "Cognitive Science of Artificial Intelligence Minor"
-      ],
-      concentrations: [
-        {
-          name: "Artificial Intelligence (AI):",
-          description: "Students who are specifically interested in artificial intellegence (AI) may wish to choose their free course selections from the following list:",
-          courses: [
-              {
-                  title: "Cognitive Modeling",
-                  courseCode: "COGS-4210",
-                  tag: []
-              },
-              {
-                  title: "Programming for Cognitive Science and Artificial Intelligence",
-                  courseCode: "COGS-4410",
-                  tag: []
-              },
-              {
-                  title: "Game AI",
-                  courseCode: "COGS-4420",
-                  tag: []
-              },
-              {
-                  title: "Learning and Advanced Game AI",
-                  courseCode: "COGS-4430",
-                  tag: []
-              },
-              {
-                  title: "Intelligent Virtual Agents",
-                  courseCode: "COGS-4640",
-                  tag: []
-              },
-              {
-                  title: "Language-Endowed Intelligent Agents",
-                  courseCode: "COGS-4880",
-                  tag: []
-              },
-              {
-                  title: "Minds and Machines",
-                  courseCode: "INQR-1140",
-                  tag: [
-                      "Communication Intensive",
-                      "HASS Inquiry"
-                  ]
-              },
-              {
-                  title: "Are Humans Rational?",
-                  courseCode: "INQR-1235",
-                  tag: []
-              }
-          ]
-      }
-      ],
+      description: "",
+      requirements: "",
+      courses: [],
+      compatibleMinor: [],
+      concentrations: [],
     });
   
   
   // Get the pathway data from the api using the Pathway Name
-  // useEffect(() => {
-  //   const apiController = new AbortController();
+  useEffect(() => {
+    const apiController = new AbortController();
   
-  //   fetch(
-  //     // Fetch data
-  //     `http://localhost:3000/api/pathway/${pathwayName}`,
-  //     {
-  //       signal: apiController.signal,
-  //       cache: "no-store",
-  //       next: {
-  //         revalidate: false,
-  //       },
-  //     }
-  //   ).then((data) => {
-  //     // Make sure data is valid
-  //     if(data.ok) {
-  //       return data.json();
-  //     } else {
-  //       throw new Error('AbortError');
-  //     }
-  //   })
-  //   .then((data) => {
-  //       // Set pathway to data (Data is returned as an array, in this case we only
-  //       //  care about the first element)
-  //       setPathway(data[0]);
-  //     })
-  //     .catch((err) => {
-  //       if (err.name === "AbortError") return;
-  //       console.error("Fetching Error: ", err);
-  //     });
-  //   return () => apiController.abort("Cancelled");
+    fetch(
+      // Fetch data
+      `http://localhost:3000/api/pathway/${pathwayName}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+        next: {
+          revalidate: false,
+        },
+      }
+    ).then((data) => {
+      // Make sure data is valid
+      if(data.ok) {
+        return data.json();
+      } else {
+        throw new Error('AbortError');
+      }
+    })
+    .then((data) => {
+        // Set pathway to data (Data is returned as an array, in this case we only
+        //  care about the first element)
+        setPathway(data[0]);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Fetching Error: ", err);
+      });
+    return () => apiController.abort("Cancelled");
 
-  // }, [pathwayName, Pathway]);
+  }, [pathwayName, Pathway]);
 
   const pathwayData: IPathwayDescriptionSchema = Pathway;
   
