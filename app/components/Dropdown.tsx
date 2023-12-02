@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import ChevronDown from "@/public/assets/svg/chevron-down.svg?svgr";
 import ChevronUp from "@/public/assets/svg/chevron-up.svg?svgr";
+//import {CourseStates} from "@/app/model/CourseInterface";
+import { courseState } from "@/public/data/staticData";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -12,8 +14,8 @@ export default function Example() {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const handleSelect = (item) => {
-        setSelectedItem(item);
+    const handleSelect = (state: string) => {
+        setSelectedItem(state);
         setOpen(false);
     };
 
@@ -59,14 +61,11 @@ export default function Example() {
                     <Menu.Items
                         className={classNames(
                             "absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
-                            { "bg-red-700": selectedItem === "Completed" },
-                            { "bg-red-50": selectedItem === "In Progress" },
-                            { "bg-white": selectedItem === "Planned" },
-                            { "bg-white": selectedItem === "Not Selected" }
                         )}
                     >
                         <div className="py-1 relative z-50">
-                            <Menu.Item>
+                            {courseState.map((state) => (
+                                <Menu.Item>
                                 {({ active }) => (
                                     <a
                                         href="#"
@@ -74,56 +73,13 @@ export default function Example() {
                                             active ? 'bg-white text-gray-900' : 'text-gray-700',
                                             'block px-4 py-2 text-sm'
                                         )}
-                                        onClick={() => handleSelect("Completed")}
+                                        onClick={() => handleSelect(state.display)}
                                     >
-                                        Completed
+                                        {state.display}
                                     </a>
                                 )}
                             </Menu.Item>
-                            <Menu.Item>
-                                {({ active }) => (
-                                    <a
-                                        href="#"
-                                        className={classNames(
-                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                            'block px-4 py-2 text-sm'
-                                        )}
-                                        onClick={() => handleSelect("In Progress")}
-                                    >
-                                        In Progress
-                                    </a>
-                                )}
-                            </Menu.Item>
-                            <Menu.Item>
-                                {({ active }) => (
-                                    <a
-                                        href="#"
-                                        className={classNames(
-                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                            'block px-4 py-2 text-sm'
-                                        )}
-                                        onClick={() => handleSelect("Planned")}
-                                    >
-                                        Planned
-                                    </a>
-                                )}
-                            </Menu.Item>
-                            <form method="POST" action="#">
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <button
-                                            type="submit"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block w-full px-4 py-2 text-left text-sm'
-                                            )}
-                                            onClick={() => handleSelect("Not Selected")}
-                                        >
-                                            Not Selected
-                                        </button>
-                                    )}
-                                </Menu.Item>
-                            </form>
+                            ))}
                         </div>
                     </Menu.Items>
                 )}

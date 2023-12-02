@@ -22,6 +22,7 @@ const defaultInitialState: ApplicationContext = {
   catalog_year: -1, // this value is to keep the dropdown text empty while fetching localStorage
   // TODO: all course with status
   setCatalog: () => {},
+  myCourses: [],
   ...constantApplicationValue,
 };
 
@@ -38,13 +39,21 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
     const stateWithoutLocalStorage = {
       ...defaultInitialState,
       catalog_year: 2023,
+      myCourses: []
     };
+
+    let payload = stateWithoutLocalStorage;
+    if (localStorageString) {
+      const localStorageData = JSON.parse(localStorageString);
+      payload = {
+        ...stateWithoutLocalStorage, // First spread the context state
+        ...localStorageData, // Then spread the localStorage data
+      };
+    }
 
     dispatch({
       type: INITIAL_LOAD_DATA,
-      payload: localStorageString
-        ? JSON.parse(localStorageString)
-        : stateWithoutLocalStorage,
+      payload: payload,
     });
   }, []);
 
