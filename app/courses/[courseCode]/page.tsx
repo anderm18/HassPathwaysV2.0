@@ -32,6 +32,7 @@ const emptyCourse: ICourseDescriptionSchema = {
  *
  * @param data - Object containing course code in params.
  */
+
 const CoursePage: React.FC<ICourseCode> = (data) => {
   const { courseCode } = data.params;
 
@@ -80,8 +81,9 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
 
   const term = courseDescription?.term ?? "Unfound Terms";
   const courseName = courseDescription?.title ?? "Unfound Course";
-  const description =
-    courseDescription?.description ?? "Unfound Course description";
+  const description = courseDescription?.description
+    ? courseDescription.description
+    : "No Description Found";
   const prereqs = courseDescription?.prereqs ?? "Unfound Prereqs";
   // const thsemesterOffered = courseDescription?.semesterOffered ?? "Unfound Course SemesterOfferend"
 
@@ -102,7 +104,7 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         <header>
           <h3>Course Description</h3>
         </header>
-        <p>{courseDescription.description}</p>
+        <p>{description}</p>
       </section>
       <section className="description-section">
         <header>
