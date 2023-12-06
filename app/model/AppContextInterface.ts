@@ -12,6 +12,7 @@ type ApplicationContextTemplate = {
 
   // Methods
   setCatalog: (...arg: any) => any;
+  setCourseState: (...arg: any) => any;
 };
 
 type ApplicationConstant = {

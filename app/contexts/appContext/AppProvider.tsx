@@ -8,7 +8,7 @@ import {
   ReactNode,
 } from "react";
 import { appReducer } from "./AppReducer";
-import { INITIAL_LOAD_DATA, SET_CATALOG } from "../actions";
+import { INITIAL_LOAD_DATA, SET_CATALOG, SET_COURSE_STATE } from "../actions";
 import {
   courseState,
   pathwaysCategories,
@@ -67,6 +67,10 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const setCatalog = (catalog_year: number) => {
     dispatch({ type: SET_CATALOG, payload: catalog_year });
   };
+
+  const setCourseState = (MyCourse: Array<T> ) => {
+    dispatch({ type: SET_COURSE_STATE, payload: MyCourse})
+  }
 
   return (
     <AppContext.Provider value={{ ...state, setCatalog }}>

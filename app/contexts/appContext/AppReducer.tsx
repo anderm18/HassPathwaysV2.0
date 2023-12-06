@@ -1,3 +1,5 @@
+// AppReducer.ts
+
 import {
   ApplicationContext,
   ApplicationDispatch,
@@ -21,15 +23,25 @@ export const appReducer: (
       };
     case SET_COURSE_STATE:
       // TODO: create a new mycourses array
-      let newMyCourse = [...state.myCourses];
+      let newMyCourses = [...state.myCourses];
 
-      // TODO: replace the course's old state with the new one
+      // TODO: find the index of the course you want to update (replace 'courseId' with the actual identifier)
+      const courseIndex = newMyCourses.findIndex(
+        (course) => course.id === action.payload.courseId
+      );
+
+      // TODO: make the necessary changes to the course (replace 'newCourseState' with the actual new state)
+      newMyCourses[courseIndex] = {
+        ...newMyCourses[courseIndex],
+        ...action.payload.newCourseState,
+      };
 
       // TODO: return the updated store, with new mycourses array
       return {
         ...state,
-        myCourse: newMyCourse,
+        myCourses: newMyCourses,
       };
+
     default:
       return state;
   }
