@@ -19,25 +19,33 @@ import { ApplicationContext } from "@/app/model/AppContextInterface";
 const constantApplicationValue = { courseState, pathwaysCategories };
 
 const defaultInitialState: ApplicationContext = {
-  catalog_year: 2023,
+  catalog_year: -1, // this value is to keep the dropdown text empty while fetching localStorage
   // TODO: all course with status
   setCatalog: () => {},
   ...constantApplicationValue,
 };
 
-const getInitialState: () => ApplicationContext = () => {
-  const initialState = localStorage.getItem(APPLICATION_STATE_KEY);
-  return initialState ? JSON.parse(initialState) : defaultInitialState;
-};
+const getInitialState: () => ApplicationContext = () => defaultInitialState;
 
-const AppContext = createContext<ApplicationContext>(defaultInitialState);
+const AppContext = createContext<ApplicationContext>(getInitialState());
 
 const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(appReducer, defaultInitialState);
+  const [state, dispatch] = useReducer(appReducer, getInitialState());
 
   // Get data from localStorage
   useEffect(() => {
-    dispatch({ type: INITIAL_LOAD_DATA, payload: getInitialState() });
+    const localStorageString = localStorage.getItem(APPLICATION_STATE_KEY);
+    const stateWithoutLocalStorage = {
+      ...defaultInitialState,
+      catalog_year: 2023,
+    };
+
+    dispatch({
+      type: INITIAL_LOAD_DATA,
+      payload: localStorageString
+        ? JSON.parse(localStorageString)
+        : stateWithoutLocalStorage,
+    });
   }, []);
 
   // Update localStorage

@@ -1,11 +1,8 @@
-{
-  "Cognitive Science": {
-    "department": "",
-    "name": "Cognitive Science",
-    "description": "Discover Cognitive Science: a young but fast-growing field focused on the study of the mind from the perspectives of philosophy, psychology, neuroscience, linguistics, and artifical intellegence.&#xA0; This pathway will introduce students to the major ideas and theories from these areas, as they relate to the study of mind and intellegence.",
-    "clusters": [
+[
+  {
+    "department": "Arts",
+    "pathways": [
       {
-
         "name": "Visual and Media Arts",
         "description": "In this pathway, students are offered a full range of opportunities to create artwork in visual, electronic, and experimental media; to situate contemporary art and visual culture historically and culturally; and to participate in activist and community-based art practices.",
         "clusters": [
@@ -71,202 +68,14 @@
               "ARTS-4560",
               "ARTS-4640"
             ]
-          },
-          {
-            "title": "Food, Farms, and Famine",
-            "courseCode": "STSO-4260",
-            "tag": []
-          },
-          {
-            "title": "Sustainability Education",
-            "courseCode": "STSO-4280",
-            "tag": []
-          },
-          {
-            "title": "Sustainability and STS Careers",
-            "courseCode": "STSO-4300",
-            "tag": []
-          },
-          {
-            "title": "Environmental Media & Data",
-            "courseCode": "STSO-4320",
-            "tag": []
-          },
-          {
-            "title": "Environmental Justice",
-            "courseCode": "STSO-4330",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Environmental Philosophy",
-            "courseCode": "STSO-4340",
-            "tag": []
-          },
-          {
-            "title": "Politics of Design",
-            "courseCode": "STSO-4350",
-            "tag": [
-              "PDII Option for Engr Majors"
-            ]
-          },
-          {
-            "title": "Medicine, Culture, and Society",
-            "courseCode": "STSO-4400",
-            "tag": []
-          },
-          {
-            "title": "History of Medicine",
-            "courseCode": "STSO-4420",
-            "tag": []
-          },
-          {
-            "title": "Drugs in History",
-            "courseCode": "STSO-4430",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "History of Mental Health",
-            "courseCode": "STSO-4440",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Globalization and Development",
-            "courseCode": "STSO-4500",
-            "tag": [
-              "Communication Intensive",
-              "PDII Option for Engr Majors"
-            ]
-          },
-          {
-            "title": "History of American Technology",
-            "courseCode": "STSO-4510",
-            "tag": []
-          },
-          {
-            "title": "History of Science and Technology",
-            "courseCode": "STSO-4530",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Gender, Science, and Technology",
-            "courseCode": "STSO-4560",
-            "tag": []
-          },
-          {
-            "title": "Self-Organization in Science and Society",
-            "courseCode": "STSO-4580",
-            "tag": []
-          },
-          {
-            "title": "American Politics in Crisis",
-            "courseCode": "STSO-4590",
-            "tag": []
-          },
-          {
-            "title": "Design and Innovation Studio A",
-            "courseCode": "STSO-4600",
-            "tag": []
-          },
-          {
-            "title": "Design and Innovation Studio B",
-            "courseCode": "STSO-4605",
-            "tag": [
-              "PDII Option for Engr Majors"
-            ]
-          },
-          {
-            "title": "Design and Innovation  Studio C",
-            "courseCode": "STSO-4610",
-            "tag": [
-              "PDII Option for Engr Majors"
-            ]
-          },
-          {
-            "title": "Design and Innovation Senior Project",
-            "courseCode": "STSO-4970",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Research Design",
-            "courseCode": "STSO-4980",
-            "tag": []
-          },
-          {
-            "title": "STS and Sustainability Senior Project",
-            "courseCode": "STSO-4990",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Concepts in Science and Technology Studies",
-            "courseCode": "STSO-6010",
-            "tag": []
-          },
-          {
-            "title": "Technology Studies",
-            "courseCode": "STSO-6040",
-            "tag": []
-          },
-          {
-            "title": "Science and Technology Policy",
-            "courseCode": "STSO-6100",
-            "tag": []
-          },
-          {
-            "title": "Research Methods in STS",
-            "courseCode": "STSO-6110",
-            "tag": []
-          },
-          {
-            "title": "Advanced Research Methods",
-            "courseCode": "STSO-6120",
-            "tag": []
-          },
-          {
-            "title": "Science Studies",
-            "courseCode": "STSO-6200",
-            "tag": []
-          },
-          {
-            "title": "Environment and Social Theory",
-            "courseCode": "STSO-6300",
-            "tag": []
-          },
-          {
-            "title": "Environment and Health",
-            "courseCode": "STSO-6400",
-            "tag": []
-          },
-          {
-            "title": "History and Ethnography",
-            "courseCode": "STSO-6580",
-            "tag": []
           }
+        ],
+        "compatibleMinor": [
+          "Electronic Arts",
+          "Studio Arts",
+          "Video, Performance, and Social Practice"
         ]
-      }
-    ],
-    "compatibleMinor": [
-      "Science, Technology, and Society Minor"
-    ],
-    "concentrations": [],
-    "requirements": "To fulfill this pathway, students must complete 12 credit hours in courses offered by the Department of Science & Technology Studies (courses with the STSO prefix, and the specific INQR courses listed below, but excluding credits from independent studies and URPs).Science, Technology, and SocietyOnly four (4) credits from the HASS Inquiry (INQR) courses listed below can be applied to the pathway. Students should pay careful attention to prerequisites of classes above the 1000-level. Students who are interested in undertaking the compatible minor and major inshould also pay careful attention to the required courses of those programs before making their course selections for this pathway.We recommend (but do not require) that students use their HASS Inquiry course to begin to fulfill this Pathway. HASS Inquiry courses offered by the Department of Science and Technology Studies are the following:"
-  },
-  "Strategic Writing": {
-    "department": "",
-    "name": "Strategic Writing",
-    "description": "This pathway is designed to train versatile, critical, and self-possessed 21st-century communicators.&#xA0; Students who successfully complete this pathway will demonstrate the ability to make focused audience-appropriate arguments; communicate effectively across diverse rhetorical, socio-cultural, and disciplinary contexts; and respond creatively to the analytical demands involved with developing, arranging, and revising ideas and arguments.",
-    "clusters": [
+      },
       {
         "name": "Music and Sound",
         "description": "In this pathway, students are offered a full range of opportunities to perform, compose, and record music; to program and develop novel music technologies; to produce and design sound for screen media; and to situate music historically and culturally across multiple genres.",
@@ -328,30 +137,24 @@
           "Music"
         ]
       }
-    ],
-    "compatibleMinor": [
-      "Writing Minor",
-      "Strategic Communication Minor"
-    ],
-    "concentrations": [],
-    "requirements": "To complete this integrative pathway, students must choose a minimum of 12 credits as from the course list below."
+    ]
   },
-  "Sustainability Studies": {
-    "department": "",
-    "name": "Sustainability Studies",
-    "description":
-      "The pathway in Sustainability focuses on the interactions between various systems - social, political, cultural, economic, technological and ecological - that undergird environmental sustainability. Students use interdisciplinary approaches to investigate environmental problems.",
-    "clusters": [
+  {
+    "department": "Communication & Media",
+    "pathways": [
       {
         "name": "Global Languages and Cultures",
         "description": "This pathway promotes the development of skills to help students effectively communicate both domestically and internationally, as well as enhance their appreciation for other cultures. Students who select this pathway must have all courses that are part of the pathway be in the <i>same foreign language</i>. These courses may be fulfilled through transfer credits.",
         "clusters": [
           {
-            "title": "Nature/Society",
-            "courseCode": "INQR-1110",
-            "tag": [
-              "Communication Intensive",
-              "HASS Inquiry"
+            "name": "Global Languages and Cultures",
+            "courses": [
+              "IHSS-1492",
+              "LANG-1000",
+              "LANG-2000",
+              "LANG-4000",
+              "LANG-4455",
+              "COMM-4535"
             ]
           }
         ],
@@ -363,21 +166,26 @@
         "name": "Graphic and Interactive Media Design",
         "description": "This pathway integrates the theory and practice of graphic and interactive media design in print and digital media. Students are prepared to use creative and critical thinking to solve visual communication problems in diverse contexts, reaching target audiences with words, symbols, and images. Offerings in integrative design also prepare students for creating forms of multimedia communication and data representation.",
         "clusters": [
-
           {
-            "title": "Sustainability Debates",
-            "courseCode": "INQR-1240",
-            "tag": [
-              "Communication Intensive",
-              "HASS Inquiry"
+            "name": "Graphic Design",
+            "courses": [
+              "INQR-1562",
+              "COMM-2570",
+              "COMM-2660",
+              "COMM-4460",
+              "COMM-4470",
+              "COMM-4730",
+              "COMM-4970"
             ]
           },
           {
-            "title": "Designing Climate Justice",
-            "courseCode": "INQR-1250",
-            "tag": [
-              "Communication Intensive",
-              "HASS Inquiry"
+            "name": "Interactive Media Design",
+            "courses": [
+              "COMM-4320",
+              "COMM-4420",
+              "COMM-4770",
+              "COMM-4780",
+              "COMM-4880"
             ]
           }
         ],
@@ -460,65 +268,17 @@
               "COMM-4540",
               "COMM-4580"
             ]
-          },
-          {
-            "title": "Globalization and Development",
-            "courseCode": "STSO-4500",
-            "tag": [
-              "Communication Intensive",
-              "PDII Option for Engr Majors"
-            ]
-          },
-          {
-            "title": "History of American Technology",
-            "courseCode": "STSO-4510",
-            "tag": []
-          },
-          {
-            "title": "Design and Innovation Studio A",
-            "courseCode": "STSO-4600",
-            "tag": []
           }
         ],
         "compatibleMinor": [
           "Media and Culture"
         ]
       }
-    ],
-    "compatibleMinor": [
-      "Sustainability Studies Minor"
-    ],
-    "concentrations": []
+    ]
   },
-  "Transfer Student Arts and Humanities": {
-    "department": "",
-    "name": "Transfer Student Arts and Humanities",
-    "description": 
-      "This pathway is intended for transfer students that enter with sophomore status or above and who have completed significant coursework within the arts and humanities to be applied toward a pathway.&#xA0; Coursework may include a mix of transfer courses that come in as electives or courses taken at Rensselaer. To complete this integrative pathway, students must complete a minimum of 12 credits of coursework with the following course prefixes, with at least 8 credit hours at or above the 2000-level:",
-    "clusters": [],
-    "compatibleMinor": [],
-    "concentrations": []
-  },
-  "Transfer Student Social Science": {
-    "department": "",
-    "name": "Transfer Student Social Science",
-    "description":
-      "This pathway is intended for transfer students that enter with sophomore status or above and&#xA0;who have completed significant coursework within the social sciences&#xA0;to be applied toward a pathway.&#xA0; Coursework may include a mix of transfer courses that come in as electives or courses taken at Rensselaer. To complete this integrative pathway, students must choose a minimum of 12 credits of coursework with the following course prefixs, with at least 8 credit hours at or above the 2000-level.",
-    "clusters": [],
-    "compatibleMinor": [],
-    "concentrations": []
-  },
-  "Visual and Media Arts": {
-    "department": "",
-    "name": "Visual and Media Arts",
-    "description": "In this pathway, students are offered a full range of opportunities to create artwork in visual, electronic, and experimental media; to situate contemporary art and visual culture historically and culturally; and to participate in activist and community-based art practices.",
-    "clusters": [],
-    "compatibleMinor": [
-      "Electronic Arts Minor",
-      "Studio Arts Minor",
-      "Video, Performance, and Social Practice Minor"
-    ],
-    "concentrations": [
+  {
+    "department": "Cognitive Science",
+    "pathways": [
       {
         "name": "Cognitive Science",
         "description": "Discover Cognitive Science: a young but fast-growing field focused on the study of the mind from the perspectives of philosophy, psychology, neuroscience, linguistics, and artificial intelligence. This pathway will introduce students to the major ideas and theories from these areas, as they relate to the study of the mind and intelligence.",
@@ -527,25 +287,16 @@
         ],
         "clusters": [
           {
-            "title": "Intermediate Drawing",
-            "courseCode": "ARTS-2200",
-            "tag": []
-          },
-          {
-            "title": "Sculpture I",
-            "courseCode": "ARTS-2210",
-            "tag": []
-          },
-          {
-            "title": "Fundamentals of 2D Design",
-            "courseCode": "ARTS-2220",
-            "tag": []
-          },
-          {
-            "title": "The Multimedia Century",
-            "courseCode": "ARTS-2540",
-            "tag": [
-              "Communication Intensive"
+            "name": "Artificial Intelligence",
+            "courses": [
+              "INQR-1140",
+              "INQR-1235",
+              "COGS-4210",
+              "COGS-4410",
+              "COGS-4420",
+              "COGS-4430",
+              "COGS-4640",
+              "COGS-4880"
             ]
           },
           {
@@ -557,6 +308,10 @@
               "COGS-4000"
             ]
           }
+        ],
+        "compatibleMinor": [
+          "Cognitive Science",
+          "Cognitive Science of Artificial Intelligence"
         ]
       },
       {
@@ -567,37 +322,29 @@
         ],
         "clusters": [
           {
-            "title": "Art History",
-            "courseCode": "ARTS-1050",
-            "tag": [
-              "Communication Intensive"
+            "name": "Behavioral and Cognitive Neuroscience",
+            "courses": [
+              "PSYC-4330",
+              "PSYC-4360",
+              "PSYC-4500",
+              "PSYC-4600",
+              "PSYC-4610",
+              "PSYC-4700"
             ]
           },
           {
-            "title": "Intermediate Digital Imaging",
-            "courseCode": "ARTS-2040",
-            "tag": []
-          },
-          {
-            "title": "2D Experimental Animation",
-            "courseCode": "ARTS-2060",
-            "tag": []
-          },
-          {
-            "title": "Graphic Storytelling",
-            "courseCode": "ARTS-2070",
-            "tag": []
-          },
-          {
-            "title": "3D Digital Modeling",
-            "courseCode": "ARTS-2230",
-            "tag": []
-          },
-          {
-            "title": "The Multimedia Century",
-            "courseCode": "ARTS-2540",
-            "tag": [
-              "Communication Intensive"
+            "name": "Psychological Science",
+            "courses": [
+              "PSYC-2310",
+              "PSYC-2730",
+              "PSYC-4110",
+              "PSYC-4200",
+              "PSYC-4310",
+              "PSYC-4350",
+              "PSYC-4370",
+              "PSYC-4450",
+              "PSYC-4500",
+              "PSYC-4720"
             ]
           },
           {
@@ -607,6 +354,11 @@
               "PSYC-4000"
             ]
           }
+        ],
+        "compatibleMinor": [
+          "Behavioral and Cognitive Neuroscience",
+          "General Psychology",
+          "Psychological Science"
         ]
       },
       {
@@ -614,38 +366,27 @@
         "description": "In this pathway, students will learn to reason more precisely, think more critically, and ask more penetrating and foundational questions about enduring and contemporary problems in ethics, science, technology, religion, and politics including some of the biggest challenges that humanity currently faces.",
         "clusters": [
           {
-            "title": "The Multimedia Century",
-            "courseCode": "ARTS-2540",
-            "tag": [
-              "Communication Intensive"
+            "name": "Philosophy of Logic, Computation, and Mind",
+            "courses": [
+              "INQR-1235",
+              "PHIL-2100",
+              "PHIL-2140",
+              "PHIL-4140",
+              "PHIL-4420"
             ]
           },
           {
-            "title": "Rethinking Documentary: Video Production",
-            "courseCode": "ARTS-4040",
-            "tag": []
-          },
-          {
-            "title": "Advanced Video Media Studio",
-            "courseCode": "ARTS-4050",
-            "tag": []
-          },
-          {
-            "title": "Music, Sound & Screen Media",
-            "courseCode": "ARTS-4440",
-            "tag": []
-          },
-          {
-            "title": "Writing and Directing for Video",
-            "courseCode": "ARTS-4630",
-            "tag": []
-          },
-          {
-            "title": "Behind the TV Screen",
-            "courseCode": "INQR-1030",
-            "tag": [
-              "Communication Intensive",
-              "HASS Inquiry"
+            "name": "Philosophy",
+            "courses": [
+              "PHIL-1110",
+              "INQR-1150",
+              "INQR-1160",
+              "INQR-1165",
+              "PHIL-2400",
+              "PHIL-4130",
+              "PHIL-4240",
+              "PHIL-4300",
+              "PHIL-4480"
             ]
           },
           {
@@ -656,8 +397,17 @@
               "PHIL-4000"
             ]
           }
+        ],
+        "compatibleMinor": [
+          "Philosophy",
+          "Philosophy of Logic, Computation, and Mind"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "department": "Economics",
+    "pathways": [
       {
         "name": "Economics",
         "description": "Economics is the study of human behavior, incentives, markets, and governments. Students learn the fundamental models and data analytics of decision-making by individuals and firms, market dynamics, policy-making, globalization, financial economics, and more.",
@@ -672,21 +422,20 @@
               "ECON-4000"
             ]
           }
+        ],
+        "compatibleMinor": [
+          "Economics",
+          "Economics of Banking and Finance",
+          "Economics of Healthcare Markets",
+          "Economics of Quantitative Modeling",
+          "Economics of Technology and Innovation"
         ]
       }
-    ],
-    "requirements": "To complete this integrative pathway, students must choose a minimum of 12 as described.  Only four (4) credits from HASS Inquiry (INQR) courses listed below can be applied to the pathway. withincombineThe courses in the Visual and Media Arts pathway are organized in categories: Studio Art, Electronic Arts, Video, Social Practice and Hybrid Genres.  Students may concentrate their selection of coursesa single catagory, or they maycourses between any of the four catagories."
+    ]
   },
-  "Well-being: Body and Mind": {
-    "department": "",
-    "name": "Well-being: Body and Mind",
-    "description":
-      "How do humans maintain a sense of well-being in their lives?What are the relationships between individual, social and ecological health?&#xA0; The \"Well-being: Body and Mind\" Integrative Pathway explores well-being through theoretical and practical courses across a range of disciplines including philosophy, psychology, science and technology studies, health sciences, and the arts. The pathway includes courses that engage issues of individual, collective and environmental well-being as subject matter, as well as courses that introduce experiential practices such as mindfulness meditation, journaling, and community engagement.",
-    "clusters": [],
-    "compatibleMinor": [
-      "Well-Being Minor"
-    ],
-    "concentrations": [
+  {
+    "department": "STS",
+    "pathways": [
       {
         "name": "Science, Technology, and Society",
         "description": "The pathway in Science, Technology, and Society (STS) is designed for students broadly interested in the social and political dimensions of science, technology, engineering, and medicine. Students use political and social science methods to investigate scientific and technological developments.",
@@ -743,7 +492,12 @@
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "department": "Interdisciplinary",
+    "pathways": [
       {
         "name": "Ethics, Integrity, and Social Responsibility",
         "description": "In this Pathway, students analyze many aspects of the complex relationship between ethics and areas in science, technology, and engineering. These conversations are critical to ensure the ethical and accessible use of technology and to allow scientists and engineers to think critically and make informed decisions on personal, professional, and public policy levels.",
@@ -782,11 +536,16 @@
         ],
         "clusters": [
           {
-            "title": "Songwriting Workshop",
-            "courseCode": "INQR-1700",
-            "tag": [
-              "Communication Intensive",
-              "HASS Inquiry"
+            "name": "Pre-Health",
+            "courses": [
+              "WRIT-1110",
+              "WRIT-2110",
+              "WRIT-2340",
+              "WRIT-4380",
+              "WRIT-4410",
+              "WRIT-4550",
+              "COMM-2520",
+              "COMM-4460"
             ]
           }
         ]
@@ -822,47 +581,28 @@
         ]
       },
       {
-        "name": "Psychology courses",
-        "description": "",
-        "courses": [
+        "name": "History",
+        "description": "The pathway designed for students interested in U.S. and world history. Courses all intersect in that they offer historical perspectives and approaches to thinking about various topics: from music, to technology, to medicine, to broader historical surveys (such as American History).",
+        "clusters": [
           {
-            "title": "Introduction to Psychological Science",
-            "courseCode": "PSYC-1200",
-            "tag": []
-          },
-          {
-            "title": "Psychology of Mindfulness",
-            "courseCode": "PSYC-4430",
-            "tag": [
-              "Communication Intensive"
+            "name": "History",
+            "courses": [
+              "INQR-1170",
+              "INQR-1300",
+              "INQR-1320",
+              "INQR-1580",
+              "INQR-1776",
+              "INQR-1570",
+              "ARTS-1050",
+              "ARTS-2500",
+              "ARTS-2510",
+              "STSO-2500",
+              "STSO-4420",
+              "STSO-4430",
+              "STSO-4440",
+              "STSO-4510",
+              "STSO-4530"
             ]
-          },
-          {
-            "title": "Sensibilities",
-            "courseCode": "PSYC-4440",
-            "tag": [
-              "Communication Intensive"
-            ]
-          },
-          {
-            "title": "Drugs, Society, and Behavior",
-            "courseCode": "PSYC-4500",
-            "tag": []
-          },
-          {
-            "title": "Stress and the Brain",
-            "courseCode": "PSYC-4610",
-            "tag": []
-          },
-          {
-            "title": "Hormones, Brain, and Behavior",
-            "courseCode": "PSYC-4700",
-            "tag": []
-          },
-          {
-            "title": "Positive Psychology",
-            "courseCode": "PSYC-4730",
-            "tag": []
           }
         ]
       },
@@ -898,21 +638,30 @@
         ]
       },
       {
-        "name": "Communication and Media courses",
-        "description": "",
-        "courses": [
+        "name": "Well-Being: Body and Mind",
+        "description": "How do we cultivate well-being in our lives? What are the relationships between individual, social and ecological health? The \"Well-being: Body and Mind\" Integrative Pathway explores well-being through theoretical and practical courses across a range of disciplines including philosophy, psychology, science and technology studies, health sciences, and the arts.",
+        "clusters": [
           {
-            "title": "Superheroes in the Classroom",
-            "courseCode": "COMM-2616",
-            "tag": [
-              "Communication Intensive"
+            "name": "Well-Being: HASS Inquiry",
+            "courses": [
+              "INQR-1110",
+              "INQR-1140",
+              "INQR-1175",
+              "INQR-1180",
+              "INQR-1700",
+              "INQR-1720",
+              "INQR-1560"
             ]
           },
           {
-            "title": "Critical Television",
-            "courseCode": "COMM-2750",
-            "tag": [
-              "Communication Intensive"
+            "name": "Well-Being: Arts",
+            "courses": [
+              "ARTS-1200",
+              "ARTS-2180",
+              "ARTS-4180",
+              "ARTS-2300",
+              "ARTS-2310",
+              "ARTS-2350"
             ]
           },
           {
@@ -949,10 +698,13 @@
             ]
           },
           {
-            "title": "Creative Writing:  Short Story",
-            "courseCode": "WRIT-2330",
-            "tag": [
-              "Communication Intensive"
+            "name": "Well-Being: Communications and Media",
+            "courses": [
+              "WRIT-2320",
+              "WRIT-2330",
+              "COMM-2750",
+              "COMM-2616",
+              "LITR-2410"
             ]
           }
         ],
@@ -960,7 +712,6 @@
           "Well-Being"
         ]
       }
-    ],
-    "requirements": "To complete this integrative pathway, students must choose a minimum of 12 credits from the list below.  Only four (4) credits from the HASS Inquiry (INQR) courses listed below can be applied to the pathway."
+    ]
   }
-}
+]

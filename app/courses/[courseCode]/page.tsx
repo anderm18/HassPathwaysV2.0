@@ -116,26 +116,12 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         <header>
           <h3>Semester Offered</h3>
         </header>
-        <section className="hidden sm:grid grid-table grid-cols-4 max-w-[960px] overflow-clip rounded-xl border-solid border border-gray-200 bg-white ut-shadow-sm">
-          <div className="table-header">Year</div>
-          <div className="table-header">Spring</div>
-          <div className="table-header">Summer</div>
-          <div className="table-header">Fall</div>
-          {term.map((t) => {
-            return (
-              <Fragment key={t.year}>
-                <header className="font-medium">{t.year}</header>
-                <TableData data={t.spring} />
-                <TableData data={t.summer} />
-                <TableData data={t.fall} />
-              </Fragment>
-            );
-          })}
-        </section>
+        <SemesterTable term={term} />
       </section>
     </Fragment>
   );
 };
+
 /**
  * TableData component to display instructor and available seats.
  *

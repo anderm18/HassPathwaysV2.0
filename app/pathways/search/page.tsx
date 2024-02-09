@@ -5,6 +5,8 @@ import React, {
   useReducer,
   useDeferredValue,
   useEffect,
+  Suspense,
+  useCallback,
 } from "react";
 import PathwayCard from "@/app/components/pathway/PathwayCard";
 import { useAppContext } from "@/app/contexts/appContext/AppProvider";
@@ -14,6 +16,10 @@ import {
 } from "@/app/components/pathway/FilterComponent";
 import { IpathwayData } from "@/public/data/staticInterface";
 import { IPathwaySchema } from "@/public/data/dataInterface";
+import dynamic from "next/dynamic";
+import { debounce } from "lodash";
+
+const Spinner = dynamic(() => import("@/app/components/utils/Spinner"));
 
 const getFilterList: (
   pathwayCategory: IpathwayData[],
@@ -31,7 +37,8 @@ const getFilterList: (
 };
 
 const SearchCourse = () => {
-  const { pathwaysCategories } = useAppContext();
+  const { pathwaysCategories, catalog_year } = useAppContext();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
@@ -59,43 +66,50 @@ const SearchCourse = () => {
   ) => (state & (1 << index)) !== 0;
 
   const [searchString, setSearchString] = useState("");
-  const [resultPathway, setResultPathway] = useState<IPathwaySchema[]>([
-    {
-      title: "Visual and Media Arts",
-      department: "Arts",
-      courses: [
-        {
-          title: "abc",
-          courseCode: "ARTS-1050",
-          tag: [],
-        },
-        {
-          title: "jir",
-          courseCode: "ARTS-1200",
-          tag: [],
-        },
-        {
-          title: "kri",
-          courseCode: "ARTS-2200",
-          tag: [],
-        },
-        {
-          title: ",o",
-          courseCode: "ARTS-2090",
-          tag: [],
-        },
-        {
-          title: "inu",
-          courseCode: "ARTS-2210",
-          tag: [],
-        },
-      ],
-    },
-  ]);
+  const [resultPathways, setResultPathways] = useState<IPathwaySchema[]>([]);
 
   const deferSearchString = useDeferredValue(searchString);
+  // const deferResultPathways = useDeferredValue(resultPathways);
   const deferFilterState = useDeferredValue(filterState);
+
+  const debouncedFetchPathways = useCallback(
+    debounce(() => {
+      const apiController = new AbortController();
+
+      setIsLoading(true);
+      fetch(
+        `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+          searchString: deferSearchString,
+          department: getFilterList(pathwaysCategories, deferFilterState),
+          // this is a temporary fix, maybe use a spinner instead when waiting for catalog_year (default value is -1, invalid in API)
+          catalogYear: catalog_year == -1 ? "2023" : catalog_year.toString(),
+        })}`,
+        {
+          signal: apiController.signal,
+          cache: "no-store",
+          next: {
+            revalidate: false,
+          },
+        }
+      )
+        .then((data) => data.json())
+        .then((data) => {
+          setResultPathways(data);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          if (err.name === "AbortError") return;
+          console.error("Fetching Error: ", err);
+        });
+
+      return () => apiController.abort("Cancelled");
+    }, 500), // delay 500ms
+
+    [deferFilterState, deferSearchString, setIsLoading, setResultPathways]
+  );
+
   useEffect(() => {
+
     const apiController = new AbortController();
 
     // console.log(getFilterList(pathwaysCategories, deferFilterState));
@@ -140,10 +154,12 @@ const SearchCourse = () => {
       </header>
       <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
         <div className="w-full fold:w-[320px]">
-          <SearchInput
-            setSearchString={setSearchString}
-            searchString={searchString}
-          />
+          <Suspense>
+            <SearchInput
+              setSearchString={setSearchString}
+              searchString={searchString}
+            />
+          </Suspense>
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold lg:hidden">Department</h3>
@@ -166,11 +182,16 @@ const SearchCourse = () => {
           </div>
         </div>
       </div>
-      <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-        {resultPathway.map((pathway, i) => {
-          return <PathwayCard {...pathway} key={i} />;
-        })}
-      </section>
+
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
+          {resultPathways.map((pathway, i) => {
+            return <PathwayCard {...pathway} key={i} />;
+          })}
+        </section>
+      )}
     </>
   );
 };

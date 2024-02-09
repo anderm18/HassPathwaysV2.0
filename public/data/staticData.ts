@@ -172,8 +172,4 @@ export const catalogList: ICatalogList = [
     text: "2019 - 2020 Catalog",
     value: 2020,
   },
-  {
-    text: "2018 - 2019 Catalog",
-    value: 2019,
-  },
 ];

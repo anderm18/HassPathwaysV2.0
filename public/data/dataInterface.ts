@@ -21,7 +21,7 @@ export interface ISemesterData {
   seats: string;
 }
 
-interface ITerm {
+export interface ITerm {
   year: string;
   spring?: ISemesterData;
   fall?: ISemesterData;

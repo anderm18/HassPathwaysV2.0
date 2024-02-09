@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import {
   ModeRadioButton,
   FilterCheckBox,
@@ -12,57 +12,58 @@ import { noBookmarkedText, noMatchedText } from "@/public/data/staticData";
 import { IPathwaySchema } from "@/public/data/dataInterface";
 
 // !! Temporary Data, Remove Later
-// const pathwayList = [
-//   {
-//     name: "Graphic and Interactive Media Design",
-//     category: "Communication & Media",
-//     courses: [
-//       {
-//         title: "abc",
-//         courseCode: "ARTS-1050",
-//         tag: [],
-//       },
-//       {
-//         title: "jir",
-//         courseCode: "ARTS-1200",
-//         tag: [],
-//       },
-//       {
-//         title: "kri",
-//         courseCode: "ARTS-2200",
-//         tag: [],
-//       },
-//     ],
-//   },
-//   {
-//     name: "Information Technology and Web Science",
-//     category: "Inter",
-//     courses: [
-//       {
-//         title: "abc",
-//         courseCode: "ARTS-1050",
-//         tag: [],
-//       },
-//       {
-//         title: "jir",
-//         courseCode: "ARTS-1200",
-//         tag: [],
-//       },
-//       {
-//         title: "kri",
-//         courseCode: "ARTS-2200",
-//         tag: [],
-//       },
-//     ],
-//   },
-// ];
+const pathwayList = [
+  {
+    name: "Graphic and Interactive Media Design",
+    category: "Communication & Media",
+    courses: [
+      {
+        title: "abc",
+        courseCode: "ARTS-1050",
+        tag: [],
+      },
+      {
+        title: "jir",
+        courseCode: "ARTS-1200",
+        tag: [],
+      },
+      {
+        title: "kri",
+        courseCode: "ARTS-2200",
+        tag: [],
+      },
+    ],
+  },
+  {
+    name: "Information Technology and Web Science",
+    category: "Inter",
+    courses: [
+      {
+        title: "abc",
+        courseCode: "ARTS-1050",
+        tag: [],
+      },
+      {
+        title: "jir",
+        courseCode: "ARTS-1200",
+        tag: [],
+      },
+      {
+        title: "kri",
+        courseCode: "ARTS-2200",
+        tag: [],
+      },
+    ],
+  },
+];
 
-const pathwayList: Array<IPathwaySchema> = [];
+//const pathwayList: Array<IPathwaySchema> = [];
 
 const MyPathways = () => {
   const { pathwaysCategories } = useAppContext();
   // Determine the mode of pathway card
   const [bookmarkedState, setbookmarkedState] = useState(true);
+  const [marked, setMarked] = useState([]);
 
   const MAX_FILTER = (1 << pathwaysCategories.length) - 1;
   // Determine the filter
@@ -84,7 +85,18 @@ const MyPathways = () => {
     },
     0
   );
-  const activeFilter = (state: number, index: number) => state & (1 << index);
+  const activeFilter = (state: number, index: number) =>
+    (state & (1 << index)) !== 0;
+
+  useEffect(() => {
+    var bmks = localStorage.getItem("bookmarks")
+    if (bmks == null) {
+      localStorage.setItem("bookmarks", "[]");
+    }
+    else {
+      setMarked(JSON.parse(bmks));
+    }
+  }, [])
 
   return (
     <>
@@ -136,7 +148,7 @@ const MyPathways = () => {
         <NothingToShow bookmarkedState={bookmarkedState} />
       ) : (
         <section className="py-8 flex flex-wrap gap-x-10 gap-y-4 justify-around md:justify-start">
-          {pathwayList.map((pathway, i) => {
+          {marked.map((pathway, i) => {
             return <PathwayCard {...pathway} key={i} />;
           })}
         </section>
