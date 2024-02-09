@@ -1,0 +1,4385 @@
+{
+    "Art History, Theory, and Criticism": {
+        "department": "",
+        "name": "Art History, Theory, and Criticism",
+        "description": [
+            "This pathway allows students to study a range of art history and media art histories and theories. This immersive study will give students a comprehensive view of how these histories have shaped our current day media and given rise to a variety of art making tools in our digital and computational era.",
+            "To complete this integrative pathway, student must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Art History",
+                        "courseCode": "ARTS-1050",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Histories of Jazz and Improvised Music",
+                        "courseCode": "ARTS-2510",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "History of Animation",
+                        "courseCode": "IHSS-1170",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Race and Film in U.S. Culture and History",
+                        "courseCode": "IHSS-1300",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Songwriting Workshop",
+                        "courseCode": "IHSS-1700",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "The Multimedia Century",
+                        "courseCode": "ARTS-2540",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Histories of Western Music",
+                        "courseCode": "ARTS-2500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Artificial Intelligence": {
+        "department": "",
+        "name": "Artificial Intelligence",
+        "description": [
+            "Artificial Intelligence is quickly becoming pervasive in our lives. Study how Artificial Intelligence can benefit from concepts and ideas from cognitive science, and explore the ways in which Artificial Intelligence is changing our lives.",
+            "To complete this integrative pathway, student must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Cognitive Science",
+                        "courseCode": "COGS-2120",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Are Humans Rational?",
+                        "courseCode": "IHSS-1235",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Cognitive Modeling",
+                        "courseCode": "COGS-4210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Programming for Cognitive Science and Artificial Intelligence",
+                        "courseCode": "COGS-4410",
+                        "tag": []
+                    },
+                    {
+                        "title": "Game AI",
+                        "courseCode": "COGS-4420",
+                        "tag": []
+                    },
+                    {
+                        "title": "Learning and Advanced Game AI",
+                        "courseCode": "COGS-4430",
+                        "tag": []
+                    },
+                    {
+                        "title": "Intelligent Virtual Agents",
+                        "courseCode": "COGS-4640",
+                        "tag": []
+                    },
+                    {
+                        "title": "Language-Endowed Intelligent Agents",
+                        "courseCode": "COGS-4880",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Cognitive Science of Artificial Intelligence Minor"
+        ]
+    },
+    "Behavioral and Cognitive Neuroscience": {
+        "department": "",
+        "name": "Behavioral and Cognitive Neuroscience",
+        "description": [
+            "Behavioral and cognitive neuroscience focus on understanding the brain mechanisms that allow humans and other animals to perceive, think, feel, remember, and act.&#xA0; Students pursuing this pathway will cultivate an understanding of brain and behavior/cognition relationships by critically analyzing research findings.",
+            "To complete this integrative pathway, student must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following, with at least 4 credits at the 4000-level:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "IHSS 1960&#xA0;&#x2013; Understanding Empathy,"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Introduction to Cognitive Neuroscience",
+                        "courseCode": "COGS-4330",
+                        "tag": []
+                    },
+                    {
+                        "title": "Behavioral Neuroscience",
+                        "courseCode": "COGS-4360",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognition and the Brain",
+                        "courseCode": "COGS-4600",
+                        "tag": []
+                    },
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "COGS-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "COGS-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Cognitive Neuroscience",
+                        "courseCode": "PSYC-4330",
+                        "tag": []
+                    },
+                    {
+                        "title": "Behavioral Neuroscience",
+                        "courseCode": "PSYC-4360",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs, Society, and Behavior",
+                        "courseCode": "PSYC-4500",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognition and the Brain",
+                        "courseCode": "PSYC-4600",
+                        "tag": []
+                    },
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "PSYC-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "PSYC-4700",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Behavioral and Cognitive Neuroscience Minor"
+        ]
+    },
+    "Chinese Language": {
+        "department": "",
+        "name": "Chinese Language",
+        "description": [
+            "Integrated with Chinese culture, students will learn all four types of language skills (listening, speaking, reading, and writing). After completing the Chinese pathway, students will be able to communicate in Chinese at their targeted proficiency levels and think critically and creatively with global and multicultural awareness.",
+            "To complete this integrative pathway, student must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Chinese I",
+                        "courseCode": "LANG-1410",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Chinese II",
+                        "courseCode": "LANG-2410",
+                        "tag": []
+                    },
+                    {
+                        "title": "Chinese III",
+                        "courseCode": "LANG-4420",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Chinese IV",
+                        "courseCode": "LANG-4430",
+                        "tag": []
+                    },
+                    {
+                        "title": "Chinese V",
+                        "courseCode": "LANG-4470",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Chinese Language Minor"
+        ]
+    },
+    "Creative Design and Innovation": {
+        "department": "",
+        "name": "Creative Design and Innovation",
+        "description": [
+            "This pathway looks at creative design and innovation from various humanities, arts, and social science points of view. Students will learn about the cognitive and communicative principles behind design and innovation, the economic policies, markets, and other social institutions driving and shaping design and innovation, and how to engage in sustainable and socially responsible design and innovation for local and global impact.",
+            "To complete this integrative pathway, student must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196x&#xA0;- Topics in IHSS: Remixing in Digital Culture&#xA0;"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196x&#xA0;- Topics in IHSS: Worlds on Display&#xA0;"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196x&#xA0;- Topics in IHSS: Game Sound and Musical Play"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Digital Imaging",
+                        "courseCode": "ARTS-1020",
+                        "tag": []
+                    },
+                    {
+                        "title": "Digital Filmmaking",
+                        "courseCode": "ARTS-1030",
+                        "tag": []
+                    },
+                    {
+                        "title": "Fundamentals of Music and Sound",
+                        "courseCode": "ARTS-1380",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Animation",
+                        "courseCode": "IHSS-1170",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Songwriting Workshop",
+                        "courseCode": "IHSS-1700",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Documentary in the 21st Century: Identity Production",
+                        "courseCode": "IHSS-1040",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "COMM 496x&#xA0;- Topics in COMM: Color Theory"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "ARTS 496x- Topics in ARTS: Performance Art"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Sculpture I",
+                        "courseCode": "ARTS-2210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Fundamentals of 2D Design",
+                        "courseCode": "ARTS-2220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Music and Sound I",
+                        "courseCode": "ARTS-2380",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sound Recording and Production I",
+                        "courseCode": "ARTS-2700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in the Arts",
+                        "courseCode": "ARTS-2960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sculpture II",
+                        "courseCode": "ARTS-4210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in the Arts",
+                        "courseCode": "ARTS-4960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Cognitive Science",
+                        "courseCode": "COGS-2120",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognitive Engineering",
+                        "courseCode": "COGS-4620",
+                        "tag": []
+                    },
+                    {
+                        "title": "Typography",
+                        "courseCode": "COMM-2570",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Graphic Design",
+                        "courseCode": "COMM-2660",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Visual Poetics and Narrative",
+                        "courseCode": "COMM-4320",
+                        "tag": []
+                    },
+                    {
+                        "title": "Visual Design: Theory and Application",
+                        "courseCode": "COMM-4460",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in Communication",
+                        "courseCode": "COMM-4960",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Design, Innovation, and Society": {
+        "department": "",
+        "name": "Design, Innovation, and Society",
+        "description": [
+            "The pathway in Design, Innovation, and Society (DIS) provides creative, socially conscious students deep context for a broad education in design and innovation. Students take a sequence of studio-based courses that address real-world social and environmental challenges.",
+            "To complete this integrative pathway, student must choose 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Design and Innovation Studio I",
+                        "courseCode": "IHSS-1610",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Design and Innovation Studio II",
+                        "courseCode": "STSO-2610",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Design and Innovation Studio III",
+                        "courseCode": "STSO-2020",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Economics": {
+        "department": "",
+        "name": "Economics",
+        "description": [
+            "Study different types of theories and statistical methods used by economists. Students are prepared to gain a broad understanding of how consumers, firms and governments make decisions, and their implications.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "2000-level ECON Elective"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Intermediate Microeconomic Theory",
+                        "courseCode": "ECON-2010",
+                        "tag": []
+                    },
+                    {
+                        "title": "Intermediate Macroeconomic Theory",
+                        "courseCode": "ECON-2020",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Economics Minor"
+        ]
+    },
+    "Economics of Banking and Finance": {
+        "department": "",
+        "name": "Economics of Banking and Finance",
+        "description": [
+            "Study markets and policies in banking and finance. Students are prepared to use different types of mathematical models and econometric techniques used by economists to study the behavior of individuals, firms, and the economy.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Money and Banking",
+                        "courseCode": "ECON-4130",
+                        "tag": []
+                    },
+                    {
+                        "title": "Economics of Financial Institutions and Markets",
+                        "courseCode": "ECON-4330",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Economics of Banking and Finance Minor"
+        ]
+    },
+    "Economics of Decision-Making": {
+        "department": "",
+        "name": "Economics of Decision-Making",
+        "description": [
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described below:",
+            "&#xA0;"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Applied Game Theory",
+                        "courseCode": "ECON-4220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Behavioral Economics",
+                        "courseCode": "ECON-4270",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Behavioral Financial Economics",
+                        "courseCode": "ECON-4340",
+                        "tag": []
+                    },
+                    {
+                        "title": "Economic Models of Decision-Making",
+                        "courseCode": "ECON-4320",
+                        "tag": []
+                    },
+                    {
+                        "title": "Experimental Economics",
+                        "courseCode": "ECON-4360",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Economics of Healthcare Markets": {
+        "department": "",
+        "name": "Economics of Healthcare Markets",
+        "description": [
+            "Study different types of markets related to pharmaceuticals, medical devices, and healthcare. Students are prepared to use theory, econometric models, and data to study the role of R&D, patents, innovation, and policies in healthcare markets, and in pharmaceuticals and medical devices.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Health Economics and Policy",
+                        "courseCode": "ECON-4170",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Behavioral Economics",
+                        "courseCode": "ECON-4270",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Economics of Biotech and Medical Innovations",
+                        "courseCode": "ECON-4290",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Economics of Policy and Regulations": {
+        "department": "",
+        "name": "Economics of Policy and Regulations",
+        "description": [
+            "Study different types of regulations and economic policy measures, and their impact on individuals, markets, and the economy. Students are prepared to use economic models, quantitative methods, and data to assess different types of regulations and policies, and their impact.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Economics of Government Regulation and Firm Strategy",
+                        "courseCode": "ECON-4150",
+                        "tag": []
+                    },
+                    {
+                        "title": "Health Economics and Policy",
+                        "courseCode": "ECON-4170",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Law and Economics",
+                        "courseCode": "ECON-4310",
+                        "tag": []
+                    },
+                    {
+                        "title": "Environmental Economics",
+                        "courseCode": "ECON-4230",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Cost-Benefit Analysis",
+                        "courseCode": "ECON-4210",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Economics of Policy and Regulations"
+        ]
+    },
+    "Economics of Quantitative Modeling": {
+        "department": "",
+        "name": "Economics of Quantitative Modeling",
+        "description": [
+            "Study different types of mathematical models and econometric techniques used in Economics. Students are prepared to use economic theory, and econometric and statistical methods to study behavior of individuals and firms in the economy.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Econometric Methods for Big Data",
+                        "courseCode": "ECON-4280",
+                        "tag": []
+                    },
+                    {
+                        "title": "Econometrics",
+                        "courseCode": "ECON-4570",
+                        "tag": []
+                    },
+                    {
+                        "title": "Experimental Economics",
+                        "courseCode": "ECON-4360",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Cost-Benefit Analysis",
+                        "courseCode": "ECON-4210",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Economics of Quantitative Modeling"
+        ]
+    },
+    "Economics of Technology and Innovation": {
+        "department": "",
+        "name": "Economics of Technology and Innovation",
+        "description": [
+            "Study different types of economic models related to innovation and new technologies. Students are prepared to use economic theory, econometric and statistical methods, and data to examine patents, R&D, and innovation more broadly, as well as in specific industries in the economy.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introductory Economics",
+                        "courseCode": "ECON-1200",
+                        "tag": [
+                            "Introductory Level Course"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Economics of Innovation and New Technologies",
+                        "courseCode": "ECON-4110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Economics of Growth & Innovation",
+                        "courseCode": "ECON-4430",
+                        "tag": []
+                    },
+                    {
+                        "title": "Economics of Biotech and Medical Innovations",
+                        "courseCode": "ECON-4290",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Economics of Technology and Innovation Minor"
+        ]
+    },
+    "Electronic Arts": {
+        "department": "",
+        "name": "Electronic Arts",
+        "description": [
+            "This pathway allows students to study a range of approaches to electronic, or digital arts, such as digital imaging, graphic storytelling, interactive media, and 3D animation. This immersive study will give students a comprehensive view of how to use digital tools to tell stories, and to critically and creatively explore the arts at the intersection of the humanities, and the physical, computational, engineering, and social sciences.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 1960&#xA0;- Behind the Television Screen",
+                            "IHSS 1960&#xA0;&#x2013; Remixing in Digital Culture"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Digital Imaging",
+                        "courseCode": "ARTS-1020",
+                        "tag": []
+                    },
+                    {
+                        "title": "Art History",
+                        "courseCode": "ARTS-1050",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Behind the TV Screen",
+                        "courseCode": "IHSS-1030",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Documentary in the 21st Century: Identity Production",
+                        "courseCode": "IHSS-1040",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "ARTS 4960 Performance Art"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Intermediate Digital Imaging",
+                        "courseCode": "ARTS-2040",
+                        "tag": []
+                    },
+                    {
+                        "title": "2D Experimental Animation",
+                        "courseCode": "ARTS-2060",
+                        "tag": []
+                    },
+                    {
+                        "title": "Graphic Storytelling",
+                        "courseCode": "ARTS-2070",
+                        "tag": []
+                    },
+                    {
+                        "title": "3D Digital Modeling",
+                        "courseCode": "ARTS-2230",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sound Recording and Production I",
+                        "courseCode": "ARTS-2700",
+                        "tag": []
+                    },
+                    {
+                        "title": "3D Visual Effects",
+                        "courseCode": "ARTS-4060",
+                        "tag": []
+                    },
+                    {
+                        "title": "3D Animation",
+                        "courseCode": "ARTS-4070",
+                        "tag": []
+                    },
+                    {
+                        "title": "Art and Code and Interactivity",
+                        "courseCode": "ARTS-4090",
+                        "tag": []
+                    },
+                    {
+                        "title": "Advanced Digital Imaging",
+                        "courseCode": "ARTS-4860",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Electronic Arts Minor"
+        ]
+    },
+    "Environmental Futures": {
+        "department": "",
+        "name": "Environmental Futures",
+        "description": [
+            "The future seems up for grabs as climate change challenges human and nonhuman societies to meet basic needs for clean air, water, soil, food, and energy. How will humans adapt, reduce harm, or mitigate the problems of the past and present? This pathway involves courses in sustainability, defined as the means to ensure the well-being of the planet and quality of life of present and future generations. Courses integrate research and insights from the social sciences, arts, and humanities to pursue a healthy environment, economic prosperity, and social justice by building on the present to inform the future.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 1960&#xA0;&#x2013; Music and Protest",
+                            "IHSS 1960&#xA0;&#x2013; Designing Climate Justice"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Nature/Society",
+                        "courseCode": "IHSS-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Sustainability Debates",
+                        "courseCode": "IHSS-1240",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "A Century of Environmental Thought",
+                        "courseCode": "IHSS-1320",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Law, Values, and Public Policy: Perspectives on Science and Technology",
+                        "courseCode": "IHSS-1350",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Music, Sound, & the Environment",
+                        "courseCode": "ARTS-2570",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Documentary in the 21st Century: Identity Production",
+                        "courseCode": "IHSS-1040",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Art, Community, and Technology",
+                        "courseCode": "ARTS-4250",
+                        "tag": []
+                    },
+                    {
+                        "title": "Eco Chic: Living Art",
+                        "courseCode": "ARTS-4240",
+                        "tag": []
+                    },
+                    {
+                        "title": "Environmental Economics",
+                        "courseCode": "ECON-4230",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Environmental Philosophy",
+                        "courseCode": "PHIL-4300",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Bioethics",
+                        "courseCode": "PHIL-4500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Bioethics",
+                        "courseCode": "STSO-4250",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Consumer Culture",
+                        "courseCode": "STSO-4720",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Sustainability Education",
+                        "courseCode": "STSO-4280",
+                        "tag": []
+                    },
+                    {
+                        "title": "Queer Ecologies",
+                        "courseCode": "ARTS-4140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Biopunk: Arts Lab Practice",
+                        "courseCode": "ARTS-4120",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Ethics, Integrity, and Social Responsibility": {
+        "department": "",
+        "name": "Ethics, Integrity, and Social Responsibility",
+        "description": [
+            "In this Pathway, students analyze many aspects of the complex relationship between ethics and areas in science, technology, and engineering. These conversations are critical to ensure the ethical and accessible use of technology and to allow scientists and engineers to think critically and make informed decisions on personal, professional, and public policy levels.",
+            {
+                "h:strong": {
+                    "permalink": {
+                        "a:title": "STSO 1110"
+                    },
+                    "#text": "Only four (4) credits from the HASS Inquiry courses listed below (IHSS courses &) can be applied to the pathway."
+                },
+                "#text": "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described."
+            }
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "IHSS 196X - Psychedelic Cultures"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Genome and You",
+                        "courseCode": "IHSS-1150",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science and Scientific Misconduct",
+                        "courseCode": "IHSS-1160",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Law, Values, and Public Policy: Perspectives on Science and Technology",
+                        "courseCode": "IHSS-1350",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Art, Community, and Technology",
+                        "courseCode": "ARTS-4250",
+                        "tag": []
+                    },
+                    {
+                        "title": "Eco Chic: Living Art",
+                        "courseCode": "ARTS-4240",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hactivism",
+                        "courseCode": "ARTS-4560",
+                        "tag": []
+                    },
+                    {
+                        "title": "Ethics",
+                        "courseCode": "PHIL-4240",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Environmental Philosophy",
+                        "courseCode": "PHIL-4300",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Bioethics",
+                        "courseCode": "PHIL-4500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Engineering Ethics",
+                        "courseCode": "STSO-4210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Bioethics",
+                        "courseCode": "STSO-4250",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Environmental Philosophy",
+                        "courseCode": "STSO-4340",
+                        "tag": []
+                    },
+                    {
+                        "title": "Medicine, Culture, and Society",
+                        "courseCode": "STSO-4400",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Extent and Limits of Rationality": {
+        "department": "",
+        "name": "Extent and Limits of Rationality",
+        "description": [
+            "Humans can do, and have done, some really stupid things: People are not as rational as they would like to think and are subject to scores of cognitive and social biases. That said, however, people also have the power to correct for these, and to do good and constructive work. It is time to see how such cognitive and social powers can be harnessed for the good. How can critical thinking be used constructively? How can people learn from their past mistakes? How can social institutions and policies be set up to ensure that wise&#xA0;decisions are made to create a world that lasts into the extended future?",
+            {
+                "h:strong": "Only four (4) credits can be applied from the HASS Inquiry (IHSS) courses listed below to this pathway.&#xA0;",
+                "#text": "To complete this integrative pathway, students must choose a minimum of 12 credits as described."
+            }
+        ],
+        "clusters": [
+            {
+                "name": "Select 12 credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Art of Listening",
+                        "courseCode": "IHSS-1180",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Are Humans Rational?",
+                        "courseCode": "IHSS-1235",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "War and Technology: Past, Present, and Future",
+                        "courseCode": "IHSS-1570",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "War and Society",
+                        "courseCode": "IHSS-1510",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Cognitive Science",
+                        "courseCode": "COGS-2120",
+                        "tag": []
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Applied Game Theory",
+                        "courseCode": "ECON-4220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Behavioral Economics",
+                        "courseCode": "ECON-4270",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Logic",
+                        "courseCode": "PHIL-2140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognitive Psychology",
+                        "courseCode": "PSYC-4370",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Science and Technology",
+                        "courseCode": "STSO-4530",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Speech Communication",
+                        "courseCode": "WRIT-2340",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Proposing and Persuading",
+                        "courseCode": "WRIT-4550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Fact and Fiction": {
+        "department": "",
+        "name": "Fact and Fiction",
+        "description": [
+            "A pathway for those who are curious about what makes something fake or factual and how such concepts are evolving in contemporary political and popular culture. Students will learn how to think more precisely and analytically about the distinctions between fact, fiction, truth, and reality.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 1976 &#x2013; Fiction from Film to the Internet",
+                            "IHSS 1964 - Documentary in the 21st Century"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Digital Filmmaking",
+                        "courseCode": "ARTS-1030",
+                        "tag": []
+                    },
+                    {
+                        "title": "Science and Scientific Misconduct",
+                        "courseCode": "IHSS-1160",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Race and Film in U.S. Culture and History",
+                        "courseCode": "IHSS-1300",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Philosophy",
+                        "courseCode": "PHIL-1110",
+                        "tag": []
+                    },
+                    {
+                        "title": "Fiction: From Film to the Internet",
+                        "courseCode": "IHSS-1550",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The American Dream",
+                        "courseCode": "IHSS-1776",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Rethinking Documentary: Video Production",
+                        "courseCode": "ARTS-4040",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hactivism",
+                        "courseCode": "ARTS-4560",
+                        "tag": []
+                    },
+                    {
+                        "title": "Science Fictions",
+                        "courseCode": "ARTS-4640",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Documentary Film",
+                        "courseCode": "COMM-2440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Post-Factual Media",
+                        "courseCode": "COMM-4530",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Advertising and Culture",
+                        "courseCode": "COMM-4580",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Science and Fiction",
+                        "courseCode": "LITR-4150",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Philosophy of Science",
+                        "courseCode": "PHIL-4130",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs in History",
+                        "courseCode": "STSO-4430",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "American Politics in Crisis",
+                        "courseCode": "STSO-4590",
+                        "tag": []
+                    },
+                    {
+                        "title": "Creative Nonfiction Writing",
+                        "courseCode": "WRIT-2320",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Creative Writing:  Short Story",
+                        "courseCode": "WRIT-2330",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Game Studies": {
+        "department": "",
+        "name": "Game Studies",
+        "description": [
+            "This pathway explores the design, creation, and analysis of games. Students completing this pathway will develop depth in creative and critical thinking, technological proficiency, and multicultural awareness.",
+            {
+                "h:em": {
+                    "h:strong": "This pathway is restricted to students in the Game and Simulation Arts and Sciences (GSAS) major."
+                }
+            },
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "History and Culture of Games",
+                        "courseCode": "GSAS-1600",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Game Design",
+                        "courseCode": "GSAS-2510",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Game Storytelling",
+                        "courseCode": "GSAS-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Game Programming",
+                        "courseCode": "GSAS-2540",
+                        "tag": []
+                    },
+                    {
+                        "title": "Game Development I",
+                        "courseCode": "GSAS-4520",
+                        "tag": []
+                    },
+                    {
+                        "title": "Game Development II",
+                        "courseCode": "GSAS-4540",
+                        "tag": []
+                    },
+                    {
+                        "title": "Experimental Game Design",
+                        "courseCode": "GSAS-4510",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Gender, Race, Sexuality, Ethnicity, and Social Change": {
+        "department": "",
+        "name": "Gender, Race, Sexuality, Ethnicity, and Social Change",
+        "description": [
+            "This pathway enables students to cultivate an appreciation of how diverse identities are lived, experienced, and analyzed. Courses in this pathway center gender, dis/ability, race/ethnicity, and social class as ways of knowing and as analytic approaches for understanding distinctions that human societies make and unmake over time. Gender is used as an analytic tool for critical thinking about such topics as studies of sex differences and sexualities; race and gender in science, engineering, or gaming; or studies of the environment, war and peace, and other social impacts. Racial-ethnic formation is similarly used as an analytical tool for visualizing intersecting inequalities; history of science, medicine, arts, and technology.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Documentary Film",
+                        "courseCode": "COMM-2440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Religion, Politics, & Media",
+                        "courseCode": "COMM-4550",
+                        "tag": []
+                    },
+                    {
+                        "title": "Women Writers",
+                        "courseCode": "LITR-4770",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Sociology",
+                        "courseCode": "STSO-2520",
+                        "tag": []
+                    },
+                    {
+                        "title": "Gender, Science, and Technology",
+                        "courseCode": "STSO-4560",
+                        "tag": []
+                    },
+                    {
+                        "title": "Queer Ecologies",
+                        "courseCode": "ARTS-4140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Popular Music and Society",
+                        "courseCode": "ARTS-2550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "The Genome and You",
+                        "courseCode": "IHSS-1150",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Race and Film in U.S. Culture and History",
+                        "courseCode": "IHSS-1300",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Language and Power",
+                        "courseCode": "IHSS-1492",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Religion in a Global World",
+                        "courseCode": "IHSS-1666",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Graphic Design": {
+        "department": "",
+        "name": "Graphic Design",
+        "description": [
+            "Study Graphic Design through the integration of theory and practice, in print and digital media. Students are prepared to use creative and critical thinking to solve visual communication problems and reach target audiences with words, symbols and images.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following, with at least 4 credits at the 4000-level:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Life in Color",
+                        "courseCode": "IHSS-1562",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Typography",
+                        "courseCode": "COMM-2570",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Graphic Design",
+                        "courseCode": "COMM-2660",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Visual Poetics and Narrative",
+                        "courseCode": "COMM-4320",
+                        "tag": []
+                    },
+                    {
+                        "title": "Visual Design: Theory and Application",
+                        "courseCode": "COMM-4460",
+                        "tag": []
+                    },
+                    {
+                        "title": "2D Motion Graphics",
+                        "courseCode": "COMM-4970",
+                        "tag": []
+                    },
+                    {
+                        "title": "Brand Identity Design",
+                        "courseCode": "COMM-4730",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Interface Design: Hypermedia Theory and Application",
+                        "courseCode": "COMM-4690",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interactive Data Visualization",
+                        "courseCode": "COMM-4880",
+                        "tag": []
+                    },
+                    {
+                        "title": "Writing in Context",
+                        "courseCode": "WRIT-1110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Graphic Design Minor"
+        ]
+    },
+    "History": {
+        "department": "",
+        "name": "History",
+        "description": [
+            "The pathway in History is designed for students interested in U.S. and world history. Courses primarily focus on the social history and evolution of technology, scientific enterprise, medicine, and law.&#xA0;",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "American History",
+                        "courseCode": "STSO-2500",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "STSO&#xA0;4000 -&#xA0;STS&#xA0;Elective",
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 1960 - Revolutions in Perspective"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196X - Psychedelic Cultures"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The American Dream",
+                        "courseCode": "IHSS-1776",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "War and Technology: Past, Present, and Future",
+                        "courseCode": "IHSS-1570",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "A Century of Environmental Thought",
+                        "courseCode": "IHSS-1320",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "History of Medicine",
+                        "courseCode": "STSO-4420",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs in History",
+                        "courseCode": "STSO-4430",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "History of Mental Health",
+                        "courseCode": "STSO-4440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "History of American Technology",
+                        "courseCode": "STSO-4510",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Science and Technology",
+                        "courseCode": "STSO-4530",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Consumer Culture",
+                        "courseCode": "STSO-4720",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "History Minor"
+        ]
+    },
+    "Information Technology and Web Sciences": {
+        "department": "",
+        "name": "Information Technology and Web Sciences",
+        "description": [
+            "The pathway in Information Technology and Web Science (ITWS) is designed to introduce students to the social aspects and human interactions that technology provides in our lives and workplaces. Students will gain knowledge of the social, legal, and ethical issues in employing technology around the world and will learn how to recognize and respond to human-centered design issues to make technology more usable.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "IHSS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "ITWS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Human Computer Interaction",
+                        "courseCode": "ITWS-2210",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "The Multimedia Century",
+                        "courseCode": "ARTS-2540",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Cognitive Science",
+                        "courseCode": "COGS-2120",
+                        "tag": []
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Graphic Design",
+                        "courseCode": "COMM-2660",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Logic",
+                        "courseCode": "PHIL-2140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Design, Culture, and Society",
+                        "courseCode": "STSO-2210",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Strategic Writing",
+                        "courseCode": "WRIT-2110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Speech Communication",
+                        "courseCode": "WRIT-2340",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Foundations of HCI Usability",
+                        "courseCode": "COMM-4420",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Interactive Media/Data Design": {
+        "department": "",
+        "name": "Interactive Media/Data Design",
+        "description": [
+            "The Interactive Media/Data Design pathway covers communication design theory and practice, interaction design theory and practice, and information design to prepare students for creating different forms of interactive, multimedia communication and data representation. Students use critical thinking, creative thinking, multimedia design, and data representation to develop effective forms of communication in diverse global contexts.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following, with at least 4 credits at the 4000 level:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Writing in Context",
+                        "courseCode": "WRIT-1110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Graphic Design",
+                        "courseCode": "COMM-2660",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Foundations of HCI Usability",
+                        "courseCode": "COMM-4420",
+                        "tag": []
+                    },
+                    {
+                        "title": "Information Design",
+                        "courseCode": "COMM-4470",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interface Design: Hypermedia Theory and Application",
+                        "courseCode": "COMM-4690",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interactive Narrative",
+                        "courseCode": "COMM-4780",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Interactive Data Visualization",
+                        "courseCode": "COMM-4880",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Graphic Design Minor"
+        ]
+    },
+    "Language": {
+        "department": "",
+        "name": "Language",
+        "description": [
+            "This pathway promotes the development of skills to help students effectively communicate both domestically, and internationally, as well as enhance appreciation for other cultures. Students who select this pathway must have all courses that are part of the pathway be in the same language. Transfer credit from American Sign Language (ASL) courses can be applied to this pathway.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [],
+        "compatibleMinor": []
+    },
+    "Law and Policy": {
+        "department": "",
+        "name": "Law and Policy",
+        "description": [
+            "The Law and Policy pathway is designed for students interested in the design of policy and legislation and students on a pre-law track. Skills and knowledge may be applied to fields such as environment and climate change, technological innovation, public health law, or intellectual property law.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Revolutions in Comparative Perspective&#xA0;"
+                            },
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Sociology of&#xA0;Inequality"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Law, Values, and Public Policy: Perspectives on Science and Technology",
+                        "courseCode": "IHSS-1350",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "War and Society",
+                        "courseCode": "IHSS-1510",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Engineering Ethics",
+                        "courseCode": "STSO-4210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs in History",
+                        "courseCode": "STSO-4430",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Gender, Science, and Technology",
+                        "courseCode": "STSO-4560",
+                        "tag": []
+                    },
+                    {
+                        "title": "American Politics in Crisis",
+                        "courseCode": "STSO-4590",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Law and Policy Minor"
+        ]
+    },
+    "Linguistics": {
+        "department": "",
+        "name": "Linguistics",
+        "description": [
+            "Study linguistics from various perspectives, from cognitive analysis of linguistic expressions to the use of language for communication and other social settings. You'll also learn how to effectively communicate and handle foreign languages.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Linguistics",
+                        "courseCode": "COGS-2340",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following&#x200B;&#x200B;&#x200B;&#x200B;, with at least 4 credits at the 4000-level:",
+                "description": {
+                    "h:p": [
+                        "Any 4 credits from the following:",
+                        "Or:"
+                    ],
+                    "h:ul": {
+                        "h:li": [
+                            "Any 1000-level LANG course",
+                            "Any 2000-level LANG course",
+                            "Any 4000-level LANG course"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Language and Power",
+                        "courseCode": "IHSS-1492",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Linguistics of Computational Linguistics",
+                        "courseCode": "COGS-4340",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Cross-linguistic Perspectives",
+                        "courseCode": "COGS-4560",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Advanced Topics in Linguistics",
+                        "courseCode": "COGS-4780",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Language-Endowed Intelligent Agents",
+                        "courseCode": "COGS-4880",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Linguistics Minor"
+        ]
+    },
+    "Literature and Creative Writing": {
+        "department": "",
+        "name": "Literature and Creative Writing",
+        "description": [
+            "The Literature and Creative Writing Pathway offers discussion-oriented courses across a range of literary genres and themes, with a choice of emphasis on either literature, creative writing, or both. Students will learn to read and write literary art critically and creatively, with clarity and imagination, and with sensitivity to multi-cultural expressions of diversity.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following, at least 4 credits at the 4000 level:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "1000-level LITR Elective",
+                            {
+                                "h:p": "2000-level LITR Elective"
+                            },
+                            {
+                                "h:p": "4000-level LITR Elective"
+                            },
+                            {
+                                "h:p": "1000-level WRIT Elective"
+                            },
+                            {
+                                "h:p": "2000-level WRIT Elective"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Fiction: From Film to the Internet",
+                        "courseCode": "IHSS-1550",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The American Dream",
+                        "courseCode": "IHSS-1776",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Visual Poetics and Narrative",
+                        "courseCode": "COMM-4320",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interactive Narrative",
+                        "courseCode": "COMM-4780",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Literature",
+                        "courseCode": "LITR-2110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Modern and Contemporary Literature",
+                        "courseCode": "LITR-2150",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Science and Fiction",
+                        "courseCode": "LITR-4150",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Irish Literature",
+                        "courseCode": "LITR-4230",
+                        "tag": []
+                    },
+                    {
+                        "title": "Women Writers",
+                        "courseCode": "LITR-4770",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Writing in Context",
+                        "courseCode": "WRIT-1110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Creative Nonfiction Writing",
+                        "courseCode": "WRIT-2320",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Creative Writing:  Short Story",
+                        "courseCode": "WRIT-2330",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Literature and Creative Writing Minor"
+        ]
+    },
+    "Living in a World of Data": {
+        "department": "",
+        "name": "Living in a World of Data",
+        "description": [
+            "Humans live in the age of information &#x2026; and misinformation &#x2026; of big data, data mining, and machine learning ... of new media presenting unparalleled means of communication ... of unseen and opaque algorithms driving our news feeds... and of rushing to judgment on viral videos. It is important to develop some 'information intelligence' and 'data dexterity'. Such dexterity and intelligence includes technical skills of quantitative data analysis and IT technology, but also includes critical thinking skills regarding how information is collected, judged, interpreted, and represented, and how big data and information is feeding humans' collective awareness driving their decisions and affecting their world surroundings.",
+            {
+                "h:strong": "Only four (4) credits from the HASS Inquiry courses listed below (IHSS & ITWS) can be applied to the pathway.",
+                "#text": "To complete this integrative pathway, students must choose a minimum of 12 credits as described."
+            }
+        ],
+        "clusters": [
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Genome and You",
+                        "courseCode": "IHSS-1150",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science and Scientific Misconduct",
+                        "courseCode": "IHSS-1160",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Principles of Economics",
+                        "courseCode": "IHSS-1200",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "ITWS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "IHSS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Information Design",
+                        "courseCode": "COMM-4470",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interface Design: Hypermedia Theory and Application",
+                        "courseCode": "COMM-4690",
+                        "tag": []
+                    },
+                    {
+                        "title": "Interactive Data Visualization",
+                        "courseCode": "COMM-4880",
+                        "tag": []
+                    },
+                    {
+                        "title": "Applied Game Theory",
+                        "courseCode": "ECON-4220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Behavioral Economics",
+                        "courseCode": "ECON-4270",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Econometrics",
+                        "courseCode": "ECON-4570",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Research Methods and Statistics I",
+                        "courseCode": "PSYC-2310",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Mathematical Methods in Psychological Science",
+                        "courseCode": "PSYC-4350",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Logical Thinking": {
+        "department": "",
+        "name": "Logical Thinking",
+        "description": [
+            "This Pathway is for students with an interest in symbolic logic, and the connections between formal logic and mathematics, computer science, Artificial Intelligence, and the human mind.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from a choice of the following&#x200B;&#x200B;&#x200B;&#x200B;, with at least 4 credits at the 4000-level:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Are Humans Rational?",
+                        "courseCode": "IHSS-1235",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Logic",
+                        "courseCode": "PHIL-2140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Intermediate Logic",
+                        "courseCode": "PHIL-4140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Computability and Logic",
+                        "courseCode": "PHIL-4420",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Philosophy of Logic, Computation, and Mind Minor"
+        ]
+    },
+    "Media and Culture": {
+        "department": "",
+        "name": "Media and Culture",
+        "description": [
+            "This pathway examines different forms of expression and their cultural contexts in a variety of media, including film, television, photography, and new media. Its components will enhance creative and critical thinking, communication practices, and awareness of cultural and individual identities. The focus on cultural and media literacy will improve the career readiness and social awareness of those in any program at RPI.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following, with at least 4 credits at the 4000-level:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 19XX &#x2013; Remixing in Digital Culture",
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Technology and the Top Ten"
+                            },
+                            {
+                                "h:p": "COMM 29XX - The Film Experience"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Behind the TV Screen",
+                        "courseCode": "IHSS-1030",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The American Dream",
+                        "courseCode": "IHSS-1776",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Perspectives on Photography",
+                        "courseCode": "COMM-2410",
+                        "tag": []
+                    },
+                    {
+                        "title": "Documentary Film",
+                        "courseCode": "COMM-2440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Superheroes in the Classroom",
+                        "courseCode": "COMM-2616",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Television",
+                        "courseCode": "COMM-2750",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Post-Factual Media",
+                        "courseCode": "COMM-4530",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Visual Culture",
+                        "courseCode": "COMM-4540",
+                        "tag": []
+                    },
+                    {
+                        "title": "Religion, Politics, & Media",
+                        "courseCode": "COMM-4550",
+                        "tag": []
+                    },
+                    {
+                        "title": "Advertising and Culture",
+                        "courseCode": "COMM-4580",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Rethinking Documentary: Video Production",
+                        "courseCode": "ARTS-4040",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Media and Culture Minor"
+        ]
+    },
+    "Mind, Brain, and Intelligence": {
+        "department": "",
+        "name": "Mind, Brain, and Intelligence",
+        "description": [
+            "Discover Cognitive Science: a young but fast-growing field focused on the study of the mind from the perspectives of philosophy, psychology, neuroscience, linguistics, and artificial intelligence.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits with a minimum of 4 credits at the 4000-level:&#xA0;"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Cognitive Science",
+                        "courseCode": "COGS-2120",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Are Humans Rational?",
+                        "courseCode": "IHSS-1235",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Cognitive Neuroscience",
+                        "courseCode": "COGS-4330",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognition and the Brain",
+                        "courseCode": "COGS-4600",
+                        "tag": []
+                    },
+                    {
+                        "title": "Mathematical Methods in Psychological Science",
+                        "courseCode": "PSYC-4350",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognitive Psychology",
+                        "courseCode": "PSYC-4370",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sensation and Perception",
+                        "courseCode": "PSYC-4410",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Cognitive Science Minor"
+        ]
+    },
+    "Music and Culture": {
+        "department": "",
+        "name": "Music and Culture",
+        "description": [
+            "Students gain&#xA0;historical and inter-cultural knowledge of music from the Western and various non-Western cultures.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Remixing in Digital Culture&#xA0;"
+                            },
+                            {
+                                "h:p": "IHSS 19XX - Technology and the Top 10"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Histories of Jazz and Improvised Music",
+                        "courseCode": "ARTS-2510",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Songwriting Workshop",
+                        "courseCode": "IHSS-1700",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Popular Music and Society",
+                        "courseCode": "ARTS-2550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "ARTS 4960 - Performance Art"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "World Music",
+                        "courseCode": "ARTS-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Sound Recording and Production I",
+                        "courseCode": "ARTS-2700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sound Recording and Production II",
+                        "courseCode": "ARTS-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Histories of Western Music",
+                        "courseCode": "ARTS-2500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Deep Listening",
+                        "courseCode": "ARTS-2180",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Topics in Deep Listening",
+                        "courseCode": "ARTS-4180",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Music Minor"
+        ]
+    },
+    "Music Composition and Production": {
+        "department": "",
+        "name": "Music Composition and Production",
+        "description": [
+            "Students learn to compose music starting with the Western Classical tradition then branching out to modern and experimental methods. &#xA0;Students also learn to program and apply modern information technology to music creation and production. &#xA0;",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Remixing in Digital Culture&#xA0;"
+                            },
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Technology and the Top Ten&#xA0;"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Fundamentals of Music and Sound",
+                        "courseCode": "ARTS-1380",
+                        "tag": []
+                    },
+                    {
+                        "title": "Histories of Jazz and Improvised Music",
+                        "courseCode": "ARTS-2510",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Songwriting Workshop",
+                        "courseCode": "IHSS-1700",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Popular Music and Society",
+                        "courseCode": "ARTS-2550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Histories of Western Music",
+                        "courseCode": "ARTS-2500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Music and Technology I",
+                        "courseCode": "ARTS-2020",
+                        "tag": []
+                    },
+                    {
+                        "title": "Music and Sound I",
+                        "courseCode": "ARTS-2380",
+                        "tag": []
+                    },
+                    {
+                        "title": "Ensemble Nonlinear",
+                        "courseCode": "ARTS-2600",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sound Recording and Production I",
+                        "courseCode": "ARTS-2700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Music and Sound II",
+                        "courseCode": "ARTS-4380",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sound Recording and Production II",
+                        "courseCode": "ARTS-4700",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Music Minor"
+        ]
+    },
+    "Music Performance": {
+        "department": "",
+        "name": "Music Performance",
+        "description": [
+            "Students learn to perform focal and instrumental music from a variety of styles, Classical to Afro-Cuban&#xA0;to experimental.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": "IHSS 19XX &#x2013; Remixing in Digital Culture"
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Fundamentals of Music and Sound",
+                        "courseCode": "ARTS-1380",
+                        "tag": []
+                    },
+                    {
+                        "title": "Histories of Jazz and Improvised Music",
+                        "courseCode": "ARTS-2510",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Popular Music and Society",
+                        "courseCode": "ARTS-2550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Histories of Western Music",
+                        "courseCode": "ARTS-2500",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Deep Listening",
+                        "courseCode": "ARTS-2180",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Rensselaer Orchestra",
+                        "courseCode": "ARTS-2300",
+                        "tag": []
+                    },
+                    {
+                        "title": "Rensselaer Concert Choir",
+                        "courseCode": "ARTS-2310",
+                        "tag": []
+                    },
+                    {
+                        "title": "Chamber Music Ensemble",
+                        "courseCode": "ARTS-2350",
+                        "tag": []
+                    },
+                    {
+                        "title": "Ensemble Nonlinear",
+                        "courseCode": "ARTS-2600",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in the Arts",
+                        "courseCode": "ARTS-2960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in Deep Listening",
+                        "courseCode": "ARTS-4180",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Private Music Lessons",
+                        "courseCode": "ARTS-2750",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Music Minor"
+        ]
+    },
+    "Philosophy": {
+        "department": "",
+        "name": "Philosophy",
+        "description": [
+            "Learn to reason more precisely, think more critically, and ask more penetrating and foundational questions about enduring and contemporary problems in ethics, science, technology, religion, and politics &#x2014; including some of the biggest challenges that humanity currently faces.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "1000-level PHIL Elective",
+                            "IHSS 19XX Philosophy, Technology, and the Human Future"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "The Genome and You",
+                        "courseCode": "IHSS-1150",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science and Scientific Misconduct",
+                        "courseCode": "IHSS-1160",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Great Ideas in Philosophy",
+                        "courseCode": "IHSS-1165",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Philosophy",
+                        "courseCode": "PHIL-1110",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Logic",
+                        "courseCode": "PHIL-2140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following with at least 4 credits at the 4000-level:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "2000-level PHIL Elective",
+                            "4000-level PHIL Elective"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Introduction to Logic",
+                        "courseCode": "PHIL-2140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Philosophy of Biology",
+                        "courseCode": "PHIL-2400",
+                        "tag": []
+                    },
+                    {
+                        "title": "Philosophy of Science",
+                        "courseCode": "PHIL-4130",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Ethics",
+                        "courseCode": "PHIL-4240",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Environmental Philosophy",
+                        "courseCode": "PHIL-4300",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Metaphysics and Consciousness",
+                        "courseCode": "PHIL-4480",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Philosophy Minor"
+        ]
+    },
+    "Pre-Health": {
+        "department": "",
+        "name": "Pre-Health",
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sociology",
+                        "courseCode": "STSO-2520",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "One of the following WRIT or COMM courses:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Writing in Context",
+                        "courseCode": "WRIT-1110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Strategic Writing",
+                        "courseCode": "WRIT-2110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Speech Communication",
+                        "courseCode": "WRIT-2340",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Writing and Response",
+                        "courseCode": "WRIT-4380",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Research Writing",
+                        "courseCode": "WRIT-4410",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Proposing and Persuading",
+                        "courseCode": "WRIT-4550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Visual Design: Theory and Application",
+                        "courseCode": "COMM-4460",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Public Health": {
+        "department": "",
+        "name": "Public Health",
+        "description": [
+            "The pathway in Public Health is designed for students interested in health-related careers who wish to develop skills and knowledge about global public health challenges. It also offers important courses for students on a pre-health/pre-med&#xA0;track beyond the pre-health/pre-med pathway.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": {
+                            "h:em": "Credit Hours: 4",
+                            "#text": "IHSS 196X - Psychedelic Cultures"
+                        }
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "The Genome and You",
+                        "courseCode": "IHSS-1150",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Sociology",
+                        "courseCode": "STSO-2520",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "COGS-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "COGS-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs, Society, and Behavior",
+                        "courseCode": "PSYC-4500",
+                        "tag": []
+                    },
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "PSYC-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "PSYC-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Medicine",
+                        "courseCode": "STSO-4420",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Mental Health",
+                        "courseCode": "STSO-4440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Bioethics",
+                        "courseCode": "STSO-4250",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Drugs in History",
+                        "courseCode": "STSO-4430",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Food, Farms, and Famine",
+                        "courseCode": "STSO-4260",
+                        "tag": []
+                    },
+                    {
+                        "title": "Medicine, Culture, and Society",
+                        "courseCode": "STSO-4400",
+                        "tag": []
+                    },
+                    {
+                        "title": "Gender, Science, and Technology",
+                        "courseCode": "STSO-4560",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Public Health Minor"
+        ]
+    },
+    "Science, Technology, and Society": {
+        "department": "",
+        "name": "Science, Technology, and Society",
+        "description": "The pathway in Science, Technology, and Society (STS) is designed for students broadly interested in the social and political dimensions of science, technology, engineering, and medicine. Students use political and social science methods to investigate scientific and technological developments.",
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": {
+                    "h:p": "A minimum of 4 credits must be completed at the 4000-level.",
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196X - Psychedelic Cultures"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "4000-level STSO course"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "ITWS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "IT and Society",
+                        "courseCode": "IHSS-1220",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "American History",
+                        "courseCode": "STSO-2500",
+                        "tag": []
+                    },
+                    {
+                        "title": "Environment and Society",
+                        "courseCode": "STSO-2300",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Sociology",
+                        "courseCode": "STSO-2520",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Science, Technology, and Society Minor"
+        ]
+    },
+    "Strategic Communication": {
+        "department": "",
+        "name": "Strategic Communication",
+        "description": [
+            "This pathway is designed to train versatile, critical, and self-possessed 21st- century communicators. Students who successfully complete this pathway will demonstrate the ability to make focused, audience-appropriate arguments; communicate effectively across diverse rhetorical, sociocultural, and disciplinary contexts; and respond creatively to the analytical demands involved with developing, arranging, and revising ideas and arguments.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits of the following, with at least 4 credits at the 4000 level:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "1000-level COMM Elective",
+                            "2000-level COMM Elective",
+                            "IHSS 19XX &#x2013; Writing and Society",
+                            "Any 4000-level WRIT course"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Graphic Design",
+                        "courseCode": "COMM-2660",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Advertising and Culture",
+                        "courseCode": "COMM-4580",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Language and Power",
+                        "courseCode": "IHSS-1492",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Media and Society",
+                        "courseCode": "IHSS-1560",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Writing in Context",
+                        "courseCode": "WRIT-1110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Strategic Writing",
+                        "courseCode": "WRIT-2110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Speech Communication",
+                        "courseCode": "WRIT-2340",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Strategic Communication Minor"
+        ]
+    },
+    "Studio Arts": {
+        "department": "",
+        "name": "Studio Arts",
+        "description": [
+            "Study traditional studio arts such as drawing, painting, sculpture in conjunction with art history to learn techniques, history, and theory in the visual arts.&#xA0; Students will develop basic skills in perspective, proportion, composition, form making, light and shadow, color,&#xA0;2 and 3D Design,&#xA0;and learn to&#xA0;articulate ideas about&#xA0;their own,&#xA0;other students', and historical&#xA0;works&#xA0;through class discussions and critiques.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Art History",
+                        "courseCode": "ARTS-1050",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "The Multimedia Century",
+                        "courseCode": "ARTS-2540",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": "1000-level ARTS Elective"
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Basic Drawing",
+                        "courseCode": "ARTS-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Intermediate Drawing",
+                        "courseCode": "ARTS-2200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sculpture I",
+                        "courseCode": "ARTS-2210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Fundamentals of 2D Design",
+                        "courseCode": "ARTS-2220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Advanced Drawing",
+                        "courseCode": "ARTS-4200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sculpture II",
+                        "courseCode": "ARTS-4210",
+                        "tag": []
+                    },
+                    {
+                        "title": "Painting",
+                        "courseCode": "ARTS-4220",
+                        "tag": []
+                    },
+                    {
+                        "title": "Life Drawing and Anatomy for Artists",
+                        "courseCode": "ARTS-4260",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Studio Arts"
+        ]
+    },
+    "Sustainability": {
+        "department": "",
+        "name": "Sustainability",
+        "description": [
+            "The pathway in Sustainability focuses on the interactions between various systems - social, political, cultural, economic, technological and ecological - that undergird environmental sustainability. Students use interdisciplinary approaches to investigate environmental problems.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Environment and Society",
+                        "courseCode": "STSO-2300",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following: must complete at least 4 credits at the 4000-level",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 1960 - Designing Climate Justice"
+                            },
+                            {
+                                "h:em": "Credit Hours: 4",
+                                "#text": "IHSS 196X - Psychedelic Cultures"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Nature/Society",
+                        "courseCode": "IHSS-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "A Century of Environmental Thought",
+                        "courseCode": "IHSS-1320",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Sustainability Debates",
+                        "courseCode": "IHSS-1240",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Sustainability and STS Careers",
+                        "courseCode": "STSO-4300",
+                        "tag": []
+                    },
+                    {
+                        "title": "Environmental Philosophy",
+                        "courseCode": "STSO-4340",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of American Technology",
+                        "courseCode": "STSO-4510",
+                        "tag": []
+                    },
+                    {
+                        "title": "Consumer Culture",
+                        "courseCode": "STSO-4720",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Food, Farms, and Famine",
+                        "courseCode": "STSO-4260",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sustainability Education",
+                        "courseCode": "STSO-4280",
+                        "tag": []
+                    },
+                    {
+                        "title": "Politics of Design",
+                        "courseCode": "STSO-4350",
+                        "tag": [
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Globalization and Development",
+                        "courseCode": "STSO-4500",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Environmental Justice",
+                        "courseCode": "STSO-4330",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Sustainability Studies Minor"
+        ]
+    },
+    "Thinking with Science": {
+        "department": "",
+        "name": "Thinking with Science",
+        "description": [
+            "This pathway offers instruction in identifying and understanding dissemination and the methods and media for scientific knowledge. Students who successfully complete this pathway will demonstrate the ability to critique how textual and social representations create diverse and competing receptions of scientific knowledge; analyze the social construction of scientific knowledge; and solve problems through disseminating scientific knowledge across a variety of social and rhetorical contexts.",
+            {
+                "h:strong": "Only four (4) credits from the HASS Inquiry courses listed below (IHSS & STSO 1110) can be applied to the pathway.",
+                "#text": "To complete this integrative pathway, students must choose a minimum of 12 credits as described."
+            }
+        ],
+        "clusters": [
+            {
+                "name": "Choose 12 credits from the following:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Science and Scientific Misconduct",
+                        "courseCode": "IHSS-1160",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Well-being: Cultivating Curiosity",
+                        "courseCode": "IHSS-1175",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "War and Technology: Past, Present, and Future",
+                        "courseCode": "IHSS-1570",
+                        "tag": [
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Science, Technology, and Society",
+                        "courseCode": "STSO-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Eco Chic: Living Art",
+                        "courseCode": "ARTS-4240",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in the Arts",
+                        "courseCode": "ARTS-4960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Communication Theory and Practice",
+                        "courseCode": "COMM-2520",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Science and Fiction",
+                        "courseCode": "LITR-4150",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PHIL-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "Philosophy of Biology",
+                        "courseCode": "PHIL-2400",
+                        "tag": []
+                    },
+                    {
+                        "title": "Philosophy of Science",
+                        "courseCode": "PHIL-4130",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Critical Thinking",
+                        "courseCode": "PSYC-2100",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of American Technology",
+                        "courseCode": "STSO-4510",
+                        "tag": []
+                    },
+                    {
+                        "title": "History of Science and Technology",
+                        "courseCode": "STSO-4530",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Medicine, Culture, and Society",
+                        "courseCode": "STSO-4400",
+                        "tag": []
+                    },
+                    {
+                        "title": "Strategic Writing",
+                        "courseCode": "WRIT-2110",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Research Writing",
+                        "courseCode": "WRIT-4410",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Proposing and Persuading",
+                        "courseCode": "WRIT-4550",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Transfer Student Arts and Humanities": {
+        "department": "",
+        "name": "Transfer Student Arts and Humanities",
+        "description": [
+            "This&#xA0;pathway&#xA0;is intended for transfer students that enter with junior status and&#xA0;who have completed significant coursework within the arts and humanities to be applied toward a pathway.&#xA0; Coursework may include a mix of transfer courses that come in as electives or courses taken at Rensselaer.&#xA0;",
+            "To complete this integrative pathway, students must complete a minimum of 12 credits as described:"
+        ],
+        "clusters": [],
+        "compatibleMinor": []
+    },
+    "Transfer Student Social Science": {
+        "department": "",
+        "name": "Transfer Student Social Science",
+        "description": [
+            "This pathway is intended for transfer students that enter with junior status and&#xA0;who have completed significant coursework within the social sciences&#xA0;to be applied toward a pathway.&#xA0; Coursework may include a mix of transfer courses that come in as electives or courses taken at Rensselaer.&#xA0;",
+            "To complete this integrative pathway, students must complete a minimum of 12 credits as described:"
+        ],
+        "clusters": [],
+        "compatibleMinor": []
+    },
+    "Understanding Human Behavior": {
+        "department": "",
+        "name": "Understanding Human Behavior",
+        "description": [
+            "The ability to understand and predict how people act and think is more important than ever in addressing many of the greatest challenges that we face as a society.&#xA0; In this pathway, students will learn how behavior and thought are influenced by cognitive, emotional, developmental, social, and environmental factors, and how to apply psychological principles.",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Required:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following, with at least 4 credits at the 4000 level::",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 19XX &#x2013; Understanding Empathy",
+                            "2000-level PSYC Elective",
+                            "4000-level PSYC Elective"
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Research Methods and Statistics I",
+                        "courseCode": "PSYC-2310",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Social Psychology",
+                        "courseCode": "PSYC-2730",
+                        "tag": []
+                    },
+                    {
+                        "title": "Motivation and Performance",
+                        "courseCode": "PSYC-2730",
+                        "tag": []
+                    },
+                    {
+                        "title": "Industrial and Organizational Psychology",
+                        "courseCode": "PSYC-4200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Research Methods and Statistics II",
+                        "courseCode": "PSYC-4310",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Mathematical Methods in Psychological Science",
+                        "courseCode": "PSYC-4350",
+                        "tag": []
+                    },
+                    {
+                        "title": "Cognitive Psychology",
+                        "courseCode": "PSYC-4370",
+                        "tag": []
+                    },
+                    {
+                        "title": "Learning",
+                        "courseCode": "PSYC-4450",
+                        "tag": []
+                    },
+                    {
+                        "title": "Drugs, Society, and Behavior",
+                        "courseCode": "PSYC-4500",
+                        "tag": []
+                    },
+                    {
+                        "title": "Abnormal Psychology",
+                        "courseCode": "PSYC-4720",
+                        "tag": []
+                    },
+                    {
+                        "title": "Sport Psychology Seminar",
+                        "courseCode": "PSYC-4800",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "General Psychology Minor",
+            "Psychological Science Minor"
+        ]
+    },
+    "Video, Performance, and Social Practice": {
+        "department": "",
+        "name": "Video, Performance, and Social Practice",
+        "description": [
+            "This pathway allows students to study video, performance, and social impact through the integration of theory and practice. Students are prepared to analyze and critique moving images; plan, produce and edit their own media productions in video/television and/or performance; and communicate through visual as well as audio mediums. Strategically situating art, media and technology in a social context, students engage in creative practice designed to make change from the local to the global.&#xA0;",
+            "To complete this integrative pathway, students must choose a minimum of 12 credits as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": [
+                            "IHSS 19XX &#x2013; Remixing in Digital Culture&#xA0;",
+                            {
+                                "h:p": "IHSS 19XX &#x2013; Technology and the Top Ten"
+                            }
+                        ]
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Digital Filmmaking",
+                        "courseCode": "ARTS-1030",
+                        "tag": []
+                    },
+                    {
+                        "title": "Race and Film in U.S. Culture and History",
+                        "courseCode": "IHSS-1300",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Behind the TV Screen",
+                        "courseCode": "IHSS-1030",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Art of Listening",
+                        "courseCode": "IHSS-1180",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Documentary in the 21st Century: Identity Production",
+                        "courseCode": "IHSS-1040",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following, with at least 4 credits at the 4000 level:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Intermediate Video",
+                        "courseCode": "ARTS-2010",
+                        "tag": []
+                    },
+                    {
+                        "title": "The Multimedia Century",
+                        "courseCode": "ARTS-2540",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Rethinking Documentary: Video Production",
+                        "courseCode": "ARTS-4040",
+                        "tag": []
+                    },
+                    {
+                        "title": "Art, Community, and Technology",
+                        "courseCode": "ARTS-4250",
+                        "tag": []
+                    },
+                    {
+                        "title": "Eco Chic: Living Art",
+                        "courseCode": "ARTS-4240",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hactivism",
+                        "courseCode": "ARTS-4560",
+                        "tag": []
+                    },
+                    {
+                        "title": "Writing and Directing for Video",
+                        "courseCode": "ARTS-4630",
+                        "tag": []
+                    },
+                    {
+                        "title": "Science Fictions",
+                        "courseCode": "ARTS-4640",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Biopunk: Arts Lab Practice",
+                        "courseCode": "ARTS-4120",
+                        "tag": []
+                    },
+                    {
+                        "title": "Queer Ecologies",
+                        "courseCode": "ARTS-4140",
+                        "tag": []
+                    },
+                    {
+                        "title": "Advanced Video Media Studio",
+                        "courseCode": "ARTS-4050",
+                        "tag": []
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": []
+    },
+    "Well-being: Body and Mind": {
+        "department": "",
+        "name": "Well-being: Body and Mind",
+        "description": [
+            {
+                "h:strong": "",
+                "#text": "How do humans maintain a sense of well-being in their lives?Each person's path to well-being in body and mind is unique&#x2014;arising from an awareness of his or her needs, goals, and what each finds fulfilling. The Well-being Interdisciplinary Pathway includes a wide variety of courses that explore the nature of what it is to be human and to orient oneself in the world, to have relationships, make decisions, be creative, and make discoveries."
+            },
+            "To complete this integrative pathway, students must choose a minimum of 12 credits&#xA0;as described:"
+        ],
+        "clusters": [
+            {
+                "name": "Choose one of the following:",
+                "description": {
+                    "h:ul": {
+                        "h:li": "IHSS 19XX &#x2013; Understanding Empathy"
+                    }
+                },
+                "courses": [
+                    {
+                        "title": "Basic Drawing",
+                        "courseCode": "ARTS-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Nature/Society",
+                        "courseCode": "IHSS-1110",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Minds and Machines",
+                        "courseCode": "IHSS-1140",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Well-being: Cultivating Curiosity",
+                        "courseCode": "IHSS-1175",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "The Art of Listening",
+                        "courseCode": "IHSS-1180",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Songwriting Workshop",
+                        "courseCode": "IHSS-1700",
+                        "tag": [
+                            "Communication Intensive",
+                            "HASS Inquiry"
+                        ]
+                    },
+                    {
+                        "title": "Music, Sound, & the Environment",
+                        "courseCode": "ARTS-2570",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Choose remaining credits from the following&#x200B;&#x200B;&#x200B;&#x200B;, with at least 4 credits at the 4000 level:",
+                "description": "",
+                "courses": [
+                    {
+                        "title": "Rensselaer Concert Choir",
+                        "courseCode": "ARTS-2310",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in the Arts",
+                        "courseCode": "ARTS-2960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "COGS-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "COGS-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Ethics",
+                        "courseCode": "PHIL-4240",
+                        "tag": [
+                            "Communication Intensive",
+                            "PDII Option for Engr Majors"
+                        ]
+                    },
+                    {
+                        "title": "Introduction to Psychological Science",
+                        "courseCode": "PSYC-1200",
+                        "tag": []
+                    },
+                    {
+                        "title": "Psychology of Mindfulness",
+                        "courseCode": "PSYC-4430",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Sensibilities",
+                        "courseCode": "PSYC-4440",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Drugs, Society, and Behavior",
+                        "courseCode": "PSYC-4500",
+                        "tag": []
+                    },
+                    {
+                        "title": "Stress and the Brain",
+                        "courseCode": "PSYC-4610",
+                        "tag": []
+                    },
+                    {
+                        "title": "Hormones, Brain, and Behavior",
+                        "courseCode": "PSYC-4700",
+                        "tag": []
+                    },
+                    {
+                        "title": "Positive Psychology",
+                        "courseCode": "PSYC-4730",
+                        "tag": []
+                    },
+                    {
+                        "title": "Topics in Psychology",
+                        "courseCode": "PSYC-4960",
+                        "tag": []
+                    },
+                    {
+                        "title": "Creative Nonfiction Writing",
+                        "courseCode": "WRIT-2320",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    },
+                    {
+                        "title": "Creative Writing:  Short Story",
+                        "courseCode": "WRIT-2330",
+                        "tag": [
+                            "Communication Intensive"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "compatibleMinor": [
+            "Well-being"
+        ]
+    }
+}
