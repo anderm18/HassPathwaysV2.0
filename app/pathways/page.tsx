@@ -85,7 +85,8 @@ const MyPathways = () => {
     },
     0
   );
-  const activeFilter = (state: number, index: number) => state & (1 << index);
+  const activeFilter = (state: number, index: number) =>
+    (state & (1 << index)) !== 0;
 
   useEffect(() => {
     var bmks = localStorage.getItem("bookmarks")

@@ -12,9 +12,8 @@ const CatalogDropdown = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Find the displaying text for catalog
-  const catalogText: string = catalogList.filter(
-    (cat) => cat.value === catalog_year
-  )[0].text;
+  const catalogText: string =
+    catalogList.filter((cat) => cat.value === catalog_year)[0]?.text ?? "";
 
   useEffect(() => {
     if (!dropdownOpen) return;

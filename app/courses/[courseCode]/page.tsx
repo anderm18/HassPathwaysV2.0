@@ -1,8 +1,6 @@
+import { SemesterTable } from "@/app/components/course/OfferTable";
 import BreadCrumb from "@/app/components/navigation/Breadcrumb";
-import {
-  ICourseDescriptionSchema,
-  ISemesterData,
-} from "@/public/data/dataInterface";
+import { ICourseDescriptionSchema } from "@/public/data/dataInterface";
 import React, { Fragment } from "react";
 
 type ICourseCode = {
@@ -11,7 +9,7 @@ type ICourseCode = {
   };
 };
 
-const CoursePage: React.FC<ICourseCode> = (data) => {
+const CoursePage: React.FC<ICourseCode> = async (data) => {
   const { courseCode } = data.params;
 
   // TODO: Fetch data from backend with courseCode
@@ -27,6 +25,13 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         fall: {
           instructor: ["Patiphon Loetsuthakun"],
           seats: "13/20 Seat",
+        },
+      },
+      {
+        year: "2022",
+        spring: {
+          instructor: ["Will Powe"],
+          seats: "22/20 Seat",
         },
       },
     ],
@@ -61,41 +66,10 @@ const CoursePage: React.FC<ICourseCode> = (data) => {
         <header>
           <h3>Semester Offered</h3>
         </header>
-        <section className="hidden sm:grid grid-table grid-cols-4 max-w-[960px] overflow-clip rounded-xl border-solid border border-gray-200 bg-white ut-shadow-sm">
-          <div className="table-header">Year</div>
-          <div className="table-header">Spring</div>
-          <div className="table-header">Summer</div>
-          <div className="table-header">Fall</div>
-          {term.map((t) => {
-            return (
-              <Fragment key={t.year}>
-                <header className="font-medium">{t.year}</header>
-                <TableData data={t.spring} />
-                <TableData data={t.summer} />
-                <TableData data={t.fall} />
-              </Fragment>
-            );
-          })}
-        </section>
+        <SemesterTable term={term} />
       </section>
     </Fragment>
   );
 };
 
-const TableData = ({ data }: { data?: ISemesterData }) => {
-  if (!data) return <div className="!text-gray-600">No Class</div>;
-
-  const { instructor, seats } = data;
-  return (
-    <div>
-      <div>
-        {instructor.reduce((acc, inst) => {
-          if (acc === "") return inst;
-          return acc + ", " + inst;
-        }, "")}
-      </div>
-      <div className="!text-gray-600">{seats}</div>
-    </div>
-  );
-};
 export default CoursePage;
