@@ -131,6 +131,21 @@ function getAllStrings(arg) {
     }, []);
 };
 
+
+function printAll(core, d) {
+    if (typeof core === "string") {
+        d.desc += core; 
+        return;
+    }
+    for (var key in core) {
+        if (key == "courses") continue;
+        if (core[key] != null) {
+            printAll(core[key], d);
+        }
+    }
+}
+
+
 // Main function that cleans up the data
 function clean(parsed, prereqs) {
     let raw = parsed.catalog.programs.program;
@@ -162,8 +177,12 @@ function clean(parsed, prereqs) {
         }*/
 
         pathway.description = desc;
+        if (desc["h:p"] != undefined) {
+            desc = desc["h:p"];
+        }
         pathway.clusters = [];
         pathway.compatibleMinor = [];
+        pathway.concentrations = [];
         // Getting courses needed
         if (raw[i].cores.length != 0) {
             for (var j = 0; j < raw[i].cores.core.length; j++) {
@@ -171,36 +190,42 @@ function clean(parsed, prereqs) {
 
                 // What type of course?
                 var coursesCategory = core["a:title"]
+                title = core["a:title"];
+                delete core["a:title"]
+                var cluster = { 
+                    name: coursesCategory, 
+                    description: core["a:content"], 
+                    courses: findCourses("a:title", core, prereqs)
+                }
+                if (cluster.description["h:p"] != undefined) {
+                    cluster.description = cluster.description["h:p"];
+                }
 
-
-                if (core["a:title"].toLowerCase().includes("requirements")) {
-                    delete core["a:title"]
-                    let cluster = { name: coursesCategory, description: core["a:content"], courses: findCourses("a:title", core, prereqs) }
+                if (title.toLowerCase().includes("requirements")) {
+                    // Object in order to pass by reference
+                    d = {desc : ""};
+                    printAll(core, d);
+                    d.desc = d.desc.trim().replaceAll("&#xA0;", " ")
+                    if (d.desc != "") {
+                        pathway.requirements = d.desc;
+                    }
                     if (Object.keys(cluster.courses).length > 0) pathway.clusters.push(cluster);
                 }
-                else if (core["a:title"].toLowerCase().includes("one of")) {
-                    delete core["a:title"]
-                    let cluster = { name: coursesCategory, description: core["a:content"], courses: findCourses("a:title", core, prereqs) }
+                else if (title.toLowerCase().includes("one of")) {
                     if (Object.keys(cluster.courses).length != 0) pathway.clusters.push(cluster);
                 }
-                else if (core["a:title"].toLowerCase().includes("required")) {
-                    delete core["a:title"]
-                    let cluster = { name: coursesCategory, description: core["a:content"], courses: findCourses("a:title", core, prereqs) }
+                else if (title.toLowerCase().includes("required")) {
                     if (Object.keys(cluster.courses).length != 0) pathway.clusters.push(cluster);
                 }
-                else if (core["a:title"].toLowerCase().includes("minor")) {
-                    delete core["a:title"]
+                else if (title.toLowerCase().includes("minor")) {
                     pathway.compatibleMinor = (getAllChildren("a:title", core))
                 }
-                else if (core["a:title"].toLowerCase().includes("choose")) {
-                    delete core["a:title"]
-                    let cluster = { name: coursesCategory, description: core["a:content"], courses: findCourses("a:title", core, prereqs) }
+                else if (title.toLowerCase().includes("choose")) {
                     if (Object.keys(cluster.courses).length != 0) pathway.clusters.push(cluster);
                 }
                 else {
-                    delete core["a:title"]
-                    let cluster = { name: coursesCategory, description: core["a:content"], courses: findCourses("a:title", core, prereqs) }
-                    if (Object.keys(cluster.courses).length != 0) pathway.clusters.push(cluster);
+                    console.log(title)
+                    if (Object.keys(cluster.courses).length != 0) pathway.concentrations.push(cluster);
                 }
 
 
@@ -213,6 +238,7 @@ function clean(parsed, prereqs) {
 
 // Gets the data and creates the file
 async function data() {
+    console.log(url)
     const response = await fetch(url);
     const xml = await response.text();
     const file = Bun.file("prerequisites.json");
@@ -223,7 +249,6 @@ async function data() {
     await Bun.write("./pathways.json", JSON.stringify(parsed));
     var deps = Object.keys(parsed);
     var ans = {};
-    console.log(deps)
     for (const name of deps) {
         ans[name] = "";
     }
@@ -257,9 +282,8 @@ async function format() {
 // RUN IT
 async function main() {
     var catalog = await getCatalogs();
-    catalog = catalog.find((e) => e.year == "2022-2023");
+    catalog = catalog.find((e) => e.year == "2023-2024");
     url = await getCourseIDS(catalog.id);
-    console.log(url)
 
 
     await data();
