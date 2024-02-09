@@ -6,6 +6,7 @@ const tags_short_to_long = {
   CI: "Communication Intensive",
   PDII: "PDII Option for Engr Majors",
 };
+
 const hass_prefixes = [
   "ARTS",
   "COGS",
@@ -34,13 +35,18 @@ export async function GET(request: NextRequest) {
       ).json()
     ).filter((c) => hass_prefixes.includes(c[0].substring(0, 4)))
   );
+
   const hass_courses_attributes = Object.entries(
     await (
       await fetch(
         "https://raw.githubusercontent.com/quatalog/data/master/prerequisites.json"
       )
     ).json()
-  ).filter((c) => Object.keys(hass_courses_desc).includes(c[0]));
+  ).filter((c) => {
+    const [key, _] = c;
+    return Object.keys(hass_courses_desc).includes(key);
+  });
+
 
   var blob = hass_courses_attributes;
   if (params.get("prefix")) {
@@ -64,18 +70,24 @@ export async function GET(request: NextRequest) {
     );
   }
   var res = [];
-  blob.forEach((c) =>
+  blob.forEach(([code, values]) =>
     res.push({
-      title: hass_courses_desc[c[0]]["name"],
-      courseCode: c[0],
-      tag: c[1]["attributes"],
+      title: hass_courses_desc[code]["name"],
+      courseCode: code,
+      tag: values["attributes"],
+      description: hass_courses_desc[code]["description"],
+      prereqs: values["prerequisites"],
     })
   );
   if (params.get("searchString")) {
-    res = res.filter((c) =>
-      c["title"]
-        .toLowerCase()
-        .includes(params.get("searchString").toLowerCase())
+    res = res.filter(
+      (c) =>
+        c["title"]
+          .toLowerCase()
+          .includes(params.get("searchString").toLowerCase()) ||
+        c["courseCode"]
+          .toLowerCase()
+          .includes(params.get("searchString").toLowerCase())
     );
   }
 

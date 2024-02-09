@@ -109,12 +109,43 @@ const SearchCourse = () => {
   );
 
   useEffect(() => {
-    debouncedFetchPathways();
 
-    return () => {
-      debouncedFetchPathways.cancel();
-    };
-  }, [debouncedFetchPathways]);
+    const apiController = new AbortController();
+
+    // console.log(getFilterList(pathwaysCategories, deferFilterState));
+    // console.log(
+    //   `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+    //     searchString: deferSearchString,
+    //     department: getFilterList(pathwaysCategories, deferFilterState),
+    //   })}`
+    // );
+
+    // fetch (`http://localhost:3000/api/pathway/search?searchString=${deferrvalue}&)
+
+    fetch(
+      `http://localhost:3000/api/pathway/search?${new URLSearchParams({
+        searchString: deferSearchString,
+        department: getFilterList(pathwaysCategories, deferFilterState),
+      })}`,
+      {
+        signal: apiController.signal,
+        cache: "no-store",
+        next: {
+          revalidate: false,
+        },
+      }
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        setResultPathway(data);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Fetching Error: ", err);
+      });
+
+    return () => apiController.abort("Cancelled");
+  }, [deferFilterState, deferSearchString]);
 
   return (
     <>
