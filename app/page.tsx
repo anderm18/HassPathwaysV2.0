@@ -14,7 +14,7 @@ export default function Home() {
             <h1 className="title">Welcome to HASS Pathways!</h1>
             <h3 className="text-sm sm:text-md md:text-lg">
               Here you can explore the different pathways RPI has to offer. To
-              get started choose from on of the options below and start
+              get started choose from one of the options below and start
               exploring your options!
             </h3>
           </div>
